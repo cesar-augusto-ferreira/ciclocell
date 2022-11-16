@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "217635063922",
+    "project_id": "ciclocell-7ffc0",
+    "storage_bucket": "ciclocell-7ffc0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:217635063922:android:6a835ff30d3efacf411aeb",
+        "android_client_info": {
+          "package_name": "com.example.ciclocell"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "217635063922-6t4u6odm095lj5hvkrdhj7e3jlp632d3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0gbsrV5QQk3aasS9P09qFUbg7EWaip5w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "217635063922-6t4u6odm095lj5hvkrdhj7e3jlp632d3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "217635063922-plr1p6ejif3rh9u3u48sppd0tha7dn30.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.ciclocell"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
