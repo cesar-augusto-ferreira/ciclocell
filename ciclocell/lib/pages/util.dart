@@ -204,6 +204,31 @@ void sucesso(context, String msg) {
   );
 }
 
+class BotaoTexto extends StatelessWidget {
+  final Color corTexto;
+  final dynamic acaoBotao;
+
+  const BotaoTexto({Key? key, required this.corTexto, this.acaoBotao}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return  TextButton(
+                  child: Text(
+                    'Esqueceu a senha? ',
+                    style: GoogleFonts.roboto(
+                      color: corTexto,
+                      fontSize: 25,
+                      decoration: TextDecoration.underline,
+                    ),
+                  ),
+                  onPressed: () {
+                    acaoBotao;
+                  }
+    );
+    
+  }
+}
+
 
 
 

@@ -44,39 +44,39 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCNmkap10ZiqOcWuXHkp9tUsWmRBpS3xSA',
-    appId: '1:217635063922:web:357ed547f17c1ded411aeb',
-    messagingSenderId: '217635063922',
-    projectId: 'ciclocell-7ffc0',
-    authDomain: 'ciclocell-7ffc0.firebaseapp.com',
-    storageBucket: 'ciclocell-7ffc0.appspot.com',
+    apiKey: 'AIzaSyB9uRTfaPWwKDciP3lYwxa9lYUNy4Ttk5A',
+    appId: '1:553072605059:web:0658edb67a2e5b0339a8b6',
+    messagingSenderId: '553072605059',
+    projectId: 'ciclocell-d0a9e',
+    authDomain: 'ciclocell-d0a9e.firebaseapp.com',
+    storageBucket: 'ciclocell-d0a9e.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyD0gbsrV5QQk3aasS9P09qFUbg7EWaip5w',
-    appId: '1:217635063922:android:6a835ff30d3efacf411aeb',
-    messagingSenderId: '217635063922',
-    projectId: 'ciclocell-7ffc0',
-    storageBucket: 'ciclocell-7ffc0.appspot.com',
+    apiKey: 'AIzaSyBqd9UCvdBCBSfKupC1HfiyG4jUp0gWuKs',
+    appId: '1:553072605059:android:4e2c12ee05d12d5639a8b6',
+    messagingSenderId: '553072605059',
+    projectId: 'ciclocell-d0a9e',
+    storageBucket: 'ciclocell-d0a9e.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAYLhb3PpVi1oHMiVVhIsX-oSu-MWuiHsY',
-    appId: '1:217635063922:ios:438b03b6de2be561411aeb',
-    messagingSenderId: '217635063922',
-    projectId: 'ciclocell-7ffc0',
-    storageBucket: 'ciclocell-7ffc0.appspot.com',
-    iosClientId: '217635063922-plr1p6ejif3rh9u3u48sppd0tha7dn30.apps.googleusercontent.com',
+    apiKey: 'AIzaSyDuWVqw-G92-0-r2I8B6QY3_j7bSD87LTA',
+    appId: '1:553072605059:ios:47cf955113d88f4a39a8b6',
+    messagingSenderId: '553072605059',
+    projectId: 'ciclocell-d0a9e',
+    storageBucket: 'ciclocell-d0a9e.appspot.com',
+    iosClientId: '553072605059-ll0l5p5oc6dcdpnkv8jqr35krj1c79l0.apps.googleusercontent.com',
     iosBundleId: 'com.example.ciclocell',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyAYLhb3PpVi1oHMiVVhIsX-oSu-MWuiHsY',
-    appId: '1:217635063922:ios:438b03b6de2be561411aeb',
-    messagingSenderId: '217635063922',
-    projectId: 'ciclocell-7ffc0',
-    storageBucket: 'ciclocell-7ffc0.appspot.com',
-    iosClientId: '217635063922-plr1p6ejif3rh9u3u48sppd0tha7dn30.apps.googleusercontent.com',
+    apiKey: 'AIzaSyDuWVqw-G92-0-r2I8B6QY3_j7bSD87LTA',
+    appId: '1:553072605059:ios:47cf955113d88f4a39a8b6',
+    messagingSenderId: '553072605059',
+    projectId: 'ciclocell-d0a9e',
+    storageBucket: 'ciclocell-d0a9e.appspot.com',
+    iosClientId: '553072605059-ll0l5p5oc6dcdpnkv8jqr35krj1c79l0.apps.googleusercontent.com',
     iosBundleId: 'com.example.ciclocell',
   );
 }
