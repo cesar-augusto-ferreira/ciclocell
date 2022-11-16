@@ -1,37 +1,37 @@
 {
   "project_info": {
-    "project_number": "217635063922",
-    "project_id": "ciclocell-7ffc0",
-    "storage_bucket": "ciclocell-7ffc0.appspot.com"
+    "project_number": "553072605059",
+    "project_id": "ciclocell-d0a9e",
+    "storage_bucket": "ciclocell-d0a9e.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:217635063922:android:6a835ff30d3efacf411aeb",
+        "mobilesdk_app_id": "1:553072605059:android:4e2c12ee05d12d5639a8b6",
         "android_client_info": {
           "package_name": "com.example.ciclocell"
         }
       },
       "oauth_client": [
         {
-          "client_id": "217635063922-6t4u6odm095lj5hvkrdhj7e3jlp632d3.apps.googleusercontent.com",
+          "client_id": "553072605059-unfjr882nac3d76n6h8qj1ct0v5rk6h4.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD0gbsrV5QQk3aasS9P09qFUbg7EWaip5w"
+          "current_key": "AIzaSyBqd9UCvdBCBSfKupC1HfiyG4jUp0gWuKs"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "217635063922-6t4u6odm095lj5hvkrdhj7e3jlp632d3.apps.googleusercontent.com",
+              "client_id": "553072605059-unfjr882nac3d76n6h8qj1ct0v5rk6h4.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "217635063922-plr1p6ejif3rh9u3u48sppd0tha7dn30.apps.googleusercontent.com",
+              "client_id": "553072605059-ll0l5p5oc6dcdpnkv8jqr35krj1c79l0.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
                 "bundle_id": "com.example.ciclocell"
