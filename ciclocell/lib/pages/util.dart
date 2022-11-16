@@ -1,7 +1,6 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class Texto extends StatelessWidget {
   final String label;
@@ -23,54 +22,42 @@ class Texto extends StatelessWidget {
 
 }
 
-class AppBar extends StatefulWidget {
-  const AppBar({Key? key}) : super(key: key);
+class CampoCadastro extends StatelessWidget {
+  final String label;
+  final String? hintLabel;
+  final IconData? iconepref;
+  final IconData? iconesuf;
 
-  @override
-  State<AppBar> createState() => _AppBarState();
-}
+  const CampoCadastro({Key? key, required this.label, this.hintLabel, this.iconepref, this.iconesuf, }) : super(key: key);
 
-class _AppBarState extends State<AppBar> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      // menu lateral
-      endDrawer: Drawer(
-        backgroundColor: Color.fromRGBO(68, 56, 71, 1),
-        width: 250,
-        child: Column(
-          children: [
-            UserAccountsDrawerHeader(
-              accountName: const Text('Sergio'),
-              accountEmail: const Text('sergio@hotmail.com'),
-              currentAccountPicture: Image.asset('lib/images/homem.png'),
-            ),
-            const SizedBox(height: 10),
-            const Texto(label: 'Aumentar a performace', tamFonte: 18),
-            const SizedBox(height: 10),
-            const Texto(label: 'Tempo da bateria', tamFonte: 18),
-            const SizedBox(height: 10),
-            const Texto(label: 'Avaliar o aparelho', tamFonte: 18),
-            const SizedBox(height: 10),
-            const Texto(label: 'Backup de arquivos', tamFonte: 18),
-            const SizedBox(height: 10),
-            const Texto(label: 'Central de ajuda', tamFonte: 18),
-            const SizedBox(height: 40),
-            const Texto(label: 'Sobre', tamFonte: 18),
-            const SizedBox(height: 10),
-            const Texto(label: 'Minha conta', tamFonte: 18),
-            const SizedBox(height: 10),
-            const Texto(label: 'Sair', tamFonte: 18),
-          ],
+    return TextFormField(
+      
+      decoration: InputDecoration(
+        floatingLabelAlignment: FloatingLabelAlignment.center,
+        labelText: label,
+        hintText: '$hintLabel $label',
+        hintStyle: TextStyle(
+          color: Colors.white,
+        ),
+        prefixIcon: iconepref == null ? null : Icon(
+          iconepref, color: Colors.white,
+        ),
+        suffixIcon: iconesuf == null ? null : Icon(
+          iconesuf , color: Colors.white,
+        ),
+        labelStyle: GoogleFonts.roboto(
+          fontSize: 25,
+          color: Colors.white,
         ),
       ),
-      //appbar
-      
-      
     );
     
   }
 }
+
+
 
 
 
