@@ -1,6 +1,5 @@
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../pages/util.dart';
 import '../controller/login_controller.dart';
 
@@ -21,37 +20,6 @@ class _TelaCadastroState extends State<TelaCadastro> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-       // menu lateral
-      endDrawer: Drawer(
-        backgroundColor: const Color.fromRGBO(68, 56, 71, 1),
-        width: 250,
-        child: Column(
-          children: [
-            UserAccountsDrawerHeader(
-              accountName: const Text('Sergio'), 
-              accountEmail: const Text('sergio@hotmail.com'),
-              currentAccountPicture: Image.asset('lib/images/homem.png'),
-            ),
-            const SizedBox(height: 10,),
-            const Texto(label: 'Aumentar a performace', tamFonte: 18),
-            const SizedBox(height: 10,),
-            const Texto(label: 'Tempo da bateria', tamFonte: 18),
-            const SizedBox(height: 10,),
-            const Texto(label: 'Avaliar o aparelho', tamFonte: 18),
-            const SizedBox(height: 10,),
-            const Texto(label: 'Backup de arquivos', tamFonte: 18),
-            const SizedBox(height: 10,),
-            const Texto(label: 'Central de ajuda', tamFonte: 18),
-            const SizedBox(height: 40,),
-            const Texto(label: 'Sobre', tamFonte: 18),
-            const SizedBox(height: 10,),
-            const Texto(label: 'Minha conta', tamFonte: 18),
-            const SizedBox(height: 10,),
-            const Texto(label: 'Sair', tamFonte: 18),
-          ],
-        ),
-      ),
 
           // Appbar
       appBar: AppBar(
@@ -74,21 +42,59 @@ class _TelaCadastroState extends State<TelaCadastro> {
             child: Column(
               // ignore: prefer_const_literals_to_create_immutables
               children: [
-                const Texto(label: 'Cadastro', tamFonte: 25),
+                const Texto(
+                  label: 'Cadastro',
+                   tamFonte: 25,
+                  ),
                 const SizedBox(height: 10),
-                const Texto(label: 'Preencha os campos abaixo.', tamFonte: 18),
+                const Texto(
+                  label: 'Preencha os campos abaixo.',
+                  tamFonte: 18,
+                ),
                 const SizedBox(height: 10),
-                const Texto(label: 'Página 1/2', tamFonte: 16),
+                const Texto(
+                  label: 'Página 1/2', 
+                  tamFonte: 16,
+                ),
                 const SizedBox(height: 10),
-                const CampoCadastro(label: 'Nome*', hintLabel: 'Digite o seu ',iconepref: Icons.person_outline,variavel: "nome", font: 25), 
+                CampoCadastro(
+                  label: 'Nome*', 
+                  hintLabel: 'Digite o seu ',
+                  iconepref: Icons.person_outline,
+                  variavel: nome, 
+                  font: 25,
+                ), 
                 const SizedBox(height: 20,),
-                const CampoCadastro(label: 'RG*', hintLabel: 'Digite o seu', iconepref: Icons.document_scanner_outlined,variavel: "rg", font: 25),
+                CampoCadastro(
+                  label: 'RG*', 
+                  hintLabel: 'Digite o seu', 
+                  iconepref: Icons.document_scanner_outlined,
+                  variavel: rg, 
+                  font: 25,
+                ),
                 const SizedBox(height: 20,),
-                const CampoCadastro(label: 'CPF*', hintLabel: 'Digite o seu ', iconepref: Icons.document_scanner_outlined,variavel: "cpf", font: 25), 
+                CampoCadastro(
+                  label: 'CPF*', 
+                  hintLabel: 'Digite o seu ', 
+                  iconepref: Icons.document_scanner_outlined,
+                  variavel: cpf, 
+                  font: 25,
+                ), 
                 const SizedBox(height: 20,),
-                const CampoCadastro(label: 'E-mail*', hintLabel: 'Digite o seu ', iconepref: Icons.email_outlined, variavel: "email", font: 25),
+                CampoCadastro(
+                  label: 'E-mail*', 
+                  hintLabel: 'Digite o seu ', 
+                  iconepref: Icons.email_outlined, 
+                  variavel: email, 
+                  font: 25,
+                ),
                 const SizedBox(height: 20),
-                const CampoCadastro(label: 'Confirme o e-mail*', iconepref: Icons.email_outlined, variavel: "confEmail", font: 25), 
+                CampoCadastro(
+                  label: 'Confirme o e-mail*', 
+                  iconepref: Icons.email_outlined, 
+                  variavel: confEmail, 
+                  font: 25,
+                ), 
                 const SizedBox(height: 45),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,

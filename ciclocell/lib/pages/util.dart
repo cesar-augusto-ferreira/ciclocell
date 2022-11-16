@@ -31,7 +31,7 @@ class CampoCadastro extends StatelessWidget {
   final IconData? iconepref;
   final IconData? iconesuf;
   final dynamic variavel; 
-  final dynamic? senha;
+  final dynamic senha;
   final dynamic font;
 
   const CampoCadastro({Key? key, required this.label, this.hintLabel, this.iconepref, 
@@ -115,12 +115,12 @@ class CampoTexto extends StatelessWidget {
   }
 }
 
-class Botao1 extends StatelessWidget {
+class Botao extends StatelessWidget {
   final Color corBotao;
   final String nomeBotao;
   final dynamic acaoBotao;
 
-  const Botao1({Key? key, required this.corBotao, required this.nomeBotao, this.acaoBotao}) : super(key: key);
+  const Botao({Key? key, required this.corBotao, required this.nomeBotao, this.acaoBotao}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -138,40 +138,43 @@ class Botao1 extends StatelessWidget {
       ),
 
       onPressed: () => { 
-        acaoBotao,
+        Navigator.pushNamed(context,acaoBotao),
       },
     );
   }
 }
 
-class Botao2 extends StatelessWidget {
-  final Color corBotao;
-  final String nomeBotao;
-  final dynamic acaoBotao;
 
-  const Botao2({Key? key, required this.corBotao, required this.nomeBotao, this.acaoBotao}) : super(key: key);
+class BotaoTexto extends StatelessWidget {
+  final Color corTexto;
+  final String texto;
+  final dynamic acaoBotao;
+  final dynamic decoracao;
+
+  const BotaoTexto({Key? key, required this.corTexto, this.acaoBotao, required this.texto, this.decoracao}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        minimumSize: const Size(120, 50),
-        primary: corBotao,
-      ), 
-      child:  Text(
-        nomeBotao,
-        style: const TextStyle(
-          fontSize: 18,
-          color: Colors.black,
-        ),
-      ),
-
-      onPressed: () { 
-        acaoBotao;
-      },
+    return  TextButton(
+                  child: Text(
+                    texto,
+                    style: GoogleFonts.roboto(
+                      color: corTexto,
+                      fontSize: 25,
+                      decoration: decoracao,
+                    ),
+                  ),
+                  onPressed: () => {
+                    Navigator.pushNamed(context,acaoBotao),
+                  }
     );
+    
   }
 }
+
+
+
+
 
 
 
@@ -203,32 +206,6 @@ void sucesso(context, String msg) {
     ),
   );
 }
-
-class BotaoTexto extends StatelessWidget {
-  final Color corTexto;
-  final dynamic acaoBotao;
-
-  const BotaoTexto({Key? key, required this.corTexto, this.acaoBotao}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return  TextButton(
-                  child: Text(
-                    'Esqueceu a senha? ',
-                    style: GoogleFonts.roboto(
-                      color: corTexto,
-                      fontSize: 25,
-                      decoration: TextDecoration.underline,
-                    ),
-                  ),
-                  onPressed: () {
-                    acaoBotao;
-                  }
-    );
-    
-  }
-}
-
 
 
 

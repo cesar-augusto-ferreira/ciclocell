@@ -4,6 +4,7 @@ import 'firebase_options.dart';
 import '../pages/tela_login.dart';
 import '../pages/tela_principal.dart';
 import '../pages/tela_cadastro.dart';
+import '../pages/tela_recuperar_senha.dart';
 
 Future<void> main() async {
 
@@ -21,6 +22,7 @@ Future<void> main() async {
         "login" : ((context) => const TelaLogin()),
         "principal" : ((context) => const TelaPrincipal()),
         "cadastro" : ((context) => const TelaCadastro()),
+        "recuperacao1" :((context) => const TelaRecuperacao1())
       },
 
     ),
