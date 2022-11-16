@@ -122,7 +122,7 @@ class _TelaCadastroState extends State<TelaCadastro> {
                         ),
                       ),
                       onPressed: () {
-                        LoginController().criarConta(context, nome.text, email.text, senha.text);
+                        //LoginController().criarConta(context, nome.text, email.text, senha.text);
                         }, 
                     ),
                   ],
@@ -148,7 +148,3 @@ class _TelaCadastroState extends State<TelaCadastro> {
 }
 
 
-    );
-
-  }
-}

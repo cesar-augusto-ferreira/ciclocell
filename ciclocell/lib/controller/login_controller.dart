@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
+import '../pages/tela_login.dart';
 import '../pages/util.dart';
 
 class LoginController {
@@ -42,7 +42,7 @@ class LoginController {
         .signInWithEmailAndPassword(email: email, password: senha)
         .then((res) {
       sucesso(context, 'Usuário autenticado com sucesso.');
-      Navigator.pushReplacementNamed(context, 'tela_principal');
+      Navigator.pushReplacementNamed(context, 'principal');
     }).catchError((e) {
       switch (e.code) {
         case 'invalid-email':

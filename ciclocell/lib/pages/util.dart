@@ -115,12 +115,12 @@ class CampoTexto extends StatelessWidget {
   }
 }
 
-class Botao extends StatelessWidget {
+class Botao1 extends StatelessWidget {
   final Color corBotao;
   final String nomeBotao;
-  final dynamic? acaoBotao;
+  final dynamic acaoBotao;
 
-  const Botao({Key? key, required this.corBotao, required this.nomeBotao, this.acaoBotao}) : super(key: key);
+  const Botao1({Key? key, required this.corBotao, required this.nomeBotao, this.acaoBotao}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -143,6 +143,36 @@ class Botao extends StatelessWidget {
     );
   }
 }
+
+class Botao2 extends StatelessWidget {
+  final Color corBotao;
+  final String nomeBotao;
+  final dynamic acaoBotao;
+
+  const Botao2({Key? key, required this.corBotao, required this.nomeBotao, this.acaoBotao}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        minimumSize: const Size(120, 50),
+        primary: corBotao,
+      ), 
+      child:  Text(
+        nomeBotao,
+        style: const TextStyle(
+          fontSize: 18,
+          color: Colors.black,
+        ),
+      ),
+
+      onPressed: () { 
+        acaoBotao;
+      },
+    );
+  }
+}
+
 
 
 void erro(context, String msg) {

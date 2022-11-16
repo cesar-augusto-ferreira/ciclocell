@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 //import 'package:flutter/src/foundation/key.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -125,7 +126,7 @@ class _TelaLoginState extends State<TelaLogin> {
                 const SizedBox(height: 80),
                 Row(
                   children: [
-                    const SizedBox(width: 25),
+                    const SizedBox(width: 20),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         minimumSize: const Size(120, 50),
@@ -155,6 +156,7 @@ class _TelaLoginState extends State<TelaLogin> {
                       ),
                       onPressed: () {LoginController().login(context, email.text, senha.text);}, 
                     ),
+                    
                     ],
                   ),    
               ],
@@ -168,3 +170,14 @@ class _TelaLoginState extends State<TelaLogin> {
     
   }
 }
+
+
+
+
+                   /* Botao1(corBotao: Colors.grey.shade200, nomeBotao: "Cadastrar",
+                      acaoBotao: Navigator.pushNamed(context, "cadastro"),
+                    ),
+                    const SizedBox(width: 25),
+                    Botao2(corBotao: Colors.grey.shade200, nomeBotao: "Login",
+                     acaoBotao: LoginController().login(context, email.text, senha.text),
+                    ),*/

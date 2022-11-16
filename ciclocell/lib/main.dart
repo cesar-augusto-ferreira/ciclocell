@@ -17,11 +17,11 @@ Future<void> main() async {
       title: "CicloCell",
 
       initialRoute: "login",
-  routes: {
-    "login" : ((context) => const TelaLogin()),
-    //"tela_principal" : ((context) => const TelaPrincipal()),
-    "cadastro" : ((context) => const TelaCadastro()),
-  },
+      routes: {
+        "login" : ((context) => const TelaLogin()),
+        "principal" : ((context) => const TelaPrincipal()),
+        "cadastro" : ((context) => const TelaCadastro()),
+      },
 
     ),
   );
