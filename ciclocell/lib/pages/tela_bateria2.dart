@@ -1,5 +1,6 @@
-import 'package:app_ciclo_cell/view/tela_cadastro.dart';
-import 'package:app_ciclo_cell/view/tela_principal.dart';
+import 'package:ciclocell/pages/tela_avaliacao.dart';
+import 'package:ciclocell/pages/tela_cadastro.dart';
+import 'package:ciclocell/pages/tela_principal.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';

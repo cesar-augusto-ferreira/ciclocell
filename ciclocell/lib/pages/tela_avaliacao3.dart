@@ -1,11 +1,11 @@
 
 
-import 'package:app_ciclo_cell/view/tela_avaliacao.dart';
-import 'package:app_ciclo_cell/view/tela_avaliacao2.dart';
-import 'package:app_ciclo_cell/view/tela_cadastro.dart';
-import 'package:app_ciclo_cell/view/tela_cadastro3.dart';
-import 'package:app_ciclo_cell/view/tela_login.dart';
-import 'package:app_ciclo_cell/view/tela_principal.dart';
+import 'package:ciclocell/pages/tela_avaliacao.dart';
+import 'package:ciclocell/pages/tela_avaliacao2.dart';
+import 'package:ciclocell/pages/tela_cadastro.dart';
+import 'package:ciclocell/pages/tela_cadastro3.dart';
+import 'package:ciclocell/pages/tela_login.dart';
+import 'package:ciclocell/pages/tela_principal.dart';
 import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
