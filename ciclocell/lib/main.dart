@@ -79,7 +79,7 @@ class MyApp extends StatelessWidget {
 <<<<<<< Updated upstream
     );
     
-  }
+  } 
 }
 
 
@@ -87,8 +87,3 @@ class MyApp extends StatelessWidget {
 
     
   
-=======
-    ),
-  );
-}
->>>>>>> Stashed changes
