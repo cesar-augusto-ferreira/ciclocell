@@ -9,7 +9,6 @@ import '../pages/tela_cadastro3.dart';
 import '../pages/tela_avaliacao.dart';
 import '../pages/tela_avaliacao2.dart';
 import '../pages/tela_avaliacao3.dart';
-import '../pages/te'
 import '../pages/tela_recuperar_senha.dart';
 import '../pages/tela_recuperar_senha2.dart';
 
