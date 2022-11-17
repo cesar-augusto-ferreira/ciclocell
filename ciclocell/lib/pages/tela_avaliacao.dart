@@ -14,10 +14,10 @@ class TelaAvaliacao extends StatefulWidget {
 }
 
 class _TelaAvaliacaoState extends State<TelaAvaliacao> {
-  var cidade = TextEditingController();
-  var endereco = TextEditingController();
-  var complemento = TextEditingController();
-  var celular = TextEditingController();
+  var marca = TextEditingController();
+  var modelo = TextEditingController();
+  var memoriaRam = TextEditingController();
+  var memoriaInt = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
