@@ -8,6 +8,7 @@ import '../pages/tela_recuperar_senha.dart';
 import '../pages/tela_avaliacao.dart';
 import '../pages/tela_avaliacao2.dart';
 import '../pages/tela_avaliacao3.dart';
+import '../pages/te'
 
 Future<void> main() async {
 
@@ -31,6 +32,7 @@ Future<void> main() async {
         "avaliacao1" :((context) => const TelaAvaliacao()),
         "avaliacao2" :((context) => const TelaAvaliacao2()),
         "avaliacao3" :((context) => const TelaAvaliacao3()),
+        "bateria":((context)) => const TelaBateria()),
         
 
       },
