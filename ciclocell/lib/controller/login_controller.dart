@@ -8,7 +8,7 @@ class LoginController {
   //
   // CRIAÇÃO DE UMA NOVA CONTA
   //
-  void criarConta(context, nome, email, senha) {
+  void criarConta(context, nome, rg, cpf, email, senha, cidade, endereco, complemento, celular) {
     FirebaseAuth.instance
         .createUserWithEmailAndPassword(email: email, password: senha)
         .then((res) {
@@ -16,6 +16,12 @@ class LoginController {
       FirebaseFirestore.instance.collection('usuarios').add({
         "uid": res.user!.uid.toString(),
         "nome": nome,
+        "rg": rg,
+        "cpf": cpf,
+        "cidade": cidade,
+        "endereço": endereco,
+        "complemento": complemento,
+        "celular": celular,
       });
 
       sucesso(context, 'Usuário criado com sucesso.');

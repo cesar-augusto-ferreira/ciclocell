@@ -44,12 +44,15 @@ class CampoCadastro extends StatelessWidget {
         child: TextField(
           controller: variavel,
           obscureText: (senha!= null) ? true : false,
+          style: GoogleFonts.roboto(
+            fontSize: font,
+            color: Colors.white,
+          ),
           decoration: InputDecoration(
             floatingLabelAlignment: FloatingLabelAlignment.center,
             labelText: label,
             hintText: '$hintLabel $label',
-            // ignore: prefer_const_constructors
-            hintStyle: TextStyle(
+            hintStyle: const TextStyle(
               color: Colors.white,
             ),
           prefixIcon: iconepref == null ? null : Icon(
@@ -76,8 +79,9 @@ class CampoTexto extends StatelessWidget {
   final IconData? iconesuf;
   final dynamic variavel; 
   final dynamic? senha; 
+  final dynamic font;
 
-  const CampoTexto({Key? key, required this.label, this.hintLabel, this.iconepref, this.iconesuf, required this.variavel, this.senha}) : super(key: key);
+  const CampoTexto({Key? key, required this.label, this.hintLabel, this.iconepref, this.iconesuf, required this.variavel, this.senha, this.font}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -86,11 +90,15 @@ class CampoTexto extends StatelessWidget {
       child: TextField(
         controller: variavel,
         obscureText: (senha != null) ? true : false,
+        style: GoogleFonts.roboto(
+            fontSize: font,
+            color: Colors.white,
+          ),
         decoration: InputDecoration(
           floatingLabelAlignment: FloatingLabelAlignment.center,
           labelText: label,
           hintText: '$hintLabel $label',
-          hintStyle: TextStyle(
+          hintStyle: const TextStyle(
             color: Colors.black,
           ),
           prefixIcon: iconepref == null ? null : Icon(
@@ -120,7 +128,7 @@ class Botao extends StatelessWidget {
   final String nomeBotao;
   final dynamic acaoBotao;
 
-  const Botao({Key? key, required this.corBotao, required this.nomeBotao, this.acaoBotao}) : super(key: key);
+  const Botao ({Key? key, required this.corBotao, required this.nomeBotao, this.acaoBotao}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -138,11 +146,13 @@ class Botao extends StatelessWidget {
       ),
 
       onPressed: () => { 
-        Navigator.pushNamed(context,acaoBotao),
+        Navigator.pushReplacementNamed(context,acaoBotao),
       },
     );
   }
 }
+
+
 
 
 class BotaoTexto extends StatelessWidget {
@@ -165,7 +175,7 @@ class BotaoTexto extends StatelessWidget {
                     ),
                   ),
                   onPressed: () => {
-                    Navigator.pushNamed(context,acaoBotao),
+                    Navigator.pushReplacementNamed(context,acaoBotao),
                   }
     );
     

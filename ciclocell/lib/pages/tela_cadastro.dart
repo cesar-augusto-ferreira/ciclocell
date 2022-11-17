@@ -1,7 +1,8 @@
 
 import 'package:flutter/material.dart';
-import '../pages/util.dart';
 import '../controller/login_controller.dart';
+import '../main.dart';
+import '../pages/util.dart';
 
 class TelaCadastro extends StatefulWidget {
   const TelaCadastro({Key? key}) : super(key: key);
@@ -15,7 +16,7 @@ class _TelaCadastroState extends State<TelaCadastro> {
   var rg = TextEditingController();
   var cpf = TextEditingController();
   var email = TextEditingController();
-  var confEmail = TextEditingController();
+  var senha = TextEditingController();
   
   @override
   Widget build(BuildContext context) {
@@ -90,9 +91,10 @@ class _TelaCadastroState extends State<TelaCadastro> {
                 ),
                 const SizedBox(height: 20),
                 CampoCadastro(
-                  label: 'Confirme o e-mail*', 
-                  iconepref: Icons.email_outlined, 
-                  variavel: confEmail, 
+                  label: "Senha*",
+                  hintLabel: "Digite a ",
+                  iconepref: Icons.vpn_key, 
+                  variavel: senha, 
                   font: 25,
                 ), 
                 const SizedBox(height: 45),
@@ -100,36 +102,35 @@ class _TelaCadastroState extends State<TelaCadastro> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   // ignore: prefer_const_literals_to_create_immutables
                   children: [
+                    Botao(
+                      corBotao: Colors.grey.shade200, 
+                      nomeBotao: "Cancelar",
+                      acaoBotao: "login",
+                    ),
+                    const SizedBox(width: 60),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         minimumSize: const Size(120, 50),
                         primary: Colors.grey.shade200,
                       ), 
-                      child:  const Text(
-                        "Cancelar",
+                      child: Text(
+                        "Enviar",
                         style: TextStyle(
                           fontSize: 18,
                           color: Colors.black,
                         ),
                       ),
-                      onPressed: () => {Navigator.pushNamed(context, "login")}, 
-                    ),
-                    const SizedBox(width: 50),
-                     ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        minimumSize: const Size(120, 50),
-                        primary: Colors.grey.shade200,
-                      ), 
-                      child:  const Text(
-                        "Próximo",
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Colors.black,
-                        ),
-                      ),
-                      onPressed: () {
-                        //LoginController().criarConta(context, nome.text, email.text, senha.text);
-                        }, 
+
+                      onPressed: () async { 
+                        if (nome.text.isNotEmpty && rg.text.isNotEmpty && cpf.text.isNotEmpty && email.text.isNotEmpty && senha.text.isNotEmpty) {
+                                Navigator.pushReplacementNamed(context, "cadastro2",
+                                  arguments: ArgumentosCadastro(nome.text, rg.text, cpf.text, email.text, senha.text),
+                                );
+                              } else {
+                                erro(context,
+                                    "Informe o nome, rg, cpf e email para fazer o cadastro.");
+                              }
+                      },
                     ),
                   ],
                 ),
@@ -137,8 +138,9 @@ class _TelaCadastroState extends State<TelaCadastro> {
                 const Texto(label: '* Campos obrigatórios', tamFonte: 14),
                 const SizedBox(height: 15),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  // ignore: prefer_const_literals_to_create_immutables
                   children: [
-                    const SizedBox(width: 250),
                     const Texto(label: 'CicloCell', tamFonte: 16),
                   ],
                 ),

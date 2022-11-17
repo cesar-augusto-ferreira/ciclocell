@@ -82,9 +82,9 @@ class _TelaLoginState extends State<TelaLogin> {
                 ),
                 const SizedBox(height: 30),
                 Row(
+                 mainAxisAlignment: MainAxisAlignment.end,
                   // ignore: prefer_const_literals_to_create_immutables
                   children: [
-                    const SizedBox(width: 250),
                     const Texto(label: 'CicloCell', tamFonte: 16),
                   ],
                 ),   
