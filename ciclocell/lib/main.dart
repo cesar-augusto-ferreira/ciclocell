@@ -9,13 +9,8 @@ import '../pages/tela_cadastro3.dart';
 import '../pages/tela_avaliacao.dart';
 import '../pages/tela_avaliacao2.dart';
 import '../pages/tela_avaliacao3.dart';
-<<<<<<< Updated upstream
 import '../pages/tela_recuperar_senha.dart';
 import '../pages/tela_recuperar_senha2.dart';
-=======
-import '../pages/tela_Bateria.dart';
-import '../pages/tela_Bateria2.dart';
->>>>>>> Stashed changes
 
 Future<void> main() async {
 
@@ -67,16 +62,9 @@ class MyApp extends StatelessWidget {
         "avaliacao1" :((context) => const TelaAvaliacao()),
         "avaliacao2" :((context) => const TelaAvaliacao2()),
         "avaliacao3" :((context) => const TelaAvaliacao3()),
-<<<<<<< Updated upstream
-=======
-        "bateria1": ((context) => const TelaBateria()),
-        "bateria2": ((context) => const TelaBateria2()),
->>>>>>> Stashed changes
         
 
       },
-
-<<<<<<< Updated upstream
     );
     
   } 
