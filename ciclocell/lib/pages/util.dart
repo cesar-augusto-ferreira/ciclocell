@@ -182,10 +182,84 @@ class BotaoTexto extends StatelessWidget {
   }
 }
 
+class UsuarioLogado extends StatelessWidget {
+  const UsuarioLogado({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder<String>(
+                  future: LoginController().retornarUsuarioLogado(),
+                  builder: (context, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.waiting) {
+                      return CircularProgressIndicator();
+                    } else if (snapshot.connectionState ==
+                        ConnectionState.done) {
+                      if (snapshot.hasError) {
+                        return const Text('Error');
+                      } else if (snapshot.hasData) {
+                        return Text(
+                          snapshot.data.toString(),
+                          overflow: TextOverflow.ellipsis,
+                          style: GoogleFonts.roboto(
+                            fontSize: 16,
+                          ),
+                        );
+                      } else {
+                        return const Text('Empty data');
+                      }
+                    } else {
+                      return Text('State: ${snapshot.connectionState}');
+                    }
+                  },
+                );
+    
+  }
+}
 
 
 
 
+/*void appBar() {
+  appBar: AppBar(
+        backgroundColor: Colors.black,
+        title: const Text(
+          'CicloCell',
+          style: TextStyle(
+            fontSize: 35,
+            color: Color.fromARGB(255, 15, 234, 22),
+          ),
+          ),
+         Column(
+           children: [
+             FutureBuilder<String>(
+                      future: LoginController().retornarUsuarioLogado(),
+                      builder: (context, snapshot) {
+                        if (snapshot.connectionState == ConnectionState.waiting) {
+                          return CircularProgressIndicator();
+                        } else if (snapshot.connectionState ==
+                            ConnectionState.done) {
+                          if (snapshot.hasError) {
+                            return const Text('Error');
+                          } else if (snapshot.hasData) {
+                            return Text(
+                              snapshot.data.toString(),
+                              overflow: TextOverflow.ellipsis,
+                              style: GoogleFonts.roboto(
+                                fontSize: 16,
+                              ),
+                            );
+                          } else {
+                            return const Text('Empty data');
+                          }
+                        } else {
+                          return Text('State: ${snapshot.connectionState}');
+                        }
+                      },
+                    ),
+           ],
+         ), 
+      );
+}*/
 
 
 void erro(context, String msg) {
@@ -216,6 +290,8 @@ void sucesso(context, String msg) {
     ),
   );
 }
+
+
 
 
 

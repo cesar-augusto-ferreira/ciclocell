@@ -1,9 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import '../pages/util.dart';
 
 class TelaPrincipal extends StatefulWidget {
@@ -17,6 +15,8 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+    
 
       endDrawer: Drawer(
         backgroundColor: Color.fromRGBO(68, 56, 71, 1),
@@ -48,16 +48,8 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
         ),
       ),
 
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        title: const Text(
-          'CicloCell',
-          style: TextStyle(
-            fontSize: 35,
-            color: Color.fromARGB(255, 15, 234, 22),
-          ),
-          ),
-      ),
+      
+      
 
       backgroundColor: Color.fromRGBO(68, 56, 71, 1),
       body: SingleChildScrollView(

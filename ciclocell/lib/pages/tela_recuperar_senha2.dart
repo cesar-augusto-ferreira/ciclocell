@@ -38,7 +38,7 @@ class TelaRecuperacao2 extends StatelessWidget {
           //corpo da página
       body: SingleChildScrollView(
         child: Padding(
-          padding:const EdgeInsets.symmetric(horizontal: 20, vertical: 90),
+          padding:const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
           child: Center(
             child: Column(
               // ignore: prefer_const_literals_to_create_immutables
@@ -62,7 +62,7 @@ class TelaRecuperacao2 extends StatelessWidget {
                   nomeBotao: "Concluir", 
                   acaoBotao: "login",
                 ),
-                const SizedBox(height: 130),
+                const SizedBox(height: 120),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [                    

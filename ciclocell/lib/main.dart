@@ -1,3 +1,4 @@
+import 'package:ciclocell/pages/tela_anunciar.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'firebase_options.dart';
@@ -26,7 +27,6 @@ class ArgumentosRecupSenha {
   final String nome;
   final String email;
   
-
   ArgumentosRecupSenha(this.nome, this.email);
 }
 
@@ -38,6 +38,13 @@ class ArgumentosCadastro {
   final String senha;
 
   ArgumentosCadastro(this.nome, this.rg, this.cpf, this.email, this.senha);
+}
+
+class ArgumentosCadastro2 {
+  final String nome;
+  final String email;
+
+  ArgumentosCadastro2(this.nome, this.email);
 }
 
 class MyApp extends StatelessWidget {
@@ -56,12 +63,13 @@ class MyApp extends StatelessWidget {
         //"ajuda" : ((context) => const TelaAjuda()),
         "cadastro" : ((context) => const TelaCadastro()),
         TelaCadastro2.routeName: (context) => TelaCadastro2(),
-        "cadastro3" : ((context) => const TelaCadastro3()),
+        TelaCadastro3.routeName: (context) => TelaCadastro3(),
         "recuperacao1" :((context) => const TelaRecuperacao1()),
         TelaRecuperacao2.routeName: (context) => TelaRecuperacao2(),
         "avaliacao1" :((context) => const TelaAvaliacao()),
         "avaliacao2" :((context) => const TelaAvaliacao2()),
         "avaliacao3" :((context) => const TelaAvaliacao3()),
+        "anunciar1" :((context) => const TelaAnunciar()),
         
 
       },

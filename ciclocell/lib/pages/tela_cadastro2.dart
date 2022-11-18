@@ -2,9 +2,7 @@
 import 'package:flutter/material.dart';
 import '../controller/login_controller.dart';
 import '../main.dart';
-import '../main.dart';
 import '../pages/util.dart';
-import '../pages/tela_cadastro.dart';
 
 
 class TelaCadastro2 extends StatelessWidget {
@@ -66,7 +64,7 @@ class TelaCadastro2 extends StatelessWidget {
                   ),
                 const SizedBox(height: 20,),
                 CampoCadastro(
-                  font: 25,
+                  font: 22,
                   label: 'Endereço', 
                   hintLabel: 'Digite o seu ', 
                   iconepref: Icons.house_outlined,
@@ -74,7 +72,7 @@ class TelaCadastro2 extends StatelessWidget {
                   ),
                 const SizedBox(height: 20,),
                 CampoCadastro(
-                  font: 25,
+                  font: 22,
                   label: 'Complemento', 
                   hintLabel: 'Digite o ', 
                   iconepref: Icons.apartment_outlined,
@@ -82,13 +80,13 @@ class TelaCadastro2 extends StatelessWidget {
                   ), 
                 const SizedBox(height: 20,),
                 CampoCadastro(
-                  font: 25,
+                  font: 22,
                   label: 'Celular*', 
                   hintLabel: 'Digite o seu ', 
                   iconepref: Icons.smartphone_outlined,
                   variavel: celular,
                   ),
-                const SizedBox(height: 100,),
+                const SizedBox(height: 40,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   // ignore: prefer_const_literals_to_create_immutables
@@ -98,7 +96,7 @@ class TelaCadastro2 extends StatelessWidget {
                       nomeBotao: "Voltar",
                       acaoBotao: "cadastro",
                     ),
-                    const SizedBox(width: 60),
+                    const SizedBox(width: 40),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         minimumSize: const Size(120, 50),
@@ -114,12 +112,15 @@ class TelaCadastro2 extends StatelessWidget {
 
                       onPressed: () async { //nome, rg, cpf, email, senha, cidade, endereco, complemento, celular
                         if (cidade.text.isNotEmpty && endereco.text.isNotEmpty && celular.text.isNotEmpty) {
-                                LoginController().criarConta(context,argumentosC.nome, argumentosC.rg, argumentosC.cpf, argumentosC.email, argumentosC.senha, cidade.text, endereco.text, complemento.text, celular.text);
-                                Navigator.pushReplacementNamed(context, "cadastro3");
-                              } else {
-                                erro(context,
-                                    "Informe a cidade, endereço e celura para fazer o cadastro.");
-                              }
+                          LoginController().criarConta(context,argumentosC.nome, argumentosC.rg, argumentosC.cpf, 
+                          argumentosC.email, argumentosC.senha, cidade.text, endereco.text, complemento.text, celular.text);                                
+                           Navigator.pushReplacementNamed(context, "cadastro3",
+                            arguments: ArgumentosCadastro2(argumentosC.nome, argumentosC.email),
+                          );
+                        } else {
+                          erro(context,
+                            "Informe a cidade, endereço e celura para fazer o cadastro.");
+                        }
                       },
                     ),
                     
@@ -129,8 +130,8 @@ class TelaCadastro2 extends StatelessWidget {
                 const Texto(label: '* Campos obrigatórios', tamFonte: 14),
                 const SizedBox(height: 15),
                 Row(
-                  children: [
-                    const SizedBox(width: 250),
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [                    
                     const Texto(label: 'CicloCell', tamFonte: 16),
                   ],
                 ),
