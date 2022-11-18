@@ -65,6 +65,11 @@ class MyApp extends StatelessWidget {
         
 
       },
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
     );
     
   } 
