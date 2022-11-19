@@ -146,7 +146,7 @@ class CaixaTexto {
         //obscureText: (senha != null) ? true : false,
         style: GoogleFonts.roboto(
           fontSize: tamFont,
-          color: Colors.white,
+          color: Colors.black,
         ),
         decoration: InputDecoration(
           floatingLabelAlignment: FloatingLabelAlignment.center,
@@ -274,11 +274,15 @@ class BotaoTexto extends StatelessWidget {
 
     //botao do tipo check
 
-class BotaoCheck extends StatefulWidget {
-  const BotaoCheck({Key? key}) : super(key: key);
+/*class BotaoCheck extends StatefulWidget {
+  
+
+  const BotaoCheck({Key? key, this.variavel}) : super(key: key);
 
   @override
   State<BotaoCheck> createState() => _BotaoCheckState();
+
+    final dynamic variavel;
 }
 
 class _BotaoCheckState extends State<BotaoCheck> {
@@ -289,11 +293,11 @@ class _BotaoCheckState extends State<BotaoCheck> {
       value: checkValue,
       onChanged: (value) {
         setState(() {
-          checkValue = value;
+          
         });
         
       },
       );
     
   }
-}
+}*/

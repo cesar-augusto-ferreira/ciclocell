@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../pages/util.dart';
 
-class Anuncio {
+class AnuncioController {
 
   void criarAnuncio(context, marca, modelo, memoriaRam, memoriaInt, telaTroc, telaTrinc, traseira, detalhes) {
     var uid = FirebaseAuth.instance.currentUser!.uid;
@@ -22,7 +22,7 @@ class Anuncio {
       "celular": detalhes,
     });
     Mensagem().sucesso(context, "Anuncio criado com sucesso.");
-    Navigator.pop(context);
+    //Navigator.pop(context);
   }
 
 

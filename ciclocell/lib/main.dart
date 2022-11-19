@@ -26,7 +26,7 @@ Future<void> main() async {
   runApp(MyApp());
 
 }
-
+    //argumentos para segunda tela de recuperar senha
 class ArgumentosRecupSenha {
   final String nome;
   final String email;
@@ -34,6 +34,7 @@ class ArgumentosRecupSenha {
   ArgumentosRecupSenha(this.nome, this.email);
 }
 
+    //argumentos para segunda tela de cadastro
 class ArgumentosCadastro {
   final String nome;
   final String rg;
@@ -44,11 +45,23 @@ class ArgumentosCadastro {
   ArgumentosCadastro(this.nome, this.rg, this.cpf, this.email, this.senha);
 }
 
+    //argumentos para terceira tela de cadastro
 class ArgumentosCadastro2 {
   final String nome;
   final String email;
 
   ArgumentosCadastro2(this.nome, this.email);
+}
+
+    //argumentos para segunda tela de anúncio
+class ArgumentosAnuncio {
+  final String marca;
+  final String modelo;
+  final String memoriaRam;
+  final String memoriaInterna;
+
+  ArgumentosAnuncio(this.marca, this.modelo, this.memoriaRam, this.memoriaInterna);
+
 }
 
 class MyApp extends StatelessWidget {
@@ -74,7 +87,7 @@ class MyApp extends StatelessWidget {
         "avaliacao2" :(context) => const TelaAvaliacao2(),
         "avaliacao3" :(context) => const TelaAvaliacao3(),
         "anunciar1" :(context) => const TelaAnunciar(),
-        "anunciar2" :(context) => const TelaAnunciar2(),
+        TelaAnunciar2.routeName: (context) => const TelaAnunciar2(),
         "anunciar3" :(context) => const TelaAnunciar3(),
         "sobre" :(context) => const TelaSobre()
         
