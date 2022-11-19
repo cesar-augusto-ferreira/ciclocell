@@ -1,31 +1,25 @@
 
-
-import '../pages/tela_principal.dart';
 import 'package:flutter/material.dart';
 import '../pages/util.dart';
 
-class TelaAnunciar extends StatefulWidget {
-  const TelaAnunciar({Key? key}) : super(key: key);
+class TelaSobre extends StatefulWidget {
+  const TelaSobre({Key? key}) : super(key: key);
 
   @override
-  State<TelaAnunciar> createState() => _TelaAnunciarState();
+  State<TelaSobre> createState() => _TelaSobreState();
 }
 
-class _TelaAnunciarState extends State<TelaAnunciar> {
-  var marca = TextEditingController();
-  var modelo = TextEditingController();
-  var memoriaRam = TextEditingController();
-  var memoriaInt = TextEditingController();
-
+class _TelaSobreState extends State<TelaSobre> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //appbar
+
+        //appbar
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: Row(
           children: [
-            Text(
+            const Text(
               'CicloCell',
               style: TextStyle(
                 fontSize: 35,
@@ -34,7 +28,7 @@ class _TelaAnunciarState extends State<TelaAnunciar> {
             ),
             Column(
               children: [
-                SizedBox(width: 150),
+                const SizedBox(width: 150),
                 Image.asset(
                   'lib/images/homem.png',
                   height: 30,
@@ -45,8 +39,8 @@ class _TelaAnunciarState extends State<TelaAnunciar> {
           ],
         ),
       ),
-
-        // menu lateral
+     
+      // menu lateral
       endDrawer: Drawer(
         backgroundColor: Color.fromRGBO(68, 56, 71, 1),
         width: 250,
@@ -77,13 +71,6 @@ class _TelaAnunciarState extends State<TelaAnunciar> {
             ),
             const SizedBox(height: 15,),
             BotaoTexto(
-              label: "Anunciar o aparelho",
-              corTexto: Colors.white, 
-              tamFont: 20,
-              acaoBotao: "anunciar1",
-            ),
-            const SizedBox(height: 15,),
-            BotaoTexto(
               label: "Backup de arquivos",
               corTexto: Colors.white, 
               tamFont: 20,
@@ -99,7 +86,6 @@ class _TelaAnunciarState extends State<TelaAnunciar> {
               label: "Sobre", 
               corTexto: Colors.white,
               tamFont: 20,
-              acaoBotao: "sobre",
             ),
             const SizedBox(height: 15,),
             BotaoTexto(
@@ -118,71 +104,73 @@ class _TelaAnunciarState extends State<TelaAnunciar> {
         ),
       ),
 
-          //corpo da página
-      backgroundColor: const Color.fromRGBO(68, 56, 71, 1),
+        // corpo
+      backgroundColor: Color.fromRGBO(68, 56, 71, 1),
       body: SingleChildScrollView(
         child: Padding(
-          padding:const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+          padding:const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
           child: Center(
             child: Column(
-              // ignore: prefer_const_literals_to_create_immutables
               children: [
-                
                 const Texto(
-                  label: "Anunciar", 
-                  tamFont: 30,
-                ),
+                  label: 'Sobre', 
+                  tamFont: 25),
                 const SizedBox(height: 25),
                 const Texto(
-                  label: "Preencha com os dados do aparelho", 
+                  label: "Somos otimizadores de desempenho para aparelhos com sistema oparecional Android.\n"
+                    "O tema escolhido foi um aplicativo que melhora o desempenho de smartphonese outros aparelhos com sistema android.\n"
+                    "A ferramenta desenvolvida busca otimizar o desempenho de aparelhos seminovos. Atravez de um "
+                    "aplicativo leve, com poucos cliques e também pode ser feito um checkup da vida util da bateria. ",
                   tamFont: 18,
                 ),
-                const SizedBox(height: 40),
-                CaixaTexto().ComBorda("*Marca", "Digite a marca do aparelho ", marca, Icons.mobile_friendly, 18),
-                const SizedBox(height: 20,),
-                CaixaTexto().ComBorda("*Modelo", "Digite o modelo do aparelho ", modelo, Icons.mobile_friendly, 18),
-                const SizedBox(height: 20,),
-                CaixaTexto().ComBorda("*Memória Ram", "Digite a quantidade de memória ram", memoriaRam, Icons.mobile_friendly, 18),
-                const SizedBox(height: 20,),
-                CaixaTexto().ComBorda("*Memória interna", "Digite a quantidade de memória interna", memoriaInt, Icons.mobile_friendly,18), 
-                const SizedBox(height: 60,),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Botao(
-                      corBotao: Colors.white, 
-                      label: "Voltar", 
-                      acaoBotao: "principal",
-                    ),
-                    SizedBox(width: 80),
-                    Botao(
-                      corBotao: Colors.white, 
-                      label: "Proximo",
-                      acaoBotao: "anunciar2",
-                    ),
-                  ],
+                const SizedBox(height: 30),
+                const Texto(
+                  label: 'Desenvolvedores:', 
+                  tamFont: 25,
                 ),
                 const SizedBox(height: 30),
-                const Texto(label: '* Campos obrigatórios', tamFont: 14),
-                const SizedBox(height: 15),
+                Image.asset(
+                  "lib/images/20210420_151839.jpg",
+                  height: 200,
+                ),
+                const SizedBox(height: 5),
+                const Texto(
+                  label: "César Augusto Ferreira", 
+                  tamFont: 20,
+                ),
+                const SizedBox(height: 40),
+                Image.asset(
+                  "lib/images/Foto-Atual.jpg",
+                  height: 200,
+                ),
+                const SizedBox(height: 5),
+                const Texto(
+                  label: "Deusdedith Bastos Souza Junior", 
+                  tamFont: 20,
+                ),
+                const SizedBox(height: 50),
+                Botao(
+                  corBotao: Colors.grey.shade200, 
+                  label:"Home", 
+                  acaoBotao: "principal",
+                ),
+                const SizedBox(height: 30),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    const Texto(
+                  children: const[
+                    SizedBox(width: 250),
+                    Texto(
                       label: 'CicloCell', 
                       tamFont: 16,
                     ),
                   ],
                 ),
-                
               ],
             ),
           ),
         ),
       ),
-
     );
-    
   }
 }
+
 

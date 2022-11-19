@@ -1,4 +1,5 @@
-import 'package:ciclocell/pages/tela_anunciar.dart';
+
+import 'package:ciclocell/pages/tela_sobre.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'firebase_options.dart';
@@ -12,6 +13,9 @@ import '../pages/tela_avaliacao2.dart';
 import '../pages/tela_avaliacao3.dart';
 import '../pages/tela_recuperar_senha.dart';
 import '../pages/tela_recuperar_senha2.dart';
+import '../pages/tela_anunciar.dart';
+import '../pages/tela_anunciar2.dart';
+import '../pages/tela_anunciar3.dart';
 
 Future<void> main() async {
 
@@ -58,18 +62,21 @@ class MyApp extends StatelessWidget {
 
       initialRoute: "login",
       routes: {
-        "login" : ((context) => const TelaLogin()),
-        "principal" : ((context) => const TelaPrincipal()),
+        "login" : (context) => const TelaLogin(),
+        "principal" : (context) => const TelaPrincipal(),
         //"ajuda" : ((context) => const TelaAjuda()),
-        "cadastro" : ((context) => const TelaCadastro()),
+        "cadastro" : (context) => const TelaCadastro(),
         TelaCadastro2.routeName: (context) => TelaCadastro2(),
         TelaCadastro3.routeName: (context) => TelaCadastro3(),
-        "recuperacao1" :((context) => const TelaRecuperacao1()),
+        "recuperacao1" :(context) => const TelaRecuperacao1(),
         TelaRecuperacao2.routeName: (context) => TelaRecuperacao2(),
-        "avaliacao1" :((context) => const TelaAvaliacao()),
-        "avaliacao2" :((context) => const TelaAvaliacao2()),
-        "avaliacao3" :((context) => const TelaAvaliacao3()),
-        "anunciar1" :((context) => const TelaAnunciar()),
+        "avaliacao1" :(context) => const TelaAvaliacao(),
+        "avaliacao2" :(context) => const TelaAvaliacao2(),
+        "avaliacao3" :(context) => const TelaAvaliacao3(),
+        "anunciar1" :(context) => const TelaAnunciar(),
+        "anunciar2" :(context) => const TelaAnunciar2(),
+        "anunciar3" :(context) => const TelaAnunciar3(),
+        "sobre" :(context) => const TelaSobre()
         
 
       },

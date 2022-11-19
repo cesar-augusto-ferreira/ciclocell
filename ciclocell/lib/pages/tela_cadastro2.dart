@@ -49,51 +49,36 @@ class TelaCadastro2 extends StatelessWidget {
             child: Column(
               // ignore: prefer_const_literals_to_create_immutables
               children: [
-                const Texto(label: 'Cadastro', tamFonte: 25),
+                Texto(
+                  label:"Cadastro",
+                  tamFont: 25,
+                ),
                 const SizedBox(height: 10),
-                const Texto(label: 'Preencha os campos abaixo.', tamFonte: 18),
+                const Texto(
+                  label: 'Preencha os campos abaixo.', 
+                  tamFont: 18,
+                ),
                 const SizedBox(height: 10),
-                const Texto(label: 'Página 2/2', tamFonte: 16),
+                const Texto(
+                  label: 'Página 2/2', 
+                  tamFont: 16,
+                ),
                 const SizedBox(height: 10),
-                CampoCadastro(
-                  font: 25,
-                  label: "Cidade", 
-                  hintLabel: 'Digite o nome da sua ', 
-                  iconepref: Icons.location_city_outlined,
-                  variavel: cidade,
-                  ),
-                const SizedBox(height: 20,),
-                CampoCadastro(
-                  font: 22,
-                  label: 'Endereço', 
-                  hintLabel: 'Digite o seu ', 
-                  iconepref: Icons.house_outlined,
-                  variavel: endereco,
-                  ),
-                const SizedBox(height: 20,),
-                CampoCadastro(
-                  font: 22,
-                  label: 'Complemento', 
-                  hintLabel: 'Digite o ', 
-                  iconepref: Icons.apartment_outlined,
-                  variavel: complemento,
-                  ), 
-                const SizedBox(height: 20,),
-                CampoCadastro(
-                  font: 22,
-                  label: 'Celular*', 
-                  hintLabel: 'Digite o seu ', 
-                  iconepref: Icons.smartphone_outlined,
-                  variavel: celular,
-                  ),
-                const SizedBox(height: 40,),
+                CaixaTexto().SemBorda("Cidade", "Digite o nome da sua ", cidade, Icons.location_city_outlined, 22),
+                const SizedBox(height: 20),
+                CaixaTexto().SemBorda("Endereço", "Digite o seu ", endereco, Icons.house_outlined, 22),
+                const SizedBox(height: 20),
+                CaixaTexto().SemBorda("Complemento", "Digite o ", complemento, Icons.apartment_outlined, 22), 
+                const SizedBox(height: 20),
+                CaixaTexto().SemBorda("Celular*", "Digite o seu ", celular, Icons.smartphone_outlined, 22),
+                const SizedBox(height: 40),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   // ignore: prefer_const_literals_to_create_immutables
                   children: [
                     Botao(
                       corBotao: Colors.grey.shade200, 
-                      nomeBotao: "Voltar",
+                      label: "Voltar",
                       acaoBotao: "cadastro",
                     ),
                     const SizedBox(width: 40),
@@ -109,33 +94,35 @@ class TelaCadastro2 extends StatelessWidget {
                           color: Colors.black,
                         ),
                       ),
-
-                      onPressed: () async { //nome, rg, cpf, email, senha, cidade, endereco, complemento, celular
+                      onPressed: () async {
                         if (cidade.text.isNotEmpty && endereco.text.isNotEmpty && celular.text.isNotEmpty) {
                           LoginController().criarConta(context,argumentosC.nome, argumentosC.rg, argumentosC.cpf, 
                           argumentosC.email, argumentosC.senha, cidade.text, endereco.text, complemento.text, celular.text);                                
-                           Navigator.pushReplacementNamed(context, "cadastro3",
+                          Navigator.pushReplacementNamed(context, "cadastro3", 
                             arguments: ArgumentosCadastro2(argumentosC.nome, argumentosC.email),
                           );
                         } else {
-                          erro(context,
-                            "Informe a cidade, endereço e celura para fazer o cadastro.");
+                          Mensagem().erro(context, "Informe a cidade, endereço e celura para fazer o cadastro.");
                         }
                       },
                     ),
-                    
                   ],
                 ),
                 const SizedBox(height: 30),
-                const Texto(label: '* Campos obrigatórios', tamFonte: 14),
+                const Texto(
+                  label: '* Campos obrigatórios', 
+                  tamFont: 14,
+                ),
                 const SizedBox(height: 15),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
-                  children: [                    
-                    const Texto(label: 'CicloCell', tamFonte: 16),
+                  children: const [                    
+                    Texto(
+                      label: 'CicloCell', 
+                      tamFont: 16,
+                    ),
                   ],
-                ),
-                
+                ),  
               ],
             ),
           ),

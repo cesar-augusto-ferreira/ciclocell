@@ -31,26 +31,14 @@ class _TelaLoginState extends State<TelaLogin> {
                   height: 180,
                 ),
                 const SizedBox(height: 60),
-                CampoCadastro(
-                  label: "E-mail", 
-                  hintLabel: "Digite seu ", 
-                  variavel: email, 
-                  iconepref: Icons.email,
-                   font: 25,
-                ),
+                CaixaTexto().SemBorda("E-mail", "Digite seu ", email, Icons.email, 25),
                 const SizedBox(height: 45),
-                CampoCadastro(
-                  label: "Senha", 
-                  hintLabel: "Digite sua ", 
-                  variavel: senha, senha: true,
-                  iconesuf: Icons.visibility_off_outlined, 
-                  iconepref: Icons.vpn_key, 
-                  font: 25,
-                ),
+                CaixaTexto().SemBorda("Senha", "Digite sua ", senha, Icons.vpn_key, 25),
                 const SizedBox(height: 40),
                 BotaoTexto(
                   corTexto: Colors.red.shade600,
-                  texto: "Recuperar a senha",
+                  label: "Recuperar a senha",
+                  tamFont: 25,
                   decoracao: TextDecoration.underline,
                   acaoBotao: "recuperacao1",
                 ),
@@ -60,7 +48,7 @@ class _TelaLoginState extends State<TelaLogin> {
                   children: [                    
                     Botao(
                       corBotao: Colors.grey.shade200,
-                      nomeBotao: "Cadastrar",
+                      label: "Cadastrar",
                       acaoBotao: "cadastro",
                     ),
                     const SizedBox(width: 40),
@@ -83,9 +71,11 @@ class _TelaLoginState extends State<TelaLogin> {
                 const SizedBox(height: 30),
                 Row(
                  mainAxisAlignment: MainAxisAlignment.end,
-                  // ignore: prefer_const_literals_to_create_immutables
-                  children: [
-                    const Texto(label: 'CicloCell', tamFonte: 16),
+                  children: const [
+                    Texto(
+                      label: 'CicloCell',
+                      tamFont: 16,
+                    ),
                   ],
                 ),   
               ],

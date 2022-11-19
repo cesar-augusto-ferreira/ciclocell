@@ -5,95 +5,90 @@ import '../pages/tela_login.dart';
 import '../pages/util.dart';
 
 class LoginController {
-  //
-  // CRIAÇÃO DE UMA NOVA CONTA
-  //
+
+  // criação de contas no app
+
   void criarConta(context, nome, rg, cpf, email, senha, cidade, endereco, complemento, celular) {
     FirebaseAuth.instance
-        .createUserWithEmailAndPassword(email: email, password: senha)
-        .then((res) {
-      //Armazenar o nome no Firestore
-      FirebaseFirestore.instance.collection('usuarios').add({
-        "uid": res.user!.uid.toString(),
-        "nome": nome,
-        "rg": rg,
-        "cpf": cpf,
-        "cidade": cidade,
-        "endereço": endereco,
-        "complemento": complemento,
-        "celular": celular,
-      });
-
-      sucesso(context, 'Usuário criado com sucesso.');
+      .createUserWithEmailAndPassword(email: email, password: senha)
+      .then((res) {
+    FirebaseFirestore.instance.collection('usuarios').add({
+      "uid": res.user!.uid.toString(),
+      "nome": nome,
+      "rg": rg,
+      "cpf": cpf,
+      "email": email,
+      "cidade": cidade,
+      "endereço": endereco,
+       "complemento": complemento,
+      "celular": celular,
+    });
+      Mensagem().sucesso(context, "Usuário criado com sucesso.");
       Navigator.pop(context);
     }).catchError((e) {
       switch (e.code) {
-        case 'email-already-in-use':
-          erro(context, 'O email já foi cadastrado.');
+        case "email-already-in-use":
+          Mensagem().erro(context, 'O email já foi cadastrado.');
           break;
-        case 'invalid-email':
-          erro(context, 'O email é inválido.');
+        case "invalid-email":
+          Mensagem().erro(context, "O email é inválido.");
           break;
         default:
-          erro(context, e.code.toString());
+          Mensagem().erro(context, e.code.toString());
       }
     });
   }
 
-  //
-  // LOGIN DO USUÁRIO
-  //
+  // login no app
+
   void login(context, email, senha) {
     FirebaseAuth.instance
         .signInWithEmailAndPassword(email: email, password: senha)
         .then((res) {
-      sucesso(context, 'Usuário autenticado com sucesso.');
-      Navigator.pushReplacementNamed(context, 'principal');
+      Mensagem().sucesso(context, "Usuário autenticado com sucesso.");
+      Navigator.pushReplacementNamed(context, "principal");
     }).catchError((e) {
       switch (e.code) {
-        case 'invalid-email':
-          erro(context, 'O formato do email é inválido.');
+        case "invalid-email":
+          Mensagem().erro(context, "O formato do email é inválido.");
           break;
         case 'user-not-found':
-          erro(context, 'Usuário não encontrado.');
+          Mensagem().erro(context, "Usuário não encontrado.");
           break;
         case 'wrong-password':
-          erro(context, 'Senha incorreta.');
+          Mensagem().erro(context, "Senha incorreta.");
           break;
         default:
-          erro(context, e.code.toString());
+          Mensagem().erro(context, e.code.toString());
       }
     });
   }
 
-  //
-  // ESQUECEU A SENHA
-  //
+  // recuperar a senha
+
   Future<void> esqueceuSenha(email) async {
     await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
   }
 
-  //
-  // LOGOUT
-  //
+  // sair do app
+
   void logout() {
     FirebaseAuth.instance.signOut();
   }
 
-  //
-  // RETORNAR USUÁRIO LOGADO
-  //
-  Future<String> retornarUsuarioLogado() async {
+  // retorna o nome usuário logado no app
+
+  Future<String> retornarNomeUsuario() async {
     var uid = FirebaseAuth.instance.currentUser!.uid;
     var res;
     await FirebaseFirestore.instance
-        .collection('usuarios')
-        .where('uid', isEqualTo: uid)
+        .collection("usuarios")
+        .where("uid", isEqualTo: uid)
         .get()
         .then(
       (q) {
         if (q.docs.isNotEmpty) {
-          res = q.docs[0].data()['nome'];
+          res = q.docs[0].data()["nome"];
         } else {
           res = "";
         }
@@ -101,4 +96,26 @@ class LoginController {
     );
     return res;
   }
+
+// retorna o email usuário logado no app
+
+  Future<String> retornarEmailUsuario() async {
+    var uid = FirebaseAuth.instance.currentUser!.uid;
+    var res;
+    await FirebaseFirestore.instance
+        .collection("usuarios")
+        .where("uid", isEqualTo: uid)
+        .get()
+        .then(
+      (q) {
+        if (q.docs.isNotEmpty) {
+          res = q.docs[0].data()["email"];
+        } else {
+          res = "";
+        }
+      },
+    );
+    return res;
+  }
+
 }

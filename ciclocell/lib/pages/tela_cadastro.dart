@@ -44,60 +44,29 @@ class _TelaCadastroState extends State<TelaCadastro> {
               // ignore: prefer_const_literals_to_create_immutables
               children: [
                 const Texto(
-                  label: 'Cadastro',
-                   tamFonte: 25,
+                  label: "Cadastro",
+                  tamFont: 25,
                   ),
                 const SizedBox(height: 10),
                 const Texto(
-                  label: 'Preencha os campos abaixo.',
-                  tamFonte: 18,
+                  label: "Preencha os campos abaixo.",
+                  tamFont: 18,
                 ),
                 const SizedBox(height: 6),
                 const Texto(
-                  label: 'Página 1/2', 
-                  tamFonte: 16,
+                  label: "Página 1/2", 
+                  tamFont: 16,
                 ),
                 const SizedBox(height: 4),
-                CampoCadastro(
-                  label: 'Nome*', 
-                  hintLabel: 'Digite o seu ',
-                  iconepref: Icons.person_outline,
-                  variavel: nome, 
-                  font: 22,
-                ), 
+                CaixaTexto().SemBorda("Nome*", "Digite o seu ", nome, Icons.person_outline, 22), 
                 const SizedBox(height: 4),
-                CampoCadastro(
-                  label: 'RG*', 
-                  hintLabel: 'Digite o seu', 
-                  iconepref: Icons.document_scanner_outlined,
-                  variavel: rg, 
-                  font: 22,
-                ),
+                CaixaTexto().SemBorda("RG*", "Digite o seu ", rg, Icons.document_scanner_outlined, 22),
                 const SizedBox(height: 4),
-                CampoCadastro(
-                  label: 'CPF*', 
-                  hintLabel: 'Digite o seu ', 
-                  iconepref: Icons.document_scanner_outlined,
-                  variavel: cpf, 
-                  font: 22,
-                ), 
+                CaixaTexto().SemBorda("CPF*", "Digite o seu ", cpf, Icons.document_scanner_outlined, 22), 
                 const SizedBox(height: 4),
-                CampoCadastro(
-                  label: 'E-mail*', 
-                  hintLabel: 'Digite o seu ', 
-                  iconepref: Icons.email_outlined, 
-                  variavel: email, 
-                  font: 22,
-                ),
+                CaixaTexto().SemBorda("E-mail*", "Digite o seu ", email, Icons.email_outlined, 22),
                 const SizedBox(height: 4),
-                CampoCadastro(
-                  label: "Senha*",
-                  hintLabel: "Digite a ",
-                  iconepref: Icons.vpn_key, 
-                  variavel: senha, 
-                  senha: true,
-                  font: 22,
-                ), 
+                CaixaTexto().SemBorda("Senha*", "Digite a ", senha, Icons.vpn_key, 22), 
                 const SizedBox(height: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -105,7 +74,7 @@ class _TelaCadastroState extends State<TelaCadastro> {
                   children: [
                     Botao(
                       corBotao: Colors.grey.shade200, 
-                      nomeBotao: "Cancelar",
+                      label: "Cancelar",
                       acaoBotao: "login",
                     ),
                     const SizedBox(width: 60),
@@ -121,28 +90,34 @@ class _TelaCadastroState extends State<TelaCadastro> {
                           color: Colors.black,
                         ),
                       ),
-
                       onPressed: () async { 
                         if (nome.text.isNotEmpty && rg.text.isNotEmpty && cpf.text.isNotEmpty && email.text.isNotEmpty && senha.text.isNotEmpty) {
-                                Navigator.pushReplacementNamed(context, "cadastro2",
-                                  arguments: ArgumentosCadastro(nome.text, rg.text, cpf.text, email.text, senha.text),
-                                );
-                              } else {
-                                erro(context,
-                                    "Informe o nome, rg, cpf e email para fazer o cadastro.");
-                              }
+                          Navigator.pushReplacementNamed(
+                            context,
+                            "cadastro2",
+                            arguments: ArgumentosCadastro(nome.text, rg.text, cpf.text, email.text, senha.text),
+                          );
+                        } else {
+                          Mensagem().erro(context,
+                          "Informe o nome, rg, cpf e email para fazer o cadastro.");
+                        }
                       },
                     ),
                   ],
                 ),
                 const SizedBox(height: 30),
-                const Texto(label: '* Campos obrigatórios', tamFonte: 14),
+                const Texto(
+                  label: '* Campos obrigatórios', 
+                  tamFont: 14,
+                ),
                 const SizedBox(height: 15),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
-                  // ignore: prefer_const_literals_to_create_immutables
-                  children: [
-                    const Texto(label: 'CicloCell', tamFonte: 16),
+                  children: const [
+                    Texto(
+                      label: 'CicloCell', 
+                      tamFont: 16,
+                    ),
                   ],
                 ),
               ],

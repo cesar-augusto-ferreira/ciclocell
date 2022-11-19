@@ -1,14 +1,8 @@
 
 
-
-import 'package:ciclocell/main.dart';
-
 import '../main.dart';
-import '../main.dart';
-import '../main.dart';
-import '../pages/tela_login.dart';
 import 'package:flutter/material.dart';
-import '../pages/util.dart';
+import 'util.dart';
 
 class TelaRecuperacao2 extends StatelessWidget {
   static const routeName = "recuperacao2";
@@ -43,30 +37,48 @@ class TelaRecuperacao2 extends StatelessWidget {
             child: Column(
               // ignore: prefer_const_literals_to_create_immutables
               children: [
-                const Texto(label: "Recuperaçao de senha", tamFonte: 25),
+                const Texto(
+                  label: "Recuperaçao de senha", 
+                  tamFont: 25,
+                ),
                 const SizedBox(height: 20),
-                Texto(label: "Olá ${argumentosRecupSenha.nome}", tamFonte: 25),
+                Texto(
+                  label: "Olá ${argumentosRecupSenha.nome}",
+                  tamFont: 25,
+                ),
                 const SizedBox(height: 20),
-                const Texto(label: "Sua senha foi enviada para o E-mail:", tamFonte: 18),
+                const Texto(
+                  label: "Sua senha foi enviada para o E-mail:",
+                  tamFont: 18,
+                ),
                 const SizedBox(height: 20),
-                Texto(label: "${argumentosRecupSenha.email}", tamFonte: 25),
+                Texto(
+                  label: "${argumentosRecupSenha.email}",
+                  tamFont: 25,
+                ),
                 const SizedBox(height: 50),
                 Image.asset(
                   "lib/images/ok.png",
                 ),
                 const SizedBox(height: 50),
-                const Texto(label: "Obrigado", tamFonte: 16),
+                const Texto(
+                  label: "Obrigado",
+                  tamFont: 16,
+                ),
                 const SizedBox(height: 40),  
                 Botao(
                   corBotao: Colors.grey.shade200, 
-                  nomeBotao: "Concluir", 
+                  label: "Concluir", 
                   acaoBotao: "login",
                 ),
                 const SizedBox(height: 120),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
-                  children: [                    
-                    const Texto(label: "CicloCell", tamFonte: 16),
+                  children: const [                    
+                    Texto(
+                      label: "CicloCell",
+                      tamFont: 16,
+                    ),
                   ],
                 ),
                 

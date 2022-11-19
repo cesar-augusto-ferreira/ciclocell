@@ -3,6 +3,7 @@
 
 import 'package:flutter/material.dart';
 import '../pages/util.dart';
+import '../controller/login_controller.dart';
 
 class TelaPrincipal extends StatefulWidget {
   const TelaPrincipal({Key? key}) : super(key: key);
@@ -14,47 +15,111 @@ class TelaPrincipal extends StatefulWidget {
 class _TelaPrincipalState extends State<TelaPrincipal> {
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
+        //appbar
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        title: Row(
+          children: [
+            Text(
+              'CicloCell',
+              style: TextStyle(
+                fontSize: 35,
+                color: Color.fromARGB(255, 15, 234, 22),
+              ),
+            ),
+            Column(
+              children: [
+                SizedBox(width: 150),
+                Image.asset(
+                  'lib/images/homem.png',
+                  height: 30,
+                  ),
+                Usuario().nome(18),
+              ],
+            ),
+          ],
+        ),
+      ),
 
-    
-
+        // menu lateral
       endDrawer: Drawer(
         backgroundColor: Color.fromRGBO(68, 56, 71, 1),
         width: 250,
         child: Column(
           children: [
             UserAccountsDrawerHeader(
-              accountName: const Text('Sergio'), 
-              accountEmail: const Text('sergio@hotmail.com'),
+              accountName: Usuario().nome(18), 
+              accountEmail: Usuario().email(18),
               currentAccountPicture: Image.asset('lib/images/homem.png'),
             ),
             const SizedBox(height: 10,),
-            const Texto(label: 'Aumentar a performace', tamFonte: 18),
-            const SizedBox(height: 10,),
-            const Texto(label: 'Tempo da bateria', tamFonte: 18),
-            const SizedBox(height: 10,),
-            const Texto(label: 'Avaliar o aparelho', tamFonte: 18),
-            const SizedBox(height: 10,),
-            const Texto(label: 'Backup de arquivos', tamFonte: 18),
-            const SizedBox(height: 10,),
-            const Texto(label: 'Central de ajuda', tamFonte: 18),
+            BotaoTexto( 
+              label: "Aumentar Performace",
+              corTexto: Colors.white,
+              tamFont: 20,
+            ),
+            const SizedBox(height: 15,),
+            BotaoTexto(
+              label: "Tempo da bateria",
+              corTexto: Colors.white, 
+              tamFont: 20,
+            ),
+            const SizedBox(height: 15,),
+            BotaoTexto(
+              label: "Avaliar o aparelho",
+              corTexto: Colors.white, 
+              tamFont: 20,
+            ),
+            const SizedBox(height: 15,),
+            BotaoTexto(
+              label: "Anunciar o aparelho",
+              corTexto: Colors.white, 
+              tamFont: 20,
+              acaoBotao: "anunciar1",
+            ),
+            const SizedBox(height: 15,),
+            BotaoTexto(
+              label: "Backup de arquivos",
+              corTexto: Colors.white, 
+              tamFont: 20,
+            ),
+            const SizedBox(height: 15,),
+            BotaoTexto(
+              label: "Central de ajuda",
+              corTexto: Colors.white,
+              tamFont: 20,
+            ),
             const SizedBox(height: 40,),
-            const Texto(label: 'Sobre', tamFonte: 18),
-            const SizedBox(height: 10,),
-            const Texto(label: 'Minha conta', tamFonte: 18),
-            const SizedBox(height: 10,),
-            const Texto(label: 'Sair', tamFonte: 18),
+            BotaoTexto(
+              label: "Sobre", 
+              corTexto: Colors.white,
+              tamFont: 20,
+              acaoBotao: "sobre",
+            ),
+            const SizedBox(height: 15,),
+            BotaoTexto(
+              label: "Minha conta", 
+              corTexto: Colors.white,
+              tamFont: 20,
+            ),
+            const SizedBox(height: 15,),
+            BotaoTexto(
+              label: 'Sair',
+              corTexto: Colors.white,
+              tamFont: 20,
+              acaoBotao: "login",
+            ),
           ],
         ),
       ),
 
-      
-      
-
+        //corpo da tela principal
       backgroundColor: Color.fromRGBO(68, 56, 71, 1),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
           child: Center(
             child: Column(
               children: [
@@ -62,36 +127,15 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
-                      'lib/images/forca.png',
+                      "lib/images/forca.png",
                       width: 80,
                       fit: BoxFit.fill,
                     ),
                     const SizedBox(width: 16),
-                    Text(
-                      'Aumentar \n performace',
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.white,
-                      ),
-                        ),
-                  ],
-                ),
-                const SizedBox(height: 25),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      'lib/images/reciclagem.png',
-                      width: 60,
-                      fit: BoxFit.fill,
-                    ),
-                    const SizedBox(width: 20),
-                    Text(
-                      'Tempo \n da bateria',
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.white,
-                      ),
+                    BotaoTexto(
+                      label: "Aumentar \n performace",
+                      tamFont: 20,
+                      corTexto: Colors.white,
                     ),
                   ],
                 ),
@@ -100,17 +144,32 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
-                      'lib/images/dolar.png',
+                      "lib/images/reciclagem.png",
                       width: 60,
                       fit: BoxFit.fill,
                     ),
                     const SizedBox(width: 20),
-                    Text(
-                      'Avaliar \n aparelho',
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.white,
-                      ),
+                    BotaoTexto(
+                      label:"Tempo \n da bateria",
+                      tamFont: 20,
+                      corTexto: Colors.white,
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 25),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      "lib/images/dolar.png",
+                      width: 60,
+                      fit: BoxFit.fill,
+                    ),
+                    const SizedBox(width: 20),
+                    BotaoTexto(
+                      label: "Avaliar \n aparelho",
+                      tamFont: 20,
+                      corTexto: Colors.white,
                     ),
                   ],
                 ),
@@ -119,18 +178,17 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
-                      'lib/images/camera.png',
+                      "lib/images/camera.png",
                       width: 80,
                       fit: BoxFit.fill,
                     ),
                     const SizedBox(width: 16),
-                    Text(
-                          'Anunciar \n aparelho',
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.white,
-                          ),
-                        ),
+                    BotaoTexto(
+                      label: "Anunciar \n aparelho",
+                      tamFont: 20,
+                      corTexto: Colors.white,
+                      acaoBotao: "anunciar1",
+                    ),
                   ],
                 ),
                 const SizedBox(height: 25),
@@ -138,17 +196,15 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
-                      'lib/images/nuvem.png',
+                      "lib/images/nuvem.png",
                       width: 85,
                       fit: BoxFit.fill,
                     ),
                     const SizedBox(width: 22),
-                    Text(
-                      'Backup \n de arquivos',
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.white,
-                      ),
+                    BotaoTexto(
+                      label: "Backup \n de arquivos",
+                      tamFont: 20,
+                      corTexto: Colors.white,                      
                     ),
                   ],
                 ),
@@ -157,17 +213,25 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
-                      'lib/images/bate-papo.png',
+                      "lib/images/bate-papo.png",
                       width: 85,
                       fit: BoxFit.fill,
                     ),
                     const SizedBox(width: 20),
-                    Text(
-                      'Central \n de ajuda',
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.white,
-                      ),
+                    BotaoTexto(
+                      label: "Central \n de ajuda",
+                      tamFont: 20,
+                      corTexto: Colors.white,
+                    ),
+                  ],
+                ),
+                SizedBox(height: 30),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: const [
+                    Texto(
+                      label: "CicloCell",
+                      tamFont: 16,
                     ),
                   ],
                 ),

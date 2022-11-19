@@ -37,32 +37,26 @@ class _TelaRecuperacao1State extends State<TelaRecuperacao1> {
             child: Column(
               // ignore: prefer_const_literals_to_create_immutables
               children: [
-                const Texto(label: 'Recuperar senha', tamFonte: 25),
+                const Texto(
+                  label: "Recuperar senha",
+                  tamFont:  25,
+                ),
                 const SizedBox(height: 10),
-                const Texto(label: 'Preencha os campos abaixo.', tamFonte: 18),
+                const Texto(
+                  label: "Preencha os campos abaixo.",
+                  tamFont: 18,
+                ),
                 const SizedBox(height: 90),               
-                CampoCadastro(
-                  label: 'Nome*', 
-                  font: 20,
-                  hintLabel: 'Digite o seu ',
-                  iconepref: Icons.person_outline,
-                  variavel: nome,
-                  ), 
+                CaixaTexto().SemBorda("Nome*", "Digite o seu ", nome, Icons.person_outline, 20), 
                 const SizedBox(height: 40),
-                CampoCadastro(
-                  label: 'E-mail*',
-                  font: 20, 
-                  hintLabel: 'Digite o seu ', 
-                  iconepref: Icons.email_outlined,
-                  variavel: email,
-                  ),
+                CaixaTexto().SemBorda("E-mail*", "Digite o seu ", email, Icons.email_outlined, 20),
                 const SizedBox(height: 150),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Botao(
                       corBotao: Colors.grey.shade200,
-                      nomeBotao: "Cancelar",
+                      label: "Cancelar",
                       acaoBotao: "login",
                     ),
                     const SizedBox(width: 80),
@@ -86,7 +80,7 @@ class _TelaRecuperacao1State extends State<TelaRecuperacao1> {
                                   arguments: ArgumentosRecupSenha(nome.text, email.text),
                                 );
                               } else {
-                                erro(context,
+                                Mensagem().erro(context,
                                     'Informe o nome e e-mail para recuperar a senha.');
                               }
                       },
@@ -94,13 +88,18 @@ class _TelaRecuperacao1State extends State<TelaRecuperacao1> {
                   ],
                 ),
                 const SizedBox(height: 30),
-                const Texto(label: "* Campos obrigatórios", tamFonte: 14),
+                const Texto(
+                  label: "* Campos obrigatórios",
+                  tamFont: 14,
+                ),
                 const SizedBox(height: 15),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
-                  // ignore: prefer_const_literals_to_create_immutables
-                  children: [
-                    const Texto(label: "CicloCell", tamFonte: 16),
+                  children: const [
+                    Texto(
+                      label: "CicloCell",
+                      tamFont: 16,
+                    ),
                   ],
                 ),
               ],
