@@ -2,16 +2,14 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
-
 import '../pages/util.dart';
 
-class AnuncioController {
+class AvaliacaoController {
 
-  void criarAnuncio(context, marca, modelo, memoriaRam, memoriaInt, telaTroc, telaTrinc, 
+  void criarAvaliacao(context, marca, modelo, memoriaRam, memoriaInt, telaTroc, telaTrinc, 
     traseira, detalhes, bateria) {
     var uid = FirebaseAuth.instance.currentUser!.uid;
-    FirebaseFirestore.instance.collection("anúncio").add({
+    FirebaseFirestore.instance.collection("avaliação").add({
       "uid": uid,
       "marca": marca,
       "modelo": modelo,
@@ -23,9 +21,8 @@ class AnuncioController {
       "outros detalhes": detalhes,
       "tem a bateria boa" : bateria,
     });
-    Mensagem().sucesso(context, "Anuncio criado com sucesso.");
+    Mensagem().sucesso(context, "Avaliação feita com sucesso.");
+    
   }
-
-
 
 }

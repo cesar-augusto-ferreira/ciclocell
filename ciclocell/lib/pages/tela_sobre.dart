@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import '../pages/util.dart';
+import '../pages/retorna_dados.dart';
 
 class TelaSobre extends StatefulWidget {
   const TelaSobre({Key? key}) : super(key: key);
@@ -18,23 +19,13 @@ class _TelaSobreState extends State<TelaSobre> {
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: Row(
-          children: [
-            const Text(
-              'CicloCell',
+          children: const [
+            Text(
+              "CicloCell",
               style: TextStyle(
                 fontSize: 35,
                 color: Color.fromARGB(255, 15, 234, 22),
               ),
-            ),
-            Column(
-              children: [
-                const SizedBox(width: 150),
-                Image.asset(
-                  'lib/images/homem.png',
-                  height: 30,
-                  ),
-                Usuario().nome(18),
-              ],
             ),
           ],
         ),
@@ -47,8 +38,8 @@ class _TelaSobreState extends State<TelaSobre> {
         child: Column(
           children: [
             UserAccountsDrawerHeader(
-              accountName: Usuario().nome(18), 
-              accountEmail: Usuario().email(18),
+              accountName: Usuario().nome(18, Colors.white), 
+              accountEmail: Usuario().email(18, Colors.white),
               currentAccountPicture: Image.asset('lib/images/homem.png'),
             ),
             const SizedBox(height: 10,),

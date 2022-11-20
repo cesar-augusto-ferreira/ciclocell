@@ -1,5 +1,4 @@
 
-import 'package:ciclocell/pages/tela_sobre.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'firebase_options.dart';
@@ -11,11 +10,20 @@ import '../pages/tela_cadastro3.dart';
 import '../pages/tela_avaliacao.dart';
 import '../pages/tela_avaliacao2.dart';
 import '../pages/tela_avaliacao3.dart';
+import '../pages/tela_bateria.dart';
+import '../pages/tela_bateria2.dart';
 import '../pages/tela_recuperar_senha.dart';
 import '../pages/tela_recuperar_senha2.dart';
 import '../pages/tela_anunciar.dart';
 import '../pages/tela_anunciar2.dart';
 import '../pages/tela_anunciar3.dart';
+import '../pages/tela_performace.dart';
+import '../pages/tela_performace2.dart';
+import '../pages/tela_performace3.dart';
+import '../pages/tela_sobre.dart';
+import '../pages/tela_nuvem.dart';
+import '../pages/tela_nuvem2.dart';
+import '../pages/tela_minha_conta.dart';
 
 Future<void> main() async {
 
@@ -64,6 +72,17 @@ class ArgumentosAnuncio {
 
 }
 
+//argumentos para segunda tela de anúncio
+class ArgumentosAvaliacao {
+  final String marca;
+  final String modelo;
+  final String memoriaRam;
+  final String memoriaInterna;
+
+  ArgumentosAvaliacao(this.marca, this.modelo, this.memoriaRam, this.memoriaInterna);
+
+}
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -84,12 +103,20 @@ class MyApp extends StatelessWidget {
         "recuperacao1" :(context) => const TelaRecuperacao1(),
         TelaRecuperacao2.routeName: (context) => TelaRecuperacao2(),
         "avaliacao1" :(context) => const TelaAvaliacao(),
-        "avaliacao2" :(context) => const TelaAvaliacao2(),
+        TelaAvaliacao2.routeName: (context) => const TelaAvaliacao2(),
         "avaliacao3" :(context) => const TelaAvaliacao3(),
         "anunciar1" :(context) => const TelaAnunciar(),
         TelaAnunciar2.routeName: (context) => const TelaAnunciar2(),
         "anunciar3" :(context) => const TelaAnunciar3(),
-        "sobre" :(context) => const TelaSobre()
+        "sobre" :(context) => const TelaSobre(),
+        //"performace1" :(context) => const TelaPerformace(),
+        //"performace2" :(context) => const TelaPerformace2(),
+        //"performace3" :(context) => const TelaPerformace3(),
+        //"nuvem1" :(context) => const telaNuvem(),
+        //"nuvem2" :(context) => const TelaNuvem2(),
+        "conta" :(context) => const TelaMinhaConta(),
+        //"bateria1" :(context) => const TelaBateria(),
+        //"bateria2" :(context) => const TelaBateria2(),
         
 
       },

@@ -3,7 +3,7 @@
 
 import 'package:flutter/material.dart';
 import '../pages/util.dart';
-import '../controller/login_controller.dart';
+import '../pages/retorna_dados.dart';
 
 class TelaPrincipal extends StatefulWidget {
   const TelaPrincipal({Key? key}) : super(key: key);
@@ -23,7 +23,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
         title: Row(
           children: [
             Text(
-              'CicloCell',
+              "CicloCell",
               style: TextStyle(
                 fontSize: 35,
                 color: Color.fromARGB(255, 15, 234, 22),
@@ -33,10 +33,10 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
               children: [
                 SizedBox(width: 150),
                 Image.asset(
-                  'lib/images/homem.png',
+                  "lib/images/homem.png",
                   height: 30,
                   ),
-                Usuario().nome(18),
+                Usuario().nome(18, Colors.white),
               ],
             ),
           ],
@@ -50,8 +50,8 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
         child: Column(
           children: [
             UserAccountsDrawerHeader(
-              accountName: Usuario().nome(18), 
-              accountEmail: Usuario().email(18),
+              accountName: Usuario().nome(18,Colors.white), 
+              accountEmail: Usuario().email(18, Colors.white),
               currentAccountPicture: Image.asset('lib/images/homem.png'),
             ),
             const SizedBox(height: 10,),
@@ -71,6 +71,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
               label: "Avaliar o aparelho",
               corTexto: Colors.white, 
               tamFont: 20,
+              acaoBotao: "avaliacao1",
             ),
             const SizedBox(height: 15,),
             BotaoTexto(
@@ -103,14 +104,10 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
               label: "Minha conta", 
               corTexto: Colors.white,
               tamFont: 20,
+              acaoBotao: "conta",
             ),
-            const SizedBox(height: 15,),
-            BotaoTexto(
-              label: 'Sair',
-              corTexto: Colors.white,
-              tamFont: 20,
-              acaoBotao: "login",
-            ),
+            const SizedBox(height: 15),
+            BotaoSair(),
           ],
         ),
       ),
@@ -170,6 +167,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                       label: "Avaliar \n aparelho",
                       tamFont: 20,
                       corTexto: Colors.white,
+                      acaoBotao: "avaliacao1",
                     ),
                   ],
                 ),

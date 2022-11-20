@@ -7,12 +7,11 @@ import '../pages/util.dart';
 class LoginController {
 
   // criação de contas no app
-
   void criarConta(context, nome, rg, cpf, email, senha, cidade, endereco, complemento, celular) {
     FirebaseAuth.instance
       .createUserWithEmailAndPassword(email: email, password: senha)
       .then((res) {
-    FirebaseFirestore.instance.collection('usuarios').add({
+    FirebaseFirestore.instance.collection("usuarios").add({
       "uid": res.user!.uid.toString(),
       "nome": nome,
       "rg": rg,
@@ -20,7 +19,7 @@ class LoginController {
       "email": email,
       "cidade": cidade,
       "endereço": endereco,
-       "complemento": complemento,
+      "complemento": complemento,
       "celular": celular,
     });
       Mensagem().sucesso(context, "Usuário criado com sucesso.");
@@ -40,7 +39,6 @@ class LoginController {
   }
 
   // login no app
-
   void login(context, email, senha) {
     FirebaseAuth.instance
         .signInWithEmailAndPassword(email: email, password: senha)
@@ -65,19 +63,16 @@ class LoginController {
   }
 
   // recuperar a senha
-
   Future<void> esqueceuSenha(email) async {
     await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
   }
 
   // sair do app
-
   void logout() {
     FirebaseAuth.instance.signOut();
   }
 
   // retorna o nome usuário logado no app
-
   Future<String> retornarNomeUsuario() async {
     var uid = FirebaseAuth.instance.currentUser!.uid;
     var res;
@@ -98,7 +93,6 @@ class LoginController {
   }
 
 // retorna o email usuário logado no app
-
   Future<String> retornarEmailUsuario() async {
     var uid = FirebaseAuth.instance.currentUser!.uid;
     var res;
@@ -110,6 +104,106 @@ class LoginController {
       (q) {
         if (q.docs.isNotEmpty) {
           res = q.docs[0].data()["email"];
+        } else {
+          res = "";
+        }
+      },
+    );
+    return res;
+  }
+
+  // retorna o cpf do usuário logado no app
+  Future<String> retornarCpfUsuario() async {
+    var uid = FirebaseAuth.instance.currentUser!.uid;
+    var res;
+    await FirebaseFirestore.instance
+        .collection("usuarios")
+        .where("uid", isEqualTo: uid)
+        .get()
+        .then(
+      (q) {
+        if (q.docs.isNotEmpty) {
+          res = q.docs[0].data()["cpf"];
+        } else {
+          res = "";
+        }
+      },
+    );
+    return res;
+  }
+
+  // retorna o rg do usuário logado no app
+  Future<String> retornarRgUsuario() async {
+    var uid = FirebaseAuth.instance.currentUser!.uid;
+    var res;
+    await FirebaseFirestore.instance
+        .collection("usuarios")
+        .where("uid", isEqualTo: uid)
+        .get()
+        .then(
+      (q) {
+        if (q.docs.isNotEmpty) {
+          res = q.docs[0].data()["rg"];
+        } else {
+          res = "";
+        }
+      },
+    );
+    return res;
+  }
+
+  // retorna o endereço do usuário logado no app
+  Future<String> retornarEnderecoUsuario() async {
+    var uid = FirebaseAuth.instance.currentUser!.uid;
+    var res;
+    await FirebaseFirestore.instance
+        .collection("usuarios")
+        .where("uid", isEqualTo: uid)
+        .get()
+        .then(
+      (q) {
+        if (q.docs.isNotEmpty) {
+          res = q.docs[0].data()["endereço"];
+        } else {
+          res = "";
+        }
+      },
+    );
+    return res;
+  }
+
+  // retorna a cidade do usuário logado no app
+  Future<String> retornarCidadeUsuario() async {
+    var uid = FirebaseAuth.instance.currentUser!.uid;
+    var res;
+    await FirebaseFirestore.instance
+        .collection("usuarios")
+        .where("uid", isEqualTo: uid)
+        .get()
+        .then(
+      (q) {
+        if (q.docs.isNotEmpty) {
+          res = q.docs[0].data()["cidade"];
+        } else {
+          res = "";
+        }
+      },
+    );
+    return res;
+  }
+
+  // retorna o celular do usuário logado no app
+  Future<String> retornarCelularUsuario() async {
+    var uid = FirebaseAuth.instance.currentUser!.uid;
+    var res;
+    await FirebaseFirestore.instance
+        .collection("usuarios")
+        .where("uid", isEqualTo: uid)
+        .get()
+        .then(
+      (q) {
+        if (q.docs.isNotEmpty) {
+          res = q.docs[0].data()["celular"];
         } else {
           res = "";
         }

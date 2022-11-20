@@ -1,7 +1,7 @@
 
 import '../pages/util.dart';
 import 'package:flutter/material.dart';
-import '../main.dart';
+import '../pages/retorna_dados.dart';
 
 class TelaAnunciar3 extends StatefulWidget {
   const TelaAnunciar3({Key? key}) : super(key: key);
@@ -14,7 +14,93 @@ class _TelaAnunciar3State extends State<TelaAnunciar3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // menu lateral
+      // appBar
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        title: Row(
+          children: const [
+            Text(
+              "CicloCell",
+              style: TextStyle(
+                fontSize: 35,
+                color: Color.fromARGB(255, 15, 234, 22),
+              ),
+            ),
+          ],
+        ),
+      ),
+
+        // menu lateral
+      endDrawer: Drawer(
+        backgroundColor: const Color.fromRGBO(68, 56, 71, 1),
+        width: 250,
+        child: Column(
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Usuario().nome(18, Colors.white), 
+              accountEmail: Usuario().email(18, Colors.white),
+              currentAccountPicture: Image.asset('lib/images/homem.png'),
+            ),
+            const SizedBox(height: 10,),
+            const BotaoTexto( 
+              label: "Aumentar Performace",
+              corTexto: Colors.white,
+              tamFont: 20,
+            ),
+            const SizedBox(height: 15,),
+            const BotaoTexto(
+              label: "Tempo da bateria",
+              corTexto: Colors.white, 
+              tamFont: 20,
+            ),
+            const SizedBox(height: 15,),
+            const BotaoTexto(
+              label: "Avaliar o aparelho",
+              corTexto: Colors.white, 
+              tamFont: 20,
+            ),
+            const SizedBox(height: 15,),
+            const BotaoTexto(
+              label: "Anunciar o aparelho",
+              corTexto: Colors.white, 
+              tamFont: 20,
+              acaoBotao: "anunciar1",
+            ),
+            const SizedBox(height: 15,),
+            const BotaoTexto(
+              label: "Backup de arquivos",
+              corTexto: Colors.white, 
+              tamFont: 20,
+            ),
+            const SizedBox(height: 15,),
+            const BotaoTexto(
+              label: "Central de ajuda",
+              corTexto: Colors.white,
+              tamFont: 20,
+            ),
+            const SizedBox(height: 40,),
+            const BotaoTexto(
+              label: "Sobre", 
+              corTexto: Colors.white,
+              tamFont: 20,
+              acaoBotao: "sobre",
+            ),
+            const SizedBox(height: 15,),
+            const BotaoTexto(
+              label: "Minha conta", 
+              corTexto: Colors.white,
+              tamFont: 20,
+            ),
+            const SizedBox(height: 15,),
+            const BotaoTexto(
+              label: 'Sair',
+              corTexto: Colors.white,
+              tamFont: 20,
+              acaoBotao: "login",
+            ),
+          ],
+        ),
+      ),
       
 
 
@@ -27,7 +113,7 @@ class _TelaAnunciar3State extends State<TelaAnunciar3> {
           child: Center(
             child: Column(
               children: [
-                const SizedBox(height: 55),
+                const SizedBox(height: 8),
                 const Texto(
                   label: "Seu aparelho foi anunciado", 
                   tamFont: 25,
@@ -42,12 +128,17 @@ class _TelaAnunciar3State extends State<TelaAnunciar3> {
                   label: " R\$ 1399,00 ", 
                   tamFont: 25,
                 ),
-                const SizedBox(height: 60),
+                const SizedBox(height: 55),
                 Image.asset(
                   "lib/images/ok.png",
-                  height: 120,
+                  height: 150,
                 ),
-                const SizedBox(height: 115),
+                const SizedBox(height: 30),
+                const Texto(
+                  label: "Obrigado", 
+                  tamFont: 25,
+                ),
+                const SizedBox(height: 75),
                 Botao(
                   corBotao: Colors.grey.shade200, 
                   label: "Home", 
@@ -57,7 +148,7 @@ class _TelaAnunciar3State extends State<TelaAnunciar3> {
                   children: const [
                     SizedBox(width: 250),
                     Texto(
-                      label: 'CicloCell', 
+                      label: "CicloCell", 
                       tamFont: 16,
                     ),
                   ],

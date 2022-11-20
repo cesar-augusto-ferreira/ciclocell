@@ -1,10 +1,10 @@
 
-import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import '../main.dart';
 import '../pages/util.dart';
 import '../controller/anuncio_controller.dart';
+import '../pages/retorna_dados.dart';
 
 class TelaAnunciar2 extends StatefulWidget {
 
@@ -17,10 +17,12 @@ class TelaAnunciar2 extends StatefulWidget {
 }
 
 class _TelaAnunciar2State extends State<TelaAnunciar2> {
-  bool telaTroc = true;
- /* var telaTrinc= TextEditingController();
-  var traseira = TextEditingController();
-  var detalhes = TextEditingController();*/
+  bool telaTroc = false;
+  bool telaTrinc = false;
+  bool traseira = false;
+  bool detalhes = false;
+  bool bateria = false;
+  bool valor = true;
 
   @override
   Widget build(BuildContext context) {
@@ -52,8 +54,8 @@ class _TelaAnunciar2State extends State<TelaAnunciar2> {
         child: Column(
           children: [
             UserAccountsDrawerHeader(
-              accountName: Usuario().nome(18), 
-              accountEmail: Usuario().email(18),
+              accountName: Usuario().nome(18, Colors.white), 
+              accountEmail: Usuario().email(18, Colors.white),
               currentAccountPicture: Image.asset('lib/images/homem.png'),
             ),
             const SizedBox(height: 10,),
@@ -131,65 +133,139 @@ class _TelaAnunciar2State extends State<TelaAnunciar2> {
                 ),
                 const SizedBox(height: 25),
                 const Texto(label: 
-                  "Marque apenas os itens que for sim ", 
+                  "Marque apenas os itens que for ", 
                   tamFont: 18,
                 ),
-                const SizedBox(height: 65),
+                const Texto(label: 
+                  "correspondente ao estado do aparelho", 
+                  tamFont: 18,
+                ),
+                const SizedBox(height: 10),
+                const Texto(
+                  label: "Página 2/2", 
+                  tamFont: 16,
+                ),
+                const SizedBox(height: 30),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  // ignore: prefer_const_literals_to_create_immutables
                   children: [
                     const Texto(
-                      label: "Tela trocada", 
+                      label: "A tela foi trocada?", 
                       tamFont: 18,
                     ),
-                    const SizedBox(width: 90,),
+                    const SizedBox(width: 70),
                     Checkbox(
                       value: telaTroc,
-                      onChanged: (value) {
-                        
-                      }), 
-
-                      
-                  ],
-                ),
-                const SizedBox(height: 20),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Texto(
-                      label: "Tela trincada", 
+                      onChanged: (valor) {              
+                        setState(() {                          
+                          telaTroc= valor!;                          
+                        });                       
+                      },
+                    ),
+                    const SizedBox(width: 10),
+                    const Texto(
+                      label: "Sim", 
                       tamFont: 18,
                     ),
-                    SizedBox(width: 90,),
-                    //BotaoCheck(),
                   ],
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 30),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Texto(
-                      label: "Ralado na traseira", 
+                  children: [
+                    const Texto(
+                      label: "A tela está trincada? ", 
                       tamFont: 18,
                     ),
-                    SizedBox(width: 50,),
-                    //BotaoCheck(),
+                    const SizedBox(width: 52),
+                    Checkbox(
+                      value: telaTrinc,
+                      onChanged: (valor) {                                          
+                        setState(() {                          
+                          telaTrinc = valor!;                        
+                        });                                                
+                      },
+                    ),
+                    const SizedBox(width: 10),
+                    const Texto(
+                      label: "Sim", 
+                      tamFont: 18,
+                    ), 
                   ],
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 30),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Texto(
-                      label: "Detalhes no aparelho", 
+                  children: [
+                    const Texto(
+                      label: "A bateria esta boa?", 
                       tamFont: 18,
                     ),
-                    SizedBox(width: 30,),
-                    //BotaoCheck(),
+                    const SizedBox(width: 62),
+                    Checkbox(
+                      value: bateria,
+                      onChanged: (valor) {                    
+                        setState(() {                         
+                          bateria = valor!;                          
+                        });                                            
+                      },
+                    ),                    
+                    const SizedBox(width: 10),
+                    const Texto(
+                      label: "Sim", 
+                      tamFont: 18,
+                    ), 
                   ],
                 ),
-                const SizedBox(height: 110,),
+                const SizedBox(height: 30),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Texto(
+                      label: "Traseira com riscos?", 
+                      tamFont: 18,
+                    ),
+                    const SizedBox(width: 62),
+                    Checkbox(
+                      value: traseira,
+                      onChanged: (valor) {                                        
+                        setState(() {                        
+                          traseira = valor!;                          
+                        });                                              
+                      },
+                    ),                    
+                    const SizedBox(width: 10),
+                    const Texto(
+                      label: "Sim", 
+                      tamFont: 18,
+                    ), 
+                  ],
+                ),
+                const SizedBox(height: 30),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Texto(
+                      label: "Outro detalhe no aparelho?", 
+                      tamFont: 18,
+                    ),
+                    const SizedBox(width: 4,),
+                    Checkbox(
+                      value: detalhes,
+                      onChanged: (valor) {                     
+                        setState(() {                       
+                          detalhes = valor!;                         
+                        });                                      
+                      },
+                    ),
+                    const SizedBox(width: 10),
+                    const Texto(
+                      label: "Sim", 
+                      tamFont: 18,
+                    ), 
+                  ],
+                ),
+                const SizedBox(height: 75,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -199,9 +275,9 @@ class _TelaAnunciar2State extends State<TelaAnunciar2> {
                       acaoBotao: "anunciar1",
                     ),
                     const SizedBox(width: 80),
-                    /*ElevatedButton(
+                    ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        //minimumSize: Size(120, 50),
+                        minimumSize: Size(120, 50),
                         primary: Colors.grey.shade200,
                       ), 
                       child: const Text(
@@ -211,23 +287,19 @@ class _TelaAnunciar2State extends State<TelaAnunciar2> {
                           color: Colors.black,
                         ),
                       ),
-                      onPressed: () async {
-                        //if (telaTroc.text.isNotEmpty && telaTrinc.text.isNotEmpty && traseira.text.isNotEmpty && detalhes.text.isNotEmpty) {
-                          //AnuncioController()..criarAnuncio(context,argumentosA.marca, argumentosA.modelo, argumentosA.memoriaRam,
-                         // argumentosA.memoriaInterna, telaTroc.text, telaTrinc.text, traseira.text, detalhes.text);                                
-                          //Navigator.pushReplacementNamed(context, "anuncio3", 
-                          //);
-                        //} else {
-                        //  Mensagem().erro(context, "Informe todos os campos para fazer o anúncio.");
-                        //}
+                      onPressed: () async {                    
+                        AnuncioController().criarAnuncio(context,argumentosA.marca, argumentosA.modelo, argumentosA.memoriaRam,
+                          argumentosA.memoriaInterna, telaTroc, telaTrinc, traseira, detalhes, bateria);                                
+                        Navigator.pushReplacementNamed(context, "anunciar3");
+                        
                       },
-                    ),*/
+                    ),
                   ],
                 ),
                 const SizedBox(height: 50),
                 Row(
-                  children: const [
-                    SizedBox(width: 250),
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: const [                  
                     Texto(
                       label: "CicloCell", 
                       tamFont: 16,

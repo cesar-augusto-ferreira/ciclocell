@@ -28,71 +28,6 @@ class Texto extends StatelessWidget {
 }
 
 
-class Usuario {
-
-  // retorna o nome do usuário logado
-
-  Widget nome(dynamic tamFont) {
-
-    return FutureBuilder<String>(
-      future: LoginController().retornarNomeUsuario(),
-      builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          return CircularProgressIndicator();
-        } else if (snapshot.connectionState == ConnectionState.done) {
-          if (snapshot.hasError) {
-            return const Text("Error");
-          } else if (snapshot.hasData) {
-            return Text(
-              snapshot.data.toString(),
-              overflow: TextOverflow.ellipsis,
-              style: GoogleFonts.roboto(
-                fontSize: tamFont,
-              ),
-            );
-          } else {
-            return const Text("Empty data");
-          }
-        } else {
-          return Text("State: ${snapshot.connectionState}");
-        }
-      },
-    );
-
-  }
-
-    //retorna o email do usuario logado
-
-  Widget email(dynamic tamFont) {
-
-    return FutureBuilder<String>(
-      future: LoginController().retornarEmailUsuario(),
-      builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          return const CircularProgressIndicator();
-        } else if (snapshot.connectionState == ConnectionState.done) {
-          if (snapshot.hasError) {
-            return const Text("Error");
-          } else if (snapshot.hasData) {
-            return Text(
-              snapshot.data.toString(),
-              overflow: TextOverflow.ellipsis,
-              style: GoogleFonts.roboto(
-                fontSize: tamFont,
-              ),
-            );
-          } else {
-            return const Text("Empty data");
-          }
-        } else {
-          return Text("State: ${snapshot.connectionState}");
-        }
-      },
-    );
-  }
-
-}
-
 class Mensagem {
 
   // mensagem de erro
@@ -272,32 +207,184 @@ class BotaoTexto extends StatelessWidget {
 
 }
 
-    //botao do tipo check
 
-/*class BotaoCheck extends StatefulWidget {
-  
-
-  const BotaoCheck({Key? key, this.variavel}) : super(key: key);
+class BotaoSair extends StatefulWidget {
+  const BotaoSair({Key? key}) : super(key: key);
 
   @override
-  State<BotaoCheck> createState() => _BotaoCheckState();
-
-    final dynamic variavel;
+  State<BotaoSair> createState() => _BotaoSairState();
 }
 
-class _BotaoCheckState extends State<BotaoCheck> {
-  dynamic checkValue = false;
+class _BotaoSairState extends State<BotaoSair> {
   @override
   Widget build(BuildContext context) {
-    return Checkbox(
-      value: checkValue,
-      onChanged: (value) {
-        setState(() {
-          
-        });
+    return  TextButton(
+      child: Text(
+        "sair",
+        style: GoogleFonts.roboto(
+          color: Colors.white,
+          fontSize: 20,
+        ),
+      ),
+      onPressed: () => {
+        showDialog(
+          barrierColor: Color.fromRGBO(68, 56, 71, 90),
+          context: context, 
+          builder: (context) => AlertDialog(
+            backgroundColor: Color.fromRGBO(68, 56, 71, 1),
+            //titlePadding: EdgeInsets.all(5),
+            content: Container(
+              padding: EdgeInsets.all(4),
+              color: Color.fromRGBO(68, 56, 71, 1),
+              width: 600,
+              height: 140,
+              child: Column(
+                children: [
+                  Text(
+                    "Deseja sair?",
+                    style: GoogleFonts.roboto(
+                      fontSize: 36,
+                      color: Colors.white,
+                    ),
+                  ),
+                  SizedBox(height: 40),
+                  Row(
+                    children: [                    
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: const Size(80, 40),
+                          primary: Colors.grey.shade200,
+                        ), 
+                        child: const Text(
+                          "Sim",
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.black,
+                          ),
+                        ),
+                        onPressed: () { 
+                          LoginController().logout();
+                          Navigator.pushReplacementNamed(context,"login");
+                        },
+                      ),
+                      const SizedBox(width: 70),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: const Size(80, 40),
+                          primary: Colors.grey.shade200,
+                        ), 
+                        child: const Text(
+                          "Não",
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.black,
+                          ),
+                        ),
+                        onPressed: () => { 
+                          Navigator.pushReplacementNamed(context,"principal"),
+                        },
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
+          ),
+        ),
+      }
         
-      },
-      );
-    
+    );
   }
+}
+
+
+
+ //janela deseja sair
+/*class BotaoSair extends StatelessWidget {
+  final dynamic tamFont;
+
+  const BotaoSair({Key? key, this.tamFont}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+
+    return  TextButton(
+      child: Text(
+        "sair",
+        style: GoogleFonts.roboto(
+          color: Colors.white,
+          fontSize: tamFont,
+        ),
+      ),
+      onPressed: () => {
+        showDialog(
+          barrierColor: Color.fromRGBO(68, 56, 71, 90),
+          context: context, 
+          builder: (context) => AlertDialog(
+            backgroundColor: Color.fromRGBO(68, 56, 71, 1),
+            //titlePadding: EdgeInsets.all(5),
+            content: Container(
+              padding: EdgeInsets.all(4),
+              color: Color.fromRGBO(68, 56, 71, 1),
+              width: 600,
+              height: 140,
+              child: Column(
+                children: [
+                  Text(
+                    "Deseja sair?",
+                    style: GoogleFonts.roboto(
+                      fontSize: 36,
+                      color: Colors.white,
+                    ),
+                  ),
+                  SizedBox(height: 40),
+                  Row(
+                    children: [
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: const Size(80, 40),
+                          primary: Colors.grey.shade200,
+                        ), 
+                        child: const Text(
+                          "Não",
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.black,
+                          ),
+                        ),
+                        onPressed: () => { 
+                          Navigator.pushReplacementNamed(context,"pincipal"),
+                        },
+                      ),
+                      const SizedBox(width: 70),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: const Size(80, 40),
+                          primary: Colors.grey.shade200,
+                        ), 
+                        child: const Text(
+                          "Sim",
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.black,
+                          ),
+                        ),
+                        onPressed: () => { 
+                          Navigator.pushReplacementNamed(context,"login"),
+                        },
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
+          ),
+        ),
+      }
+        
+    );
+  }
+
 }*/
+
+

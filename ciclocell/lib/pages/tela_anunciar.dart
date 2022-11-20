@@ -2,6 +2,7 @@
 import 'package:ciclocell/main.dart';
 import 'package:flutter/material.dart';
 import '../pages/util.dart';
+import '../pages/retorna_dados.dart';
 
 class TelaAnunciar extends StatefulWidget {
   const TelaAnunciar({Key? key}) : super(key: key);
@@ -43,8 +44,8 @@ class _TelaAnunciarState extends State<TelaAnunciar> {
         child: Column(
           children: [
             UserAccountsDrawerHeader(
-              accountName: Usuario().nome(18), 
-              accountEmail: Usuario().email(18),
+              accountName: Usuario().nome(18, Colors.white), 
+              accountEmail: Usuario().email(18, Colors.white),
               currentAccountPicture: Image.asset("lib/images/homem.png"),
             ),
             const SizedBox(height: 10,),
