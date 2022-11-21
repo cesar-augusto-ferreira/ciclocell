@@ -17,9 +17,9 @@ import '../pages/tela_recuperar_senha2.dart';
 import '../pages/tela_anunciar.dart';
 import '../pages/tela_anunciar2.dart';
 import '../pages/tela_anunciar3.dart';
-import '../pages/tela_performace.dart';
-import '../pages/tela_performace2.dart';
-import '../pages/tela_performace3.dart';
+import '../pages/tela_performnance.dart';
+import '../pages/tela_performance2.dart';
+import '../pages/tela_performance3.dart';
 import '../pages/tela_sobre.dart';
 import '../pages/tela_nuvem.dart';
 import '../pages/tela_nuvem2.dart';
@@ -109,9 +109,9 @@ class MyApp extends StatelessWidget {
         TelaAnunciar2.routeName: (context) => const TelaAnunciar2(),
         "anunciar3" :(context) => const TelaAnunciar3(),
         "sobre" :(context) => const TelaSobre(),
-        //"performace1" :(context) => const TelaPerformace(),
-        //"performace2" :(context) => const TelaPerformace2(),
-        //"performace3" :(context) => const TelaPerformace3(),
+        "performance1" :(context) => const TelaPerformance(),
+        "performance2" :(context) => const TelaPerformance2(),
+        "performance3" :(context) => const TelaPerformance3(),
         //"nuvem1" :(context) => const telaNuvem(),
         //"nuvem2" :(context) => const TelaNuvem2(),
         "conta" :(context) => const TelaMinhaConta(),

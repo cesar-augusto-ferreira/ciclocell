@@ -56,9 +56,10 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
             ),
             const SizedBox(height: 10,),
             BotaoTexto( 
-              label: "Aumentar Performace",
+              label: "Aumentar Performance",
               corTexto: Colors.white,
               tamFont: 20,
+              acaoBotao: "performance1",
             ),
             const SizedBox(height: 15,),
             BotaoTexto(
@@ -130,9 +131,10 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                     ),
                     const SizedBox(width: 16),
                     BotaoTexto(
-                      label: "Aumentar \n performace",
+                      label: "Aumentar \n performance",
                       tamFont: 20,
                       corTexto: Colors.white,
+                      acaoBotao: "performance1",
                     ),
                   ],
                 ),

@@ -1,21 +1,20 @@
 
 import 'package:flutter/material.dart';
 import '../pages/util.dart';
-import '../pages/retorna_dados.dart';
+import '../pages/Retorna_dados.dart';
 
-class TelaSobre extends StatefulWidget {
-  const TelaSobre({Key? key}) : super(key: key);
+class TelaPerformance3 extends StatefulWidget {
+  const TelaPerformance3({Key? key}) : super(key: key);
 
   @override
-  State<TelaSobre> createState() => _TelaSobreState();
+  State<TelaPerformance3> createState() => _TelaPerformance3State();
 }
 
-class _TelaSobreState extends State<TelaSobre> {
+class _TelaPerformance3State extends State<TelaPerformance3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-        //appbar
+       //appbar
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: Row(
@@ -30,8 +29,8 @@ class _TelaSobreState extends State<TelaSobre> {
           ],
         ),
       ),
-     
-      // menu lateral
+
+        // menu lateral
       endDrawer: Drawer(
         backgroundColor: Color.fromRGBO(68, 56, 71, 1),
         width: 250,
@@ -44,9 +43,10 @@ class _TelaSobreState extends State<TelaSobre> {
             ),
             const SizedBox(height: 10,),
             const BotaoTexto( 
-              label: "Aumentar Performace",
+              label: "Aumentar Performance",
               corTexto: Colors.white,
               tamFont: 20,
+              acaoBotao: "performance1",
             ),
             const SizedBox(height: 15,),
             const BotaoTexto(
@@ -100,73 +100,32 @@ class _TelaSobreState extends State<TelaSobre> {
         ),
       ),
 
-        // corpo
-      backgroundColor: Color.fromRGBO(68, 56, 71, 1),
+      
+      backgroundColor: const Color.fromRGBO(68, 56, 71, 1),
       body: SingleChildScrollView(
-        child: Padding(
-          padding:const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
-          child: Center(
-            child: Column(
-              children: [
-                const Texto(
-                  label: 'Sobre', 
-                  tamFont: 25),
-                const SizedBox(height: 25),
-                const Texto(
-                  label: "Somos otimizadores de desempenho para aparelhos com sistema oparecional Android.\n"
-                    "O tema escolhido foi um aplicativo que melhora o desempenho de smartphonese outros aparelhos com sistema android.\n"
-                    "A ferramenta desenvolvida busca otimizar o desempenho de aparelhos seminovos. Atravez de um "
-                    "aplicativo leve, com poucos cliques e também pode ser feito um checkup da vida util da bateria. ",
-                  tamFont: 18,
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 70),
+        child: Center(
+          child: Column(
+            children: [
+              const Texto(
+                label: '+ Performance! ', 
+                tamFont: 20,
                 ),
-                const SizedBox(height: 30),
-                const Texto(
-                  label: 'Desenvolvedores:', 
-                  tamFont: 25,
-                ),
-                const SizedBox(height: 30),
-                Image.asset(
-                  "lib/images/20210420_151839.jpg",
-                  height: 200,
-                ),
-                const SizedBox(height: 5),
-                const Texto(
-                  label: "César Augusto Ferreira", 
-                  tamFont: 20,
-                ),
-                const SizedBox(height: 40),
-                Image.asset(
-                  "lib/images/Foto-Atual.jpg",
-                  height: 200,
-                ),
-                const SizedBox(height: 5),
-                const Texto(
-                  label: "Deusdedith Bastos Souza Junior", 
-                  tamFont: 20,
-                ),
-                const SizedBox(height: 50),
-                Botao(
-                  corBotao: Colors.grey.shade200, 
-                  label:"Home", 
-                  acaoBotao: "principal",
-                ),
-                const SizedBox(height: 30),
-                Row(
-                  children: const[
-                    SizedBox(width: 250),
-                    Texto(
-                      label: 'CicloCell', 
-                      tamFont: 16,
-                    ),
-                  ],
-                ),
-              ],
-            ),
+              const SizedBox(height: 20),
+              const Texto(
+                label: ' Seu Smartphone esta 29% mais forte! \n', 
+                tamFont: 20,
+              ),
+              const SizedBox(height: 30),
+              Image.asset(
+                'lib/images/forca.png',
+                height: 150,                
+              ),                                                  
+            ],
           ),
         ),
       ),
     );
+    
   }
 }
-
-
