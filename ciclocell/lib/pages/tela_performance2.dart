@@ -129,6 +129,7 @@ class _TelaPerformance2State extends State<TelaPerformance2> {
               Botao(
                 corBotao: Colors.white, 
                 label: 'Nuvem',
+                acaoBotao: 'nuvem1',
               ),
               SizedBox(height:100),
               SizedBox(width:75),
