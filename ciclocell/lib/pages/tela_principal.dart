@@ -166,7 +166,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                     ),
                     const SizedBox(width: 20),
                     BotaoTexto(
-                      label: "Avaliar \n aparelho",
+                      label: "Avaliar \n aparelho    ",
                       tamFont: 20,
                       corTexto: Colors.white,
                       acaoBotao: "avaliacao1",

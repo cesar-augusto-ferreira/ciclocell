@@ -32,14 +32,14 @@ class _TelaPerformance3State extends State<TelaPerformance3> {
 
         // menu lateral
       endDrawer: Drawer(
-        backgroundColor: Color.fromRGBO(68, 56, 71, 1),
+        backgroundColor: const Color.fromRGBO(68, 56, 71, 1),
         width: 250,
         child: Column(
           children: [
             UserAccountsDrawerHeader(
               accountName: Usuario().nome(18,Colors.white), 
               accountEmail: Usuario().email(18, Colors.white),
-              currentAccountPicture: Image.asset('lib/images/homem.png'),
+              currentAccountPicture: Image.asset("lib/images/homem.png"),
             ),
             const SizedBox(height: 10,),
             const BotaoTexto( 
@@ -95,7 +95,7 @@ class _TelaPerformance3State extends State<TelaPerformance3> {
               acaoBotao: "conta",
             ),
             const SizedBox(height: 15),
-            BotaoSair(),
+            const BotaoSair(),
           ],
         ),
       ),
@@ -103,22 +103,22 @@ class _TelaPerformance3State extends State<TelaPerformance3> {
       
       backgroundColor: const Color.fromRGBO(68, 56, 71, 1),
       body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 70),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 70),
         child: Center(
           child: Column(
             children: [
               const Texto(
-                label: '+ Performance! ', 
+                label: "+ Performance! ", 
                 tamFont: 20,
                 ),
               const SizedBox(height: 20),
               const Texto(
-                label: ' Seu Smartphone esta 29% mais forte! \n', 
+                label: " Seu Smartphone esta 29% mais forte! \n", 
                 tamFont: 20,
               ),
               const SizedBox(height: 30),
               Image.asset(
-                'lib/images/forca.png',
+                "lib/images/forca.png",
                 height: 150,                
               ),                                                  
             ],

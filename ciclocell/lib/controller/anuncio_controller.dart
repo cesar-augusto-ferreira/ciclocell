@@ -11,7 +11,7 @@ class AnuncioController {
   void criarAnuncio(context, marca, modelo, memoriaRam, memoriaInt, telaTroc, telaTrinc, 
     traseira, detalhes, bateria) {
     var uid = FirebaseAuth.instance.currentUser!.uid;
-    FirebaseFirestore.instance.collection("anúncio").add({
+    FirebaseFirestore.instance.collection("anúncios").add({
       "uid": uid,
       "marca": marca,
       "modelo": modelo,
@@ -23,7 +23,7 @@ class AnuncioController {
       "outros detalhes": detalhes,
       "tem a bateria boa" : bateria,
     });
-    Mensagem().sucesso(context, "Anuncio criado com sucesso.");
+    Mensagem().sucesso(context, "Anúncio criado com sucesso.");
   }
 
 
