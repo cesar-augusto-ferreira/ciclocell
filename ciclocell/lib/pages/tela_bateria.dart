@@ -1,8 +1,8 @@
-
 import 'package:flutter/material.dart';
 import '../pages/util.dart';
+import '../pages/Retorna_dados.dart';
 
-/*class TelaBateria extends StatefulWidget {
+class TelaBateria extends StatefulWidget {
   const TelaBateria({Key? key}) : super(key: key);
 
   @override
@@ -12,46 +12,117 @@ import '../pages/util.dart';
 class _TelaBateriaState extends State<TelaBateria> {
   @override
   Widget build(BuildContext context) {
-     return Scaffold(
-       endDrawer: Drawer(
+    return Scaffold(
+      //appbar
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        title: Row(
+          children: [
+            Text(
+              "CicloCell",
+              style: TextStyle(
+                fontSize: 35,
+                color: Color.fromARGB(255, 15, 234, 22),
+              ),
+            ),
+            Column(
+              children: [
+                SizedBox(width: 150),
+                Image.asset(
+                  "lib/images/homem.png",
+                  height: 30,
+                ),
+                Usuario().nome(18, Colors.white),
+              ],
+            ),
+          ],
+        ),
+      ),
+
+      // menu lateral
+      endDrawer: Drawer(
         backgroundColor: Color.fromRGBO(68, 56, 71, 1),
         width: 250,
         child: Column(
           children: [
             UserAccountsDrawerHeader(
-              accountName: const Text('Sergio'), 
-              accountEmail: const Text('sergio@hotmail.com'),
+              accountName: Usuario().nome(18, Colors.white),
+              accountEmail: Usuario().email(18, Colors.white),
               currentAccountPicture: Image.asset('lib/images/homem.png'),
             ),
-            const SizedBox(height: 10,),
-            const Texto(label: 'Aumentar a performace', tamFonte: 18),
-            const SizedBox(height: 10,),
-            const Texto(label: 'Tempo da bateria', tamFonte: 18),
-            const SizedBox(height: 10,),
-            const Texto(label: 'Avaliar o aparelho', tamFonte: 18),
-            const SizedBox(height: 10,),
-            const Texto(label: 'Backup de arquivos', tamFonte: 18),
-            const SizedBox(height: 10,),
-            const Texto(label: 'Central de ajuda', tamFonte: 18),
-            const SizedBox(height: 40,),
-            const Texto(label: 'Sobre', tamFonte: 18),
-            const SizedBox(height: 10,),
-            const Texto(label: 'Minha conta', tamFonte: 18),
-            const SizedBox(height: 10,),
-            const Texto(label: 'Sair', tamFonte: 18),
+            const SizedBox(
+              height: 10,
+            ),
+            BotaoTexto(
+              label: "Aumentar Performance",
+              corTexto: Colors.white,
+              tamFont: 20,
+              acaoBotao: "performance1",
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            BotaoTexto(
+              label: "Tempo da bateria",
+              corTexto: Colors.white,
+              tamFont: 20,
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            BotaoTexto(
+              label: "Avaliar o aparelho",
+              corTexto: Colors.white,
+              tamFont: 20,
+              acaoBotao: "avaliacao1",
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            BotaoTexto(
+              label: "Anunciar o aparelho",
+              corTexto: Colors.white,
+              tamFont: 20,
+              acaoBotao: "anunciar1",
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            BotaoTexto(
+              label: "Backup de arquivos",
+              corTexto: Colors.white,
+              tamFont: 20,
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            BotaoTexto(
+              label: "Central de ajuda",
+              corTexto: Colors.white,
+              tamFont: 20,
+            ),
+            const SizedBox(
+              height: 40,
+            ),
+            BotaoTexto(
+              label: "Sobre",
+              corTexto: Colors.white,
+              tamFont: 20,
+              acaoBotao: "sobre",
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            BotaoTexto(
+              label: "Minha conta",
+              corTexto: Colors.white,
+              tamFont: 20,
+              acaoBotao: "conta",
+            ),
+            const SizedBox(height: 15),
+            BotaoSair(),
           ],
         ),
-      ),
-
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        title: const Text(
-          'CicloCell',
-          style: TextStyle(
-            fontSize: 35,
-            color: Color.fromARGB(255, 15, 234, 22),
-          ),
-          ),
       ),
       backgroundColor: const Color.fromRGBO(68, 56, 71, 1),
       body: SingleChildScrollView(
@@ -59,26 +130,26 @@ class _TelaBateriaState extends State<TelaBateria> {
         child: Center(
           child: Column(
             children: [
-              Texto(label: 'Tempo de bateria!', tamFonte: 20),
+              Texto(label: 'Tempo de bateria!', tamFont: 20),
               const SizedBox(height: 20),
               Texto(
-                label: ' Que tal saber quanto tempo de vida útil ainda' 
-                  ' tem a bateria do seu aparelho.', tamFonte: 20
-              ),
+                  label: ' Que tal saber quanto tempo de vida útil ainda'
+                      ' tem a bateria do seu aparelho.',
+                  tamFont: 20),
               const SizedBox(height: 30),
               Image.asset(
                 'lib/images/reciclagem.png',
-                height: 150,                
+                height: 150,
               ),
-              SizedBox(height:30),
-              Botao(corBotao: Colors.white, label: 'Iniciar teste', acaoBotao: TelaBateria2()),
-
-
+              SizedBox(height: 30),
+              Botao(
+                  corBotao: Colors.white,
+                  label: 'Iniciar teste',
+                  acaoBotao: "bateria2"),
             ],
           ),
         ),
       ),
     );
-    
   }
-}*/
+}

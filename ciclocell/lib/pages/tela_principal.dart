@@ -152,6 +152,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                       label:"Tempo \n da bateria",
                       tamFont: 20,
                       corTexto: Colors.white,
+                      acaoBotao: "bateria1",
                     ),
                   ],
                 ),
@@ -204,7 +205,8 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                     BotaoTexto(
                       label: "Backup \n de arquivos",
                       tamFont: 20,
-                      corTexto: Colors.white,                      
+                      corTexto: Colors.white,
+                      acaoBotao: 'nuvem1',                      
                     ),
                   ],
                 ),

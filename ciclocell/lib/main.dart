@@ -1,4 +1,4 @@
-
+import 'package:ciclocell/pages/tela_compra_nuvem.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'firebase_options.dart';
@@ -24,25 +24,25 @@ import '../pages/tela_sobre.dart';
 import '../pages/tela_nuvem.dart';
 import '../pages/tela_nuvem2.dart';
 import '../pages/tela_minha_conta.dart';
+import '../pages/CompraNuvem.dart';
 
 Future<void> main() async {
-
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
   runApp(MyApp());
-
 }
-    //argumentos para segunda tela de recuperar senha
+
+//argumentos para segunda tela de recuperar senha
 class ArgumentosRecupSenha {
   final String nome;
   final String email;
-  
+
   ArgumentosRecupSenha(this.nome, this.email);
 }
 
-    //argumentos para segunda tela de cadastro
+//argumentos para segunda tela de cadastro
 class ArgumentosCadastro {
   final String nome;
   final String rg;
@@ -53,7 +53,7 @@ class ArgumentosCadastro {
   ArgumentosCadastro(this.nome, this.rg, this.cpf, this.email, this.senha);
 }
 
-    //argumentos para terceira tela de cadastro
+//argumentos para terceira tela de cadastro
 class ArgumentosCadastro2 {
   final String nome;
   final String email;
@@ -61,15 +61,15 @@ class ArgumentosCadastro2 {
   ArgumentosCadastro2(this.nome, this.email);
 }
 
-    //argumentos para segunda tela de anúncio
+//argumentos para segunda tela de anúncio
 class ArgumentosAnuncio {
   final String marca;
   final String modelo;
   final String memoriaRam;
   final String memoriaInterna;
 
-  ArgumentosAnuncio(this.marca, this.modelo, this.memoriaRam, this.memoriaInterna);
-
+  ArgumentosAnuncio(
+      this.marca, this.modelo, this.memoriaRam, this.memoriaInterna);
 }
 
 //argumentos para segunda tela de anúncio
@@ -79,8 +79,8 @@ class ArgumentosAvaliacao {
   final String memoriaRam;
   final String memoriaInterna;
 
-  ArgumentosAvaliacao(this.marca, this.modelo, this.memoriaRam, this.memoriaInterna);
-
+  ArgumentosAvaliacao(
+      this.marca, this.modelo, this.memoriaRam, this.memoriaInterna);
 }
 
 class MyApp extends StatelessWidget {
@@ -91,42 +91,33 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "CicloCell",
-
       initialRoute: "login",
       routes: {
-        "login" : (context) => const TelaLogin(),
-        "principal" : (context) => const TelaPrincipal(),
+        "login": (context) => const TelaLogin(),
+        "principal": (context) => const TelaPrincipal(),
         //"ajuda" : ((context) => const TelaAjuda()),
-        "cadastro" : (context) => const TelaCadastro(),
+        "cadastro": (context) => const TelaCadastro(),
         TelaCadastro2.routeName: (context) => TelaCadastro2(),
         TelaCadastro3.routeName: (context) => TelaCadastro3(),
-        "recuperacao1" :(context) => const TelaRecuperacao1(),
+        "recuperacao1": (context) => const TelaRecuperacao1(),
         TelaRecuperacao2.routeName: (context) => TelaRecuperacao2(),
-        "avaliacao1" :(context) => const TelaAvaliacao(),
+        "avaliacao1": (context) => const TelaAvaliacao(),
         TelaAvaliacao2.routeName: (context) => const TelaAvaliacao2(),
-        "avaliacao3" :(context) => const TelaAvaliacao3(),
-        "anunciar1" :(context) => const TelaAnunciar(),
+        "avaliacao3": (context) => const TelaAvaliacao3(),
+        "anunciar1": (context) => const TelaAnunciar(),
         TelaAnunciar2.routeName: (context) => const TelaAnunciar2(),
-        "anunciar3" :(context) => const TelaAnunciar3(),
-        "sobre" :(context) => const TelaSobre(),
-        "performance1" :(context) => const TelaPerformance(),
-        "performance2" :(context) => const TelaPerformance2(),
-        "performance3" :(context) => const TelaPerformance3(),
-        //"nuvem1" :(context) => const telaNuvem(),
-        //"nuvem2" :(context) => const TelaNuvem2(),
-        "conta" :(context) => const TelaMinhaConta(),
-        //"bateria1" :(context) => const TelaBateria(),
-        //"bateria2" :(context) => const TelaBateria2(),
-        
-
+        "anunciar3": (context) => const TelaAnunciar3(),
+        "sobre": (context) => const TelaSobre(),
+        "performance1": (context) => const TelaPerformance(),
+        "performance2": (context) => const TelaPerformance2(),
+        "performance3": (context) => const TelaPerformance3(),
+        "nuvem1": (context) => const TelaNuvem(),
+        "nuvem2": (context) => const TelaNuvem2(),
+        "conta": (context) => const TelaMinhaConta(),
+        "bateria1": (context) => const TelaBateria(),
+        "bateria2": (context) => const TelaBateria2(),
+        "compranuvem": (context) => const TelaCompra1(),
       },
     );
-    
-  } 
+  }
 }
-
-
-
-
-    
-  
