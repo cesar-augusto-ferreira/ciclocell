@@ -3,10 +3,9 @@ import '../main.dart';
 import '../pages/util.dart';
 import '../controller/anuncio_controller.dart';
 import '../pages/retorna_dados.dart';
-import 'package:ciclocell/pages/tela_compra_nuvem.dart';
 
 class TelaCompra1 extends StatefulWidget {
-  static const routeName = "anunciar2";
+  static const routeName = "compranuvem";
 
   const TelaCompra1({Key? key}) : super(key: key);
 
