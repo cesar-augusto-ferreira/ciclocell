@@ -5,11 +5,7 @@ import '../controller/anuncio_controller.dart';
 import '../pages/retorna_dados.dart';
 
 class TelaCompra1 extends StatefulWidget {
-<<<<<<< HEAD
   static const routeName = "compranuvem";
-=======
-  
->>>>>>> 155f63556a9d61927321bb0fc89e50995c0ab4b4
 
   const TelaCompra1({Key? key}) : super(key: key);
 
@@ -144,32 +140,26 @@ class _TelaCompra1State extends State<TelaCompra1> {
             child: Column(
               children: [
                 const Texto(
-                  label: "Anunciar",
+                  label: "Nuvem",
                   tamFont: 30,
                 ),
                 const SizedBox(height: 25),
                 const Texto(
-                  label: "Marque apenas os itens que for ",
+                  label: "Valores para armazenar na nuvem: ",
                   tamFont: 18,
                 ),
-                const Texto(
-                  label: "correspondente ao estado do aparelho",
-                  tamFont: 18,
-                ),
+                
                 const SizedBox(height: 10),
-                const Texto(
-                  label: "Página 2/2",
-                  tamFont: 16,
-                ),
+                
                 const SizedBox(height: 30),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Texto(
-                      label: "A tela foi trocada?",
-                      tamFont: 18,
+                      label: "CicloCell 100GB - 11,00 por mês",
+                      tamFont: 15,
                     ),
-                    const SizedBox(width: 70),
+                    const SizedBox(width: 60),
                     Checkbox(
                       value: telaTroc,
                       onChanged: (valor) {
@@ -179,10 +169,7 @@ class _TelaCompra1State extends State<TelaCompra1> {
                       },
                     ),
                     const SizedBox(width: 10),
-                    const Texto(
-                      label: "Sim",
-                      tamFont: 18,
-                    ),
+                    
                   ],
                 ),
                 const SizedBox(height: 30),
@@ -190,8 +177,8 @@ class _TelaCompra1State extends State<TelaCompra1> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Texto(
-                      label: "A tela está trincada? ",
-                      tamFont: 18,
+                      label: "CicloCell 200GB - 18,00 por mês ",
+                      tamFont: 15,
                     ),
                     const SizedBox(width: 52),
                     Checkbox(
@@ -203,10 +190,7 @@ class _TelaCompra1State extends State<TelaCompra1> {
                       },
                     ),
                     const SizedBox(width: 10),
-                    const Texto(
-                      label: "Sim",
-                      tamFont: 18,
-                    ),
+                    
                   ],
                 ),
                 const SizedBox(height: 30),
@@ -214,8 +198,8 @@ class _TelaCompra1State extends State<TelaCompra1> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Texto(
-                      label: "A bateria esta boa?",
-                      tamFont: 18,
+                      label: "CicloCell 2TB - 44,99 por mês",
+                      tamFont: 15,
                     ),
                     const SizedBox(width: 62),
                     Checkbox(
@@ -227,20 +211,14 @@ class _TelaCompra1State extends State<TelaCompra1> {
                       },
                     ),
                     const SizedBox(width: 10),
-                    const Texto(
-                      label: "Sim",
-                      tamFont: 18,
-                    ),
+                    
                   ],
                 ),
                 const SizedBox(height: 30),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Texto(
-                      label: "Traseira com riscos?",
-                      tamFont: 18,
-                    ),
+                    
                     const SizedBox(width: 62),
                     Checkbox(
                       value: traseira,
@@ -250,21 +228,14 @@ class _TelaCompra1State extends State<TelaCompra1> {
                         });
                       },
                     ),
-                    const SizedBox(width: 10),
-                    const Texto(
-                      label: "Sim",
-                      tamFont: 18,
-                    ),
+                    
                   ],
                 ),
                 const SizedBox(height: 30),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Texto(
-                      label: "Outro detalhe no aparelho?",
-                      tamFont: 18,
-                    ),
+                    
                     const SizedBox(
                       width: 4,
                     ),
@@ -276,11 +247,7 @@ class _TelaCompra1State extends State<TelaCompra1> {
                         });
                       },
                     ),
-                    const SizedBox(width: 10),
-                    const Texto(
-                      label: "Sim",
-                      tamFont: 18,
-                    ),
+                    
                   ],
                 ),
                 const SizedBox(
@@ -292,7 +259,7 @@ class _TelaCompra1State extends State<TelaCompra1> {
                     Botao(
                       corBotao: Colors.grey.shade200,
                       label: "Voltar",
-                      acaoBotao: "anunciar1",
+                      acaoBotao: "principal",
                     ),
                     const SizedBox(width: 80),
                     ElevatedButton(
@@ -301,14 +268,14 @@ class _TelaCompra1State extends State<TelaCompra1> {
                         primary: Colors.grey.shade200,
                       ),
                       child: const Text(
-                        "Enviar",
+                        "Comprar",
                         style: TextStyle(
                           fontSize: 18,
                           color: Colors.black,
                         ),
                       ),
                       onPressed: () async {
-                        Navigator.pushReplacementNamed(context, "anunciar3");
+                        Navigator.pushReplacementNamed(context, "nuvem2");
                       },
                     ),
                   ],
