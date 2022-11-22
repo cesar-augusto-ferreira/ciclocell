@@ -18,13 +18,22 @@ class _TelaPerformance3State extends State<TelaPerformance3> {
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: Row(
-          children: const [
-            Text(
-              "CicloCell",
-              style: TextStyle(
-                fontSize: 35,
-                color: Color.fromARGB(255, 15, 234, 22),
-              ),
+          children: [
+            const BotaoTexto(
+              label: "CicloCell",
+              corTexto: Color.fromARGB(255, 15, 234, 22),
+              acaoBotao: "principal",
+              tamFont: 35,
+            ),
+            Column(
+              children: [
+                const SizedBox(width: 130),
+                Image.asset(
+                  "lib/images/homem.png",
+                  height: 30,
+                  ),
+                Usuario().nome(18, Colors.white),
+              ],
             ),
           ],
         ),
@@ -39,7 +48,7 @@ class _TelaPerformance3State extends State<TelaPerformance3> {
             UserAccountsDrawerHeader(
               accountName: Usuario().nome(18,Colors.white), 
               accountEmail: Usuario().email(18, Colors.white),
-              currentAccountPicture: Image.asset("lib/images/homem.png"),
+              currentAccountPicture: Image.asset('lib/images/homem.png'),
             ),
             const SizedBox(height: 10,),
             const BotaoTexto( 
@@ -100,7 +109,7 @@ class _TelaPerformance3State extends State<TelaPerformance3> {
         ),
       ),
 
-      
+        //corpo da página
       backgroundColor: const Color.fromRGBO(68, 56, 71, 1),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 70),

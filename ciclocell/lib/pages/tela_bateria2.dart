@@ -18,20 +18,19 @@ class _TelaBateria2State extends State<TelaBateria2> {
         backgroundColor: Colors.black,
         title: Row(
           children: [
-            const Text(
-              "CicloCell",
-              style: TextStyle(
-                fontSize: 35,
-                color: Color.fromARGB(255, 15, 234, 22),
-              ),
+            const BotaoTexto(
+              label: "CicloCell",
+              corTexto: Color.fromARGB(255, 15, 234, 22),
+              acaoBotao: "principal",
+              tamFont: 35,
             ),
             Column(
               children: [
-                const SizedBox(width: 150),
+                const SizedBox(width: 130),
                 Image.asset(
                   "lib/images/homem.png",
                   height: 30,
-                ),
+                  ),
                 Usuario().nome(18, Colors.white),
               ],
             ),
@@ -39,82 +38,66 @@ class _TelaBateria2State extends State<TelaBateria2> {
         ),
       ),
 
-      // menu lateral
+        // menu lateral
       endDrawer: Drawer(
-        backgroundColor: Color.fromRGBO(68, 56, 71, 1),
+        backgroundColor: const Color.fromRGBO(68, 56, 71, 1),
         width: 250,
         child: Column(
           children: [
             UserAccountsDrawerHeader(
-              accountName: Usuario().nome(18, Colors.white),
+              accountName: Usuario().nome(18,Colors.white), 
               accountEmail: Usuario().email(18, Colors.white),
               currentAccountPicture: Image.asset('lib/images/homem.png'),
             ),
-            const SizedBox(
-              height: 10,
-            ),
-            const BotaoTexto(
+            const SizedBox(height: 10,),
+            const BotaoTexto( 
               label: "Aumentar Performance",
               corTexto: Colors.white,
               tamFont: 20,
               acaoBotao: "performance1",
             ),
-            const SizedBox(
-              height: 15,
-            ),
+            const SizedBox(height: 15,),
             const BotaoTexto(
               label: "Tempo da bateria",
-              corTexto: Colors.white,
+              corTexto: Colors.white, 
               tamFont: 20,
             ),
-            const SizedBox(
-              height: 15,
-            ),
+            const SizedBox(height: 15,),
             const BotaoTexto(
               label: "Avaliar o aparelho",
-              corTexto: Colors.white,
+              corTexto: Colors.white, 
               tamFont: 20,
               acaoBotao: "avaliacao1",
             ),
-            const SizedBox(
-              height: 15,
-            ),
+            const SizedBox(height: 15,),
             const BotaoTexto(
               label: "Anunciar o aparelho",
-              corTexto: Colors.white,
+              corTexto: Colors.white, 
               tamFont: 20,
               acaoBotao: "anunciar1",
             ),
-            const SizedBox(
-              height: 15,
-            ),
+            const SizedBox(height: 15,),
             const BotaoTexto(
               label: "Backup de arquivos",
-              corTexto: Colors.white,
+              corTexto: Colors.white, 
               tamFont: 20,
             ),
-            const SizedBox(
-              height: 15,
-            ),
+            const SizedBox(height: 15,),
             const BotaoTexto(
               label: "Central de ajuda",
               corTexto: Colors.white,
               tamFont: 20,
             ),
-            const SizedBox(
-              height: 40,
-            ),
+            const SizedBox(height: 40,),
             const BotaoTexto(
-              label: "Sobre",
+              label: "Sobre", 
               corTexto: Colors.white,
               tamFont: 20,
               acaoBotao: "sobre",
             ),
-            const SizedBox(
-              height: 15,
-            ),
+            const SizedBox(height: 15,),
             const BotaoTexto(
-              label: "Minha conta",
+              label: "Minha conta", 
               corTexto: Colors.white,
               tamFont: 20,
               acaoBotao: "conta",
@@ -124,6 +107,8 @@ class _TelaBateria2State extends State<TelaBateria2> {
           ],
         ),
       ),
+
+        //corpo da página
       backgroundColor: const Color.fromRGBO(68, 56, 71, 1),
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 70),

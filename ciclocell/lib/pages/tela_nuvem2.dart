@@ -19,16 +19,15 @@ class _TelaNuvem2State extends State<TelaNuvem2> {
         backgroundColor: Colors.black,
         title: Row(
           children: [
-            const Text(
-              "CicloCell",
-              style: TextStyle(
-                fontSize: 35,
-                color: Color.fromARGB(255, 15, 234, 22),
-              ),
+            const BotaoTexto(
+              label: "CicloCell",
+              corTexto: Color.fromARGB(255, 15, 234, 22),
+              acaoBotao: "principal",
+              tamFont: 35,
             ),
             Column(
               children: [
-                SizedBox(width: 150),
+                const SizedBox(width: 130),
                 Image.asset(
                   "lib/images/homem.png",
                   height: 30,
@@ -42,7 +41,7 @@ class _TelaNuvem2State extends State<TelaNuvem2> {
 
         // menu lateral
       endDrawer: Drawer(
-        backgroundColor: Color.fromRGBO(68, 56, 71, 1),
+        backgroundColor: const Color.fromRGBO(68, 56, 71, 1),
         width: 250,
         child: Column(
           children: [
@@ -105,10 +104,12 @@ class _TelaNuvem2State extends State<TelaNuvem2> {
               acaoBotao: "conta",
             ),
             const SizedBox(height: 15),
-            BotaoSair(),
+            const BotaoSair(),
           ],
         ),
       ),
+
+        //corpo da página
       backgroundColor: const Color.fromRGBO(68, 56, 71, 1),
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 70),
