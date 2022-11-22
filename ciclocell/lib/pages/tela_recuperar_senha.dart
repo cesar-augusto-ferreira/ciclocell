@@ -21,15 +21,16 @@ class _TelaRecuperacao1State extends State<TelaRecuperacao1> {
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: const Text(
-          'CicloCell',
+          "CicloCell",
           style: TextStyle(
             fontSize: 35,
             color: Color.fromARGB(255, 15, 234, 22),
           ),
           ),
       ),
-      backgroundColor: const Color.fromRGBO(68, 56, 71, 1),
 
+      //corpo da página
+      backgroundColor: const Color.fromRGBO(68, 56, 71, 1),
        body: SingleChildScrollView(
         child: Padding(
           padding:const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
@@ -65,7 +66,7 @@ class _TelaRecuperacao1State extends State<TelaRecuperacao1> {
                         minimumSize: const Size(120, 50),
                         primary: Colors.grey.shade200,
                       ), 
-                      child: Text(
+                      child: const Text(
                         "Enviar",
                         style: TextStyle(
                           fontSize: 18,
@@ -81,7 +82,7 @@ class _TelaRecuperacao1State extends State<TelaRecuperacao1> {
                                 );
                               } else {
                                 Mensagem().erro(context,
-                                    'Informe o nome e e-mail para recuperar a senha.');
+                                    "Informe o nome e e-mail para recuperar a senha.");
                               }
                       },
                     ),

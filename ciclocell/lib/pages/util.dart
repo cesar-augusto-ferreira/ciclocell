@@ -78,7 +78,6 @@ class CaixaTexto {
       padding: const EdgeInsets.fromLTRB(0, 0, 0, 15),
       child: TextField(
         controller: variavel,
-        //obscureText: (senha != null) ? true : false,
         style: GoogleFonts.roboto(
           fontSize: tamFont,
           color: Colors.black,
@@ -180,12 +179,12 @@ class Botao extends StatelessWidget {
 
 class BotaoTexto extends StatelessWidget {
   final Color corTexto;
-  final String label;
+  final dynamic label;
   final dynamic acaoBotao;
   final dynamic decoracao;
   final dynamic tamFont;
 
-  const BotaoTexto({Key? key, required this.corTexto, this.acaoBotao, required this.label, this.decoracao, this.tamFont}) : super(key: key);
+  const BotaoTexto({Key? key, required this.corTexto, this.acaoBotao, this.label, this.decoracao, this.tamFont}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -228,14 +227,13 @@ class _BotaoSairState extends State<BotaoSair> {
       ),
       onPressed: () => {
         showDialog(
-          barrierColor: Color.fromRGBO(68, 56, 71, 90),
+          barrierColor: const Color.fromRGBO(68, 56, 71, 90),
           context: context, 
           builder: (context) => AlertDialog(
-            backgroundColor: Color.fromRGBO(68, 56, 71, 1),
-            //titlePadding: EdgeInsets.all(5),
+            backgroundColor: const Color.fromRGBO(68, 56, 71, 1),
             content: Container(
-              padding: EdgeInsets.all(4),
-              color: Color.fromRGBO(68, 56, 71, 1),
+              padding: const EdgeInsets.all(4),
+              color: const Color.fromRGBO(68, 56, 71, 1),
               width: 600,
               height: 140,
               child: Column(
@@ -247,7 +245,7 @@ class _BotaoSairState extends State<BotaoSair> {
                       color: Colors.white,
                     ),
                   ),
-                  SizedBox(height: 40),
+                  const SizedBox(height: 40),
                   Row(
                     children: [                    
                       ElevatedButton(
@@ -296,7 +294,6 @@ class _BotaoSairState extends State<BotaoSair> {
     );
   }
 }
-
 
 
 

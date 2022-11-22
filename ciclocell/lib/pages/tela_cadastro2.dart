@@ -39,9 +39,9 @@ class TelaCadastro2 extends StatelessWidget {
           ),
         ),
       ),
-      backgroundColor: const Color.fromRGBO(68, 56, 71, 1),
 
-          //corpo da página
+       //corpo da página
+      backgroundColor: const Color.fromRGBO(68, 56, 71, 1),
       body: SingleChildScrollView(
         child: Padding(
           padding:const EdgeInsets.symmetric(horizontal: 20, vertical: 20),

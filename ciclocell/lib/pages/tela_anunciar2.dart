@@ -31,17 +31,26 @@ class _TelaAnunciar2State extends State<TelaAnunciar2> {
 
     return Scaffold(
 
-      // appBar
+      //appbar
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: Row(
-          children: const [
-            Text(
-              "CicloCell",
-              style: TextStyle(
-                fontSize: 35,
-                color: Color.fromARGB(255, 15, 234, 22),
-              ),
+          children: [
+            const BotaoTexto(
+              label: "CicloCell",
+              corTexto: Color.fromARGB(255, 15, 234, 22),
+              acaoBotao: "principal",
+              tamFont: 35,
+            ),
+            Column(
+              children: [
+                const SizedBox(width: 130),
+                Image.asset(
+                  "lib/images/homem.png",
+                  height: 30,
+                  ),
+                Usuario().nome(18, Colors.white),
+              ],
             ),
           ],
         ),
@@ -54,15 +63,16 @@ class _TelaAnunciar2State extends State<TelaAnunciar2> {
         child: Column(
           children: [
             UserAccountsDrawerHeader(
-              accountName: Usuario().nome(18, Colors.white), 
+              accountName: Usuario().nome(18,Colors.white), 
               accountEmail: Usuario().email(18, Colors.white),
               currentAccountPicture: Image.asset('lib/images/homem.png'),
             ),
             const SizedBox(height: 10,),
             const BotaoTexto( 
-              label: "Aumentar Performace",
+              label: "Aumentar Performance",
               corTexto: Colors.white,
               tamFont: 20,
+              acaoBotao: "performance1",
             ),
             const SizedBox(height: 15,),
             const BotaoTexto(
@@ -75,6 +85,7 @@ class _TelaAnunciar2State extends State<TelaAnunciar2> {
               label: "Avaliar o aparelho",
               corTexto: Colors.white, 
               tamFont: 20,
+              acaoBotao: "avaliacao1",
             ),
             const SizedBox(height: 15,),
             const BotaoTexto(
@@ -107,14 +118,10 @@ class _TelaAnunciar2State extends State<TelaAnunciar2> {
               label: "Minha conta", 
               corTexto: Colors.white,
               tamFont: 20,
+              acaoBotao: "conta",
             ),
-            const SizedBox(height: 15,),
-            const BotaoTexto(
-              label: 'Sair',
-              corTexto: Colors.white,
-              tamFont: 20,
-              acaoBotao: "login",
-            ),
+            const SizedBox(height: 15),
+            const BotaoSair(),
           ],
         ),
       ),

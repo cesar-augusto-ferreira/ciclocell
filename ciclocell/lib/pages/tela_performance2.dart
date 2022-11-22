@@ -14,17 +14,26 @@ class _TelaPerformance2State extends State<TelaPerformance2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        //appBar
-       appBar: AppBar(
+        //appbar
+      appBar: AppBar(
         backgroundColor: Colors.black,
         title: Row(
-          children: const [
-            Text(
-              "CicloCell",
-              style: TextStyle(
-                fontSize: 35,
-                color: Color.fromARGB(255, 15, 234, 22),
-              ),
+          children: [
+            const BotaoTexto(
+              label: "CicloCell",
+              corTexto: Color.fromARGB(255, 15, 234, 22),
+              acaoBotao: "principal",
+              tamFont: 35,
+            ),
+            Column(
+              children: [
+                const SizedBox(width: 130),
+                Image.asset(
+                  "lib/images/homem.png",
+                  height: 30,
+                  ),
+                Usuario().nome(18, Colors.white),
+              ],
             ),
           ],
         ),
@@ -32,7 +41,7 @@ class _TelaPerformance2State extends State<TelaPerformance2> {
 
         // menu lateral
       endDrawer: Drawer(
-        backgroundColor: Color.fromRGBO(68, 56, 71, 1),
+        backgroundColor: const Color.fromRGBO(68, 56, 71, 1),
         width: 250,
         child: Column(
           children: [
@@ -42,65 +51,65 @@ class _TelaPerformance2State extends State<TelaPerformance2> {
               currentAccountPicture: Image.asset('lib/images/homem.png'),
             ),
             const SizedBox(height: 10,),
-            BotaoTexto( 
+            const BotaoTexto( 
               label: "Aumentar Performance",
               corTexto: Colors.white,
               tamFont: 20,
               acaoBotao: "performance1",
             ),
             const SizedBox(height: 15,),
-            BotaoTexto(
+            const BotaoTexto(
               label: "Tempo da bateria",
               corTexto: Colors.white, 
               tamFont: 20,
             ),
             const SizedBox(height: 15,),
-            BotaoTexto(
+            const BotaoTexto(
               label: "Avaliar o aparelho",
               corTexto: Colors.white, 
               tamFont: 20,
               acaoBotao: "avaliacao1",
             ),
             const SizedBox(height: 15,),
-            BotaoTexto(
+            const BotaoTexto(
               label: "Anunciar o aparelho",
               corTexto: Colors.white, 
               tamFont: 20,
               acaoBotao: "anunciar1",
             ),
             const SizedBox(height: 15,),
-            BotaoTexto(
+            const BotaoTexto(
               label: "Backup de arquivos",
               corTexto: Colors.white, 
               tamFont: 20,
             ),
             const SizedBox(height: 15,),
-            BotaoTexto(
+            const BotaoTexto(
               label: "Central de ajuda",
               corTexto: Colors.white,
               tamFont: 20,
             ),
             const SizedBox(height: 40,),
-            BotaoTexto(
+            const BotaoTexto(
               label: "Sobre", 
               corTexto: Colors.white,
               tamFont: 20,
               acaoBotao: "sobre",
             ),
             const SizedBox(height: 15,),
-            BotaoTexto(
+            const BotaoTexto(
               label: "Minha conta", 
               corTexto: Colors.white,
               tamFont: 20,
               acaoBotao: "conta",
             ),
             const SizedBox(height: 15),
-            BotaoSair(),
+            const BotaoSair(),
           ],
         ),
       ),
-
       
+        //corpo da página
       backgroundColor: const Color.fromRGBO(68, 56, 71, 1),
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 30, vertical: 70),
