@@ -25,6 +25,7 @@ import '../pages/tela_nuvem.dart';
 import '../pages/tela_nuvem2.dart';
 import '../pages/tela_minha_conta.dart';
 import '../pages/tela_compra_nuvem.dart';
+import '../pages/tela_compra_nuvem2.dart';
 
 Future<void> main() async {
   await Firebase.initializeApp(
@@ -117,6 +118,7 @@ class MyApp extends StatelessWidget {
         "bateria1": (context) => const TelaBateria(),
         "bateria2": (context) => const TelaBateria2(),
         "compranuvem": (context) => const TelaCompra1(),
+        "nuvem2": (context) => const TelaCompra2(),
       },
     );
   }
