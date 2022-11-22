@@ -48,7 +48,7 @@ class _TelaNuvem2State extends State<TelaNuvem2> {
             UserAccountsDrawerHeader(
               accountName: Usuario().nome(18,Colors.white), 
               accountEmail: Usuario().email(18, Colors.white),
-              currentAccountPicture: Image.asset('lib/images/homem.png'),
+              currentAccountPicture: Image.asset("lib/images/homem.png"),
             ),
             const SizedBox(height: 10,),
             const BotaoTexto( 
@@ -62,6 +62,7 @@ class _TelaNuvem2State extends State<TelaNuvem2> {
               label: "Tempo da bateria",
               corTexto: Colors.white, 
               tamFont: 20,
+              acaoBotao: "bateria1",
             ),
             const SizedBox(height: 15,),
             const BotaoTexto(
@@ -82,12 +83,14 @@ class _TelaNuvem2State extends State<TelaNuvem2> {
               label: "Backup de arquivos",
               corTexto: Colors.white, 
               tamFont: 20,
+              acaoBotao: "nuvem1",
             ),
             const SizedBox(height: 15,),
             const BotaoTexto(
               label: "Central de ajuda",
               corTexto: Colors.white,
               tamFont: 20,
+              acaoBotao: "ajuda",
             ),
             const SizedBox(height: 40,),
             const BotaoTexto(
@@ -112,22 +115,22 @@ class _TelaNuvem2State extends State<TelaNuvem2> {
         //corpo da página
       backgroundColor: const Color.fromRGBO(68, 56, 71, 1),
       body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 70),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 70),
         child: Center(
           child: Column(
             children: [
               const Texto(
-                label: 'Conteúdo enviado para nuvem de: ',
+                label: "Conteúdo enviado para nuvem de: ",
                 tamFont: 20,
               ),                 
               const SizedBox(height: 20),
-              const Texto(
-                label: ' sergio@hotmail.com',
+              Texto(
+                label: "${Usuario().email(18, Colors.white)}",
                 tamFont: 30,
               ),
               const SizedBox(height: 25),
               Image.asset(
-                'lib/images/nuvem.png',
+                "lib/images/nuvem.png",
                 height: 150,
               ),
               const SizedBox(height: 25),
@@ -136,19 +139,21 @@ class _TelaNuvem2State extends State<TelaNuvem2> {
                   SizedBox(width: 105),
                   Botao(
                     corBotao: Colors.white,
-                    label: 'Home',
+                    label: "Home",
                     acaoBotao: "principal",
                   ),
                 ],
               ),
-              SizedBox(height: 250),
+              const SizedBox(height: 250),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: const [
-                  Texto(label: 'CicloCell', tamFont: 16),
+                  Texto(
+                    label: "CicloCell", 
+                    tamFont: 16,
+                  ),
                 ],
               ),
-              
             ],
           ),
         ),

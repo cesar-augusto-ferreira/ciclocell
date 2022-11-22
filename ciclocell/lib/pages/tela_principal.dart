@@ -32,7 +32,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                 Image.asset(
                   "lib/images/homem.png",
                   height: 30,
-                  ),
+                ),
                 Usuario().nome(18, Colors.white),
               ],
             ),
@@ -49,7 +49,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
             UserAccountsDrawerHeader(
               accountName: Usuario().nome(18,Colors.white), 
               accountEmail: Usuario().email(18, Colors.white),
-              currentAccountPicture: Image.asset('lib/images/homem.png'),
+              currentAccountPicture: Image.asset("lib/images/homem.png"),
             ),
             const SizedBox(height: 10,),
             const BotaoTexto( 
@@ -203,7 +203,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                       label: "Backup \n de arquivos",
                       tamFont: 20,
                       corTexto: Colors.white,
-                      acaoBotao: 'nuvem1',                      
+                      acaoBotao: "nuvem1",                      
                     ),
                   ],
                 ),
@@ -235,10 +235,8 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                   ],
                 ),
               ],
-
             ),
           ),
-
         ),
       ),
     );

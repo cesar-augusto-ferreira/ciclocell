@@ -12,7 +12,7 @@ class Usuario {
       future: LoginController().retornarNomeUsuario(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return CircularProgressIndicator();
+          return const CircularProgressIndicator();
         } else if (snapshot.connectionState == ConnectionState.done) {
           if (snapshot.hasError) {
             return const Text("Error");

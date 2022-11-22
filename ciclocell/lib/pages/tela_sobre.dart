@@ -112,7 +112,8 @@ class _TelaSobreState extends State<TelaSobre> {
               children: [
                 const Texto(
                   label: "Sobre", 
-                  tamFont: 25),
+                  tamFont: 25,
+                ),
                 const SizedBox(height: 25),
                 const Texto(
                   label: "Somos otimizadores de desempenho para aparelhos com sistema oparecional Android.\n"
@@ -136,7 +137,7 @@ class _TelaSobreState extends State<TelaSobre> {
                   label: "César Augusto Ferreira", 
                   tamFont: 20,
                 ),
-                const SizedBox(height: 40),
+                const SizedBox(height: 50),
                 Image.asset(
                   "lib/images/Foto-Atual.jpg",
                   height: 200,
@@ -152,10 +153,10 @@ class _TelaSobreState extends State<TelaSobre> {
                   label:"Home", 
                   acaoBotao: "principal",
                 ),
-                const SizedBox(height: 30),
+                const SizedBox(height: 50),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: const[
-                    SizedBox(width: 250),
                     Texto(
                       label: "CicloCell", 
                       tamFont: 16,

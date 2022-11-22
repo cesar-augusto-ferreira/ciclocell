@@ -52,7 +52,7 @@ class TelaRecuperacao2 extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 Texto(
-                  label: "${argumentosRecupSenha.email}",
+                  label: argumentosRecupSenha.email,
                   tamFont: 25,
                 ),
                 const SizedBox(height: 50),
@@ -80,13 +80,11 @@ class TelaRecuperacao2 extends StatelessWidget {
                     ),
                   ],
                 ),
-                
               ],
             ),
           ),
         ),
       ),
-
     );
     
   }

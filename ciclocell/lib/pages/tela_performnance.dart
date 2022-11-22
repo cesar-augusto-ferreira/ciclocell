@@ -31,7 +31,7 @@ class _TelaPerformanceState extends State<TelaPerformance> {
                 Image.asset(
                   "lib/images/homem.png",
                   height: 30,
-                  ),
+                ),
                 Usuario().nome(18, Colors.white),
               ],
             ),
@@ -48,7 +48,7 @@ class _TelaPerformanceState extends State<TelaPerformance> {
             UserAccountsDrawerHeader(
               accountName: Usuario().nome(18,Colors.white), 
               accountEmail: Usuario().email(18, Colors.white),
-              currentAccountPicture: Image.asset('lib/images/homem.png'),
+              currentAccountPicture: Image.asset("lib/images/homem.png"),
             ),
             const SizedBox(height: 10,),
             const BotaoTexto( 
@@ -117,25 +117,23 @@ class _TelaPerformanceState extends State<TelaPerformance> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Texto(label: 'Mais performance! ', tamFont: 20),
+              const Texto(label: "Mais performance! ", tamFont: 20),
               const SizedBox(height: 20),
               const Texto(
-                label: '   Essa função elimina os cokies, fecha os aplicativos em segundo plano'
-                ' e sugere a remoção de aplicativos antigos, que não estão sendo utilizados.', tamFont: 20
+                label: "   Essa função elimina os cokies, fecha os aplicativos em segundo plano"
+                " e sugere a remoção de aplicativos antigos, que não estão sendo utilizados.", tamFont: 20
               ),
               const SizedBox(height: 30),
               Image.asset(
-                'lib/images/forca.png',
+                "lib/images/forca.png",
                 height: 150,                
               ),
               const SizedBox(height:40),
               const Botao(
                 corBotao: Colors.white, 
-                label: '+ Performance', 
+                label: "+ Performance", 
                 acaoBotao: "performance2",
               ),
-
-
             ],
           ),
         ),

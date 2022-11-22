@@ -26,7 +26,7 @@ class _TelaRecuperacao1State extends State<TelaRecuperacao1> {
             fontSize: 35,
             color: Color.fromARGB(255, 15, 234, 22),
           ),
-          ),
+        ),
       ),
 
       //corpo da página
@@ -36,7 +36,6 @@ class _TelaRecuperacao1State extends State<TelaRecuperacao1> {
           padding:const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
           child: Center(
             child: Column(
-              // ignore: prefer_const_literals_to_create_immutables
               children: [
                 const Texto(
                   label: "Recuperar senha",
@@ -47,11 +46,11 @@ class _TelaRecuperacao1State extends State<TelaRecuperacao1> {
                   label: "Preencha os campos abaixo.",
                   tamFont: 18,
                 ),
-                const SizedBox(height: 90),               
+                const SizedBox(height: 80),               
                 CaixaTexto().SemBorda("Nome*", "Digite o seu ", nome, Icons.person_outline, 20), 
                 const SizedBox(height: 40),
                 CaixaTexto().SemBorda("E-mail*", "Digite o seu ", email, Icons.email_outlined, 20),
-                const SizedBox(height: 150),
+                const SizedBox(height: 100),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -73,27 +72,30 @@ class _TelaRecuperacao1State extends State<TelaRecuperacao1> {
                           color: Colors.black,
                         ),
                       ),
-
                       onPressed: () async { 
                         if (nome.text.isNotEmpty && email.text.isNotEmpty) {
-                                LoginController().esqueceuSenha(email.text);
-                                Navigator.pushReplacementNamed(context, "recuperacao2",
-                                  arguments: ArgumentosRecupSenha(nome.text, email.text),
-                                );
-                              } else {
-                                Mensagem().erro(context,
-                                    "Informe o nome e e-mail para recuperar a senha.");
-                              }
+                          LoginController().esqueceuSenha(email.text);
+                          Navigator.pushReplacementNamed(
+                            context, 
+                            "recuperacao2",
+                            arguments: ArgumentosRecupSenha(nome.text, email.text),
+                          );
+                        } else {
+                          Mensagem().erro(
+                            context,
+                            "Informe o nome e e-mail para recuperar a senha.",
+                          );
+                        }
                       },
                     ),
                   ],
                 ),
-                const SizedBox(height: 30),
+                const SizedBox(height: 35),
                 const Texto(
                   label: "* Campos obrigatórios",
                   tamFont: 14,
                 ),
-                const SizedBox(height: 15),
+                const SizedBox(height: 60),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: const [

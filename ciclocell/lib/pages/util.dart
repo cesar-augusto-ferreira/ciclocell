@@ -62,7 +62,6 @@ class Mensagem {
         duration: const Duration(seconds: 3),
       ),
     );
-
   }
 
 }
@@ -137,7 +136,6 @@ class CaixaTexto {
         ),
       )
     );
-
   }
 
 }
@@ -289,8 +287,7 @@ class _BotaoSairState extends State<BotaoSair> {
             ),
           ),
         ),
-      }
-        
+      }   
     );
   }
 }

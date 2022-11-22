@@ -48,7 +48,7 @@ class _TelaPerformance3State extends State<TelaPerformance3> {
             UserAccountsDrawerHeader(
               accountName: Usuario().nome(18,Colors.white), 
               accountEmail: Usuario().email(18, Colors.white),
-              currentAccountPicture: Image.asset('lib/images/homem.png'),
+              currentAccountPicture: Image.asset("lib/images/homem.png"),
             ),
             const SizedBox(height: 10,),
             const BotaoTexto( 
@@ -119,7 +119,7 @@ class _TelaPerformance3State extends State<TelaPerformance3> {
               const Texto(
                 label: "+ Performance! ", 
                 tamFont: 20,
-                ),
+              ),
               const SizedBox(height: 20),
               const Texto(
                 label: " Seu Smartphone esta 29% mais forte! \n", 
