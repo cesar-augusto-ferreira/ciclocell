@@ -24,7 +24,6 @@ import '../pages/tela_sobre.dart';
 import '../pages/tela_nuvem.dart';
 import '../pages/tela_nuvem2.dart';
 import '../pages/tela_minha_conta.dart';
-import '../pages/CompraNuvem.dart';
 
 Future<void> main() async {
   await Firebase.initializeApp(

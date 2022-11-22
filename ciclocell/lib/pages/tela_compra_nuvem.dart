@@ -6,7 +6,7 @@ import '../pages/retorna_dados.dart';
 import 'package:ciclocell/pages/tela_compra_nuvem.dart';
 
 class TelaCompra1 extends StatefulWidget {
-  static const routeName = "anunciar2";
+  
 
   const TelaCompra1({Key? key}) : super(key: key);
 
@@ -24,9 +24,7 @@ class _TelaCompra1State extends State<TelaCompra1> {
 
   @override
   Widget build(BuildContext context) {
-    final argumentosA =
-        ModalRoute.of(context)!.settings.arguments as ArgumentosAnuncio;
-
+     
     return Scaffold(
       // appBar
       appBar: AppBar(
@@ -307,17 +305,6 @@ class _TelaCompra1State extends State<TelaCompra1> {
                         ),
                       ),
                       onPressed: () async {
-                        AnuncioController().criarAnuncio(
-                            context,
-                            argumentosA.marca,
-                            argumentosA.modelo,
-                            argumentosA.memoriaRam,
-                            argumentosA.memoriaInterna,
-                            telaTroc,
-                            telaTrinc,
-                            traseira,
-                            detalhes,
-                            bateria);
                         Navigator.pushReplacementNamed(context, "anunciar3");
                       },
                     ),
