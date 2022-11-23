@@ -129,6 +129,16 @@ class _TelaBateria2State extends State<TelaBateria2> {
                 label: 'Home',
                 acaoBotao: "principal",
               ),
+               const SizedBox(height: 230),
+              Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: const [
+                    Texto(
+                      label: "CicloCell",
+                      tamFont: 16,
+                    ),
+                  ],
+                ),
             ],
           ),
         ),
