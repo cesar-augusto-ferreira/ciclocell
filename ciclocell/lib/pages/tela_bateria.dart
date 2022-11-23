@@ -131,10 +131,26 @@ class _TelaBateriaState extends State<TelaBateria> {
                   corBotao: Colors.white,
                   label: 'Iniciar teste',
                   acaoBotao: "bateria2"),
+                   const SizedBox(height: 190),
+              Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: const [
+                    Texto(
+                      label: "CicloCell",
+                      tamFont: 16,
+                    ),
+                  ],
+                ),
             ],
+            
           ),
+          
         ),
+        
       ),
+      
     );
+    
   }
+  
 }
