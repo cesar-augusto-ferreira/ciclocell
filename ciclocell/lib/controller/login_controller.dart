@@ -1,3 +1,4 @@
+import 'package:ciclocell/pages/Retorna_dados.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -212,3 +213,23 @@ class LoginController {
   }
 
 }
+
+// retorna o documento do usuário 
+  Future<String> retornarDocumentoUsuario() async {
+    var uid = FirebaseAuth.instance.currentUser!.uid;
+    var res;
+    await FirebaseFirestore.instance
+        .collection("usuarios")
+        .where("uid", isEqualTo: uid)
+        .get()
+        .then(
+      (q) {
+        if (q.docs.isNotEmpty) {
+          res = q.docs;
+        } else {
+          res = "";
+        }
+      },
+    );
+    return res;
+  }

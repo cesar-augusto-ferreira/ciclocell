@@ -1,4 +1,4 @@
-import 'package:ciclocell/pages/tela_compra_nuvem.dart';
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'firebase_options.dart';
@@ -28,6 +28,9 @@ import '../pages/tela_compra_nuvem.dart';
 import '../pages/tela_compra_nuvem2.dart';
 import '../pages/tela_ajuda.dart';
 import '../pages/tela_ajuda2.dart';
+import '../pages/tela_atualizar_cadastro.dart';
+import '../pages/tela_atualizar_cadastro2.dart';
+import '../pages/tela_atualizar_cadastro3.dart';
 
 Future<void> main() async {
   await Firebase.initializeApp(
@@ -93,6 +96,16 @@ class ArgumentosNuvem {
   ArgumentosNuvem(this.contratados);
 }
 
+//argumentos para segunda tela de atualizar
+class ArgumentosAtualizar {
+  final String nome;
+  final String rg;
+  final String cpf;
+  final String senha;
+
+  ArgumentosAtualizar(this.nome, this.rg, this.cpf, this.senha);
+}
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -129,6 +142,9 @@ class MyApp extends StatelessWidget {
         "bateria2": (context) => const TelaBateria2(),
         TelaCompra2.routeName: (context) => const TelaCompra2(),
         "compranuvem1": (context) => const TelaCompra1(),
+        "atualizar1": (context) => const TelaAtualizarCadastro(),
+        TelaAtualizarCadastro2.routeName: (context) =>  TelaAtualizarCadastro2(),
+        "atualizar3": (context) => const TelaAtualizarCadastro3(),
       },
     );
   }
