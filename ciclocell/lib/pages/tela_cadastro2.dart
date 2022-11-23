@@ -20,12 +20,7 @@ class TelaCadastro2 extends StatelessWidget {
   Widget build(BuildContext context) {
 
     final argumentosC = ModalRoute.of(context)!.settings.arguments as ArgumentosCadastro;
-
-    /*final String nome = argumentosC.nome;
-    final String rg = argumentosC.rg;
-    final String cpf = argumentosC.cpf;
-    final String email = argumentosC.email;
-    final String senha = argumentosC.senha;*/
+    
     return Scaffold(
       
         //appbar

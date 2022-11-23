@@ -50,7 +50,7 @@ class _TelaCompra1State extends State<TelaCompra1> {
             UserAccountsDrawerHeader(
               accountName: Usuario().nome(18, Colors.white),
               accountEmail: Usuario().email(18, Colors.white),
-              currentAccountPicture: Image.asset('lib/images/homem.png'),
+              currentAccountPicture: Image.asset("lib/images/homem.png"),
             ),
             const SizedBox(
               height: 10,
