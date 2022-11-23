@@ -17,22 +17,12 @@ class _TelaBateriaState extends State<TelaBateria> {
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: Row(
-          children: [
-            const BotaoTexto(
+          children: const [
+            BotaoTexto(
               label: "CicloCell",
               corTexto: Color.fromARGB(255, 15, 234, 22),
               acaoBotao: "principal",
               tamFont: 35,
-            ),
-            Column(
-              children: [
-                const SizedBox(width: 130),
-                Image.asset(
-                  "lib/images/homem.png",
-                  height: 30,
-                  ),
-                Usuario().nome(18, Colors.white),
-              ],
             ),
           ],
         ),
@@ -47,7 +37,7 @@ class _TelaBateriaState extends State<TelaBateria> {
             UserAccountsDrawerHeader(
               accountName: Usuario().nome(18,Colors.white), 
               accountEmail: Usuario().email(18, Colors.white),
-              currentAccountPicture: Image.asset('lib/images/homem.png'),
+              currentAccountPicture: Image.asset("lib/images/homem.png"),
             ),
             const SizedBox(height: 10,),
             const BotaoTexto( 
@@ -61,6 +51,7 @@ class _TelaBateriaState extends State<TelaBateria> {
               label: "Tempo da bateria",
               corTexto: Colors.white, 
               tamFont: 20,
+              acaoBotao: "bateria1",
             ),
             const SizedBox(height: 15,),
             const BotaoTexto(
@@ -81,12 +72,14 @@ class _TelaBateriaState extends State<TelaBateria> {
               label: "Backup de arquivos",
               corTexto: Colors.white, 
               tamFont: 20,
+              acaoBotao: "nuvem1",
             ),
             const SizedBox(height: 15,),
             const BotaoTexto(
               label: "Central de ajuda",
               corTexto: Colors.white,
               tamFont: 20,
+              acaoBotao: "ajuda1",
             ),
             const SizedBox(height: 40,),
             const BotaoTexto(
@@ -115,7 +108,7 @@ class _TelaBateriaState extends State<TelaBateria> {
         child: Center(
           child: Column(
             children: [
-              const Texto(label: 'Tempo de bateria!', tamFont: 20),
+              const Texto(label: "Tempo de bateria!", tamFont: 20),
               const SizedBox(height: 20),
               const Texto(
                   label: " Que tal saber quanto tempo de vida útil ainda"
@@ -123,7 +116,7 @@ class _TelaBateriaState extends State<TelaBateria> {
                   tamFont: 20),
               const SizedBox(height: 30),
               Image.asset(
-                'lib/images/reciclagem.png',
+                "lib/images/reciclagem.png",
                 height: 150,
               ),
               const SizedBox(height: 30),

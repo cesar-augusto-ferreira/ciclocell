@@ -47,9 +47,9 @@ class _TelaRecuperacao1State extends State<TelaRecuperacao1> {
                   tamFont: 18,
                 ),
                 const SizedBox(height: 80),               
-                CaixaTexto().SemBorda("Nome*", "Digite o seu ", nome, Icons.person_outline, 20), 
+                CaixaTexto().SemBorda("Nome*", "Digite o seu ", nome, Icons.person_outline, 20, false), 
                 const SizedBox(height: 40),
-                CaixaTexto().SemBorda("E-mail*", "Digite o seu ", email, Icons.email_outlined, 20),
+                CaixaTexto().SemBorda("E-mail*", "Digite o seu ", email, Icons.email_outlined, 20,false),
                 const SizedBox(height: 100),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,

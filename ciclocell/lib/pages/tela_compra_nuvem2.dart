@@ -14,8 +14,7 @@ class TelaCompra2 extends StatefulWidget {
 class _TelaCompra2State extends State<TelaCompra2> {
   @override
   Widget build(BuildContext context) {
-    final ArgumentosN =
-        ModalRoute.of(context)!.settings.arguments as ArgumentosNuvem;
+    final ArgumentosN = ModalRoute.of(context)!.settings.arguments as ArgumentosNuvem;
     return Scaffold(
       //appbar
       appBar: AppBar(
@@ -51,7 +50,7 @@ class _TelaCompra2State extends State<TelaCompra2> {
             UserAccountsDrawerHeader(
               accountName: Usuario().nome(18, Colors.white),
               accountEmail: Usuario().email(18, Colors.white),
-              currentAccountPicture: Image.asset('lib/images/homem.png'),
+              currentAccountPicture: Image.asset("lib/images/homem.png"),
             ),
             const SizedBox(
               height: 10,
@@ -69,6 +68,7 @@ class _TelaCompra2State extends State<TelaCompra2> {
               label: "Tempo da bateria",
               corTexto: Colors.white,
               tamFont: 20,
+              acaoBotao: "bateria1",
             ),
             const SizedBox(
               height: 15,
@@ -95,6 +95,7 @@ class _TelaCompra2State extends State<TelaCompra2> {
               label: "Backup de arquivos",
               corTexto: Colors.white,
               tamFont: 20,
+              acaoBotao: "nuvem1",
             ),
             const SizedBox(
               height: 15,
@@ -103,6 +104,7 @@ class _TelaCompra2State extends State<TelaCompra2> {
               label: "Central de ajuda",
               corTexto: Colors.white,
               tamFont: 20,
+              acaoBotao: "ajuda1",
             ),
             const SizedBox(
               height: 40,
@@ -144,7 +146,7 @@ class _TelaCompra2State extends State<TelaCompra2> {
                 const SizedBox(height: 25),
                 const SizedBox(height: 25),
                 Texto(
-                  label: "${ArgumentosN.contratados}",
+                  label: ArgumentosN.contratados,
                   tamFont: 25,
                 ),
                 const SizedBox(height: 55),
@@ -164,8 +166,8 @@ class _TelaCompra2State extends State<TelaCompra2> {
                     acaoBotao: "principal"),
                 const SizedBox(height: 80),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: const [
-                    SizedBox(width: 250),
                     Texto(
                       label: "CicloCell",
                       tamFont: 16,

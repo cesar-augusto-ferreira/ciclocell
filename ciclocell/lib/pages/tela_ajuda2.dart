@@ -2,7 +2,6 @@
 import '../pages/util.dart';
 import 'package:flutter/material.dart';
 import '../pages/Retorna_dados.dart';
-import '../pages/Retorna_dados.dart';
 
 class TelaAjuda2 extends StatefulWidget {
   const TelaAjuda2({Key? key}) : super(key: key);

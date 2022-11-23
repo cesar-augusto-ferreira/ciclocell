@@ -108,50 +108,48 @@ class _TelaNuvemState extends State<TelaNuvem> {
         //corpo da página
       backgroundColor: const Color.fromRGBO(68, 56, 71, 1),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 70),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
         child: Center(
           child: Column(
             children: [
-              const Texto(label: 'Salvar com segurança! ', tamFont: 20),
+              const Texto(label: "Salvar com segurança! ", tamFont: 20),
               const SizedBox(height: 20),
               const Texto(
-                label: ' Digite seu e-mail abaixo: \n',
+                label: " Digite seu e-mail abaixo: \n",
                 tamFont: 20,
               ),
-              CaixaTexto().ComBorda(
-                'e-mail nuvem',
-                'Digite seu',
-                nuvem,
-                Icons.abc,
-                18,
-              ),
-              const SizedBox(height: 25),
+              const SizedBox(height: 50),
+              CaixaTexto().ComBorda("e-mail nuvem", "Digite seu", nuvem, Icons.abc, 18,),
+                const SizedBox(height: 25),
               Image.asset(
-                'lib/images/nuvem.png',
+                "lib/images/nuvem.png",
                 height: 150,
               ),
-              const SizedBox(height: 25),
+              const SizedBox(height: 50),
               Row(
                 children: const [
                   SizedBox(width: 20),
                   Botao(
                     corBotao: Colors.white,
-                    label: 'Comprar',
-                    acaoBotao: 'compranuvem1',
+                    label: "Comprar",
+                    acaoBotao: "compranuvem1",
                   ),
                   SizedBox(width: 60),
                   Botao(
                     corBotao: Colors.white,
-                    label: 'Salvar',
-                    acaoBotao: 'nuvem2',
+                    label: "Salvar",
+                    acaoBotao: "nuvem2",
                   ),
                 ],
               ),
-               const SizedBox(height: 170),
+               const SizedBox(height: 100),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: const [
-                  Texto(label: 'CicloCell', tamFont: 16),
+                  Texto(
+                    label: "CicloCell", 
+                    tamFont: 16,
+                  ),
                 ],
               ),
             ],

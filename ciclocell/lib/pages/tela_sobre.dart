@@ -73,7 +73,7 @@ class _TelaSobreState extends State<TelaSobre> {
               label: "Backup de arquivos",
               corTexto: Colors.white, 
               tamFont: 20,
-              acaoBotao: "nuvem",
+              acaoBotao: "nuvem1",
             ),
             const SizedBox(height: 15,),
             const BotaoTexto(

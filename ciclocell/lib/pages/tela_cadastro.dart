@@ -26,7 +26,7 @@ class _TelaCadastroState extends State<TelaCadastro> {
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: const Text(
-          'CicloCell',
+          "CicloCell",
           style: TextStyle(
             fontSize: 35,
             color: Color.fromARGB(255, 15, 234, 22),
@@ -41,7 +41,6 @@ class _TelaCadastroState extends State<TelaCadastro> {
           padding:const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
           child: Center(
             child: Column(
-              // ignore: prefer_const_literals_to_create_immutables
               children: [
                 const Texto(
                   label: "Cadastro",
@@ -58,15 +57,15 @@ class _TelaCadastroState extends State<TelaCadastro> {
                   tamFont: 16,
                 ),
                 const SizedBox(height: 4),
-                CaixaTexto().SemBorda("Nome*", "Digite o seu ", nome, Icons.person_outline, 22), 
+                CaixaTexto().SemBorda("Nome*", "Digite o seu ", nome, Icons.person_outline, 22, false), 
                 const SizedBox(height: 4),
-                CaixaTexto().SemBorda("RG*", "Digite o seu ", rg, Icons.document_scanner_outlined, 22),
+                CaixaTexto().SemBorda("RG*", "Digite o seu ", rg, Icons.document_scanner_outlined, 22, false),
                 const SizedBox(height: 4),
-                CaixaTexto().SemBorda("CPF*", "Digite o seu ", cpf, Icons.document_scanner_outlined, 22), 
+                CaixaTexto().SemBorda("CPF*", "Digite o seu ", cpf, Icons.document_scanner_outlined, 22, false), 
                 const SizedBox(height: 4),
-                CaixaTexto().SemBorda("E-mail*", "Digite o seu ", email, Icons.email_outlined, 22),
+                CaixaTexto().SemBorda("E-mail*", "Digite o seu ", email, Icons.email_outlined, 22, false),
                 const SizedBox(height: 4),
-                CaixaTexto().SemBorda("Senha*", "Digite a ", senha, Icons.vpn_key, 22), 
+                CaixaTexto().SemBorda("Senha*", "Digite a ", senha, Icons.vpn_key, 22, false), 
                 const SizedBox(height: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -83,7 +82,7 @@ class _TelaCadastroState extends State<TelaCadastro> {
                         minimumSize: const Size(120, 50),
                         primary: Colors.grey.shade200,
                       ), 
-                      child: Text(
+                      child: const Text(
                         "Enviar",
                         style: TextStyle(
                           fontSize: 18,
@@ -107,7 +106,7 @@ class _TelaCadastroState extends State<TelaCadastro> {
                 ),
                 const SizedBox(height: 30),
                 const Texto(
-                  label: '* Campos obrigatórios', 
+                  label: "* Campos obrigatórios", 
                   tamFont: 14,
                 ),
                 const SizedBox(height: 15),
@@ -115,7 +114,7 @@ class _TelaCadastroState extends State<TelaCadastro> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: const [
                     Texto(
-                      label: 'CicloCell', 
+                      label: "CicloCell", 
                       tamFont: 16,
                     ),
                   ],
@@ -125,7 +124,6 @@ class _TelaCadastroState extends State<TelaCadastro> {
           ),
         ),
       ),
-
     );
     
   }

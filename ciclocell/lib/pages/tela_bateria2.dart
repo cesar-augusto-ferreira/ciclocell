@@ -108,9 +108,9 @@ class _TelaBateria2State extends State<TelaBateria2> {
         child: Center(
           child: Column(
             children: [
-              const Texto(label: 'Sua bateria esta boa!', tamFont: 20),
+              const Texto(label: "Sua bateria esta boa!", tamFont: 20),
               const SizedBox(height: 20),
-              const Texto(label: ' Tem 70% de vida útil.', tamFont: 30),
+              const Texto(label: " Tem 70% de vida útil.", tamFont: 30),
               const SizedBox(height: 30),
               Image.asset(
                 "lib/images/reciclagem.png",
@@ -119,19 +119,19 @@ class _TelaBateria2State extends State<TelaBateria2> {
               const SizedBox(height: 30),
               const Botao(
                 corBotao: Colors.white,
-                label: 'Home',
+                label: "Home",
                 acaoBotao: "principal",
               ),
                const SizedBox(height: 230),
               Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: const [
-                    Texto(
-                      label: "CicloCell",
-                      tamFont: 16,
-                    ),
-                  ],
-                ),
+               mainAxisAlignment: MainAxisAlignment.end,
+                children: const [
+                  Texto(
+                    label: "CicloCell",
+                    tamFont: 16,
+                  ),
+                ], 
+              ),
             ],
           ),
         ),

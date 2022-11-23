@@ -18,22 +18,12 @@ class _TelaNuvem2State extends State<TelaNuvem2> {
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: Row(
-          children: [
-            const BotaoTexto(
+          children: const [
+            BotaoTexto(
               label: "CicloCell",
               corTexto: Color.fromARGB(255, 15, 234, 22),
               acaoBotao: "principal",
               tamFont: 35,
-            ),
-            Column(
-              children: [
-                const SizedBox(width: 130),
-                Image.asset(
-                  "lib/images/homem.png",
-                  height: 30,
-                ),
-                Usuario().nome(18, Colors.white),
-              ],
             ),
           ],
         ),
@@ -141,12 +131,12 @@ class _TelaNuvem2State extends State<TelaNuvem2> {
               ),
               const SizedBox(height: 20),
               Usuario().email(18, Colors.white),
-              const SizedBox(height: 25),
+              const SizedBox(height: 50),
               Image.asset(
                 "lib/images/nuvem.png",
-                height: 150,
+                height: 200,
               ),
-              const SizedBox(height: 25),
+              const SizedBox(height: 60),
               Row(
                 children: const [
                   SizedBox(width: 105),
@@ -157,7 +147,7 @@ class _TelaNuvem2State extends State<TelaNuvem2> {
                   ),
                 ],
               ),
-              const SizedBox(height: 250),
+              const SizedBox(height: 150),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: const [

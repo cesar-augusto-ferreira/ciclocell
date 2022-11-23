@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import '../pages/tela_login.dart';
 import '../pages/util.dart';
 
 class LoginController {
@@ -27,7 +26,7 @@ class LoginController {
     }).catchError((e) {
       switch (e.code) {
         case "email-already-in-use":
-          Mensagem().erro(context, 'O email já foi cadastrado.');
+          Mensagem().erro(context, "O email já foi cadastrado.");
           break;
         case "invalid-email":
           Mensagem().erro(context, "O email é inválido.");

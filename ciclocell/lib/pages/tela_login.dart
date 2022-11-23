@@ -31,9 +31,9 @@ class _TelaLoginState extends State<TelaLogin> {
                   height: 180,
                 ),
                 const SizedBox(height: 60),
-                CaixaTexto().SemBorda("E-mail", "Digite seu ", email, Icons.email, 25),
+                CaixaTexto().SemBorda("E-mail", "Digite seu ", email, Icons.email, 25, false),
                 const SizedBox(height: 40),
-                CaixaTexto().SemBorda("Senha", "Digite sua ", senha, Icons.vpn_key, 25),
+                CaixaTexto().SemBorda("Senha", "Digite sua ", senha, Icons.vpn_key, 25, true),
                 const SizedBox(height: 40),
                 BotaoTexto(
                   corTexto: Colors.red.shade600,
@@ -73,7 +73,7 @@ class _TelaLoginState extends State<TelaLogin> {
                  mainAxisAlignment: MainAxisAlignment.end,
                   children: const [
                     Texto(
-                      label: 'CicloCell',
+                      label: "CicloCell",
                       tamFont: 16,
                     ),
                   ],
@@ -83,7 +83,6 @@ class _TelaLoginState extends State<TelaLogin> {
           ),
         ),
       ),
-
     ); 
   }
 }

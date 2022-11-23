@@ -305,7 +305,6 @@ class _TelaAvaliacao2State extends State<TelaAvaliacao2> {
                     ),
                   ],
                 ),
-                
               ],
             ),
           ),

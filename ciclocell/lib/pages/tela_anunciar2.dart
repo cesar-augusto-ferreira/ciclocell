@@ -127,8 +127,8 @@ class _TelaAnunciar2State extends State<TelaAnunciar2> {
           child: Center(
             child: Column(
               children: [
-                const Texto(label: 
-                  "Anunciar", 
+                const Texto(
+                  label: "Anunciar", 
                   tamFont: 30,
                 ),
                 const SizedBox(height: 25),

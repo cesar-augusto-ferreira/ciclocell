@@ -25,8 +25,8 @@ class _TelaAvaliacaoState extends State<TelaAvaliacao> {
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: Row(
-          children: [
-            const BotaoTexto(
+          children: const [
+            BotaoTexto(
               label: "CicloCell",
               corTexto: Color.fromARGB(255, 15, 234, 22),
               acaoBotao: "principal",

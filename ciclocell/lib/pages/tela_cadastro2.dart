@@ -27,7 +27,7 @@ class TelaCadastro2 extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: const Text(
-          'CicloCell',
+          "CicloCell",
           style: TextStyle(
             fontSize: 35,
             color: Color.fromARGB(255, 15, 234, 22),
@@ -42,9 +42,8 @@ class TelaCadastro2 extends StatelessWidget {
           padding:const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
           child: Center(
             child: Column(
-              // ignore: prefer_const_literals_to_create_immutables
               children: [
-                Texto(
+                const Texto(
                   label:"Cadastro",
                   tamFont: 25,
                 ),
@@ -59,17 +58,14 @@ class TelaCadastro2 extends StatelessWidget {
                   tamFont: 16,
                 ),
                 const SizedBox(height: 10),
-                CaixaTexto().SemBorda("Cidade", "Digite o nome da sua ", cidade, Icons.location_city_outlined, 22),
+                CaixaTexto().SemBorda("Cidade", "Digite o nome da sua ", cidade, Icons.location_city_outlined, 22, false),
                 const SizedBox(height: 20),
-                CaixaTexto().SemBorda("Endereço", "Digite o seu ", endereco, Icons.house_outlined, 22),
+                CaixaTexto().SemBorda("Endereço", "Digite o seu ", endereco, Icons.house_outlined, 22, false),
                 const SizedBox(height: 20),
-                CaixaTexto().SemBorda("Complemento", "Digite o ", complemento, Icons.apartment_outlined, 22), 
-                const SizedBox(height: 20),
-                CaixaTexto().SemBorda("Celular*", "Digite o seu ", celular, Icons.smartphone_outlined, 22),
-                const SizedBox(height: 40),
+                CaixaTexto().SemBorda("Complemento", "Digite o ", complemento, Icons.apartment_outlined, 22, false),
+                CaixaTexto().SemBorda("Celular*", "Digite o seu ", celular, Icons.smartphone_outlined, 22, false),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  // ignore: prefer_const_literals_to_create_immutables
                   children: [
                     Botao(
                       corBotao: Colors.grey.shade200, 
@@ -82,7 +78,7 @@ class TelaCadastro2 extends StatelessWidget {
                         minimumSize: const Size(120, 50),
                         primary: Colors.grey.shade200,
                       ), 
-                      child: Text(
+                      child: const Text(
                         "Enviar",
                         style: TextStyle(
                           fontSize: 18,
@@ -105,7 +101,7 @@ class TelaCadastro2 extends StatelessWidget {
                 ),
                 const SizedBox(height: 30),
                 const Texto(
-                  label: '* Campos obrigatórios', 
+                  label: "* Campos obrigatórios", 
                   tamFont: 14,
                 ),
                 const SizedBox(height: 15),
@@ -113,7 +109,7 @@ class TelaCadastro2 extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: const [                    
                     Texto(
-                      label: 'CicloCell', 
+                      label: "CicloCell", 
                       tamFont: 16,
                     ),
                   ],
@@ -123,7 +119,6 @@ class TelaCadastro2 extends StatelessWidget {
           ),
         ),
       ),
-
     );
     
   }

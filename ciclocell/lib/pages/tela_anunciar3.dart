@@ -139,8 +139,9 @@ class _TelaAnunciar3State extends State<TelaAnunciar3> {
                 Botao(
                   corBotao: Colors.grey.shade200, 
                   label: "Home", 
-                  acaoBotao: "principal"),
-                const SizedBox(height: 80),
+                  acaoBotao: "principal",
+                ),
+                const SizedBox(height: 85),
                  Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: const [

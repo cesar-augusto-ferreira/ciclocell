@@ -108,7 +108,7 @@ class CaixaTexto {
 
     // caixa de texto sem borda
 
-  Widget SemBorda(String label,String hintLabel, dynamic variavel, IconData iconepref, dynamic tamFont) {
+  Widget SemBorda(String label,String hintLabel, dynamic variavel, IconData iconepref, dynamic tamFont, bool senha) {
 
     return Padding(
       padding : const EdgeInsets.fromLTRB(0, 0, 0, 15),

@@ -80,7 +80,7 @@ class _TelaCadastro3State extends State<TelaCadastro3> {
                 ),
                 const SizedBox(height: 40),  
                 Botao(corBotao: Colors.grey.shade200, label: "Concluir", acaoBotao: "login"),
-                const SizedBox(height: 85),
+                const SizedBox(height: 80),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: const [
@@ -89,14 +89,12 @@ class _TelaCadastro3State extends State<TelaCadastro3> {
                       tamFont: 16,
                     ),
                   ],
-                ),
-                
+                ), 
               ],
             ),
           ),
         ),
       ),
-
     );
     
   }

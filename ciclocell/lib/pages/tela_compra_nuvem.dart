@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../main.dart';
 import '../pages/util.dart';
-import '../controller/anuncio_controller.dart';
 import '../pages/retorna_dados.dart';
 import '../controller/nuvem_controller.dart';
 
@@ -214,28 +213,28 @@ class _TelaCompra1State extends State<TelaCompra1> {
                       onPressed: () async {
                         NuvemController().criarNuvem(
                             context, plano100gb, plano200gb, plano2tb);
-                          if ( plano100gb  == true){
-                            String contratado = "Plano 100GB";
-                            Navigator.pushReplacementNamed(
-                              context,
-                              "compranuvem2",                          
-                              arguments: ArgumentosNuvem(contratado),
-                        );
-                      } if ( plano200gb  == true){
-                            String contratado = "Plano 200GB";
-                            Navigator.pushReplacementNamed(
-                              context,
-                              "compranuvem2",                          
-                              arguments: ArgumentosNuvem(contratado),
-                        );
-                      } if ( plano2tb  == true){
-                            String contratado = "Plano 2TB";
-                            Navigator.pushReplacementNamed(
-                              context,
-                              "compranuvem2",                          
-                              arguments: ArgumentosNuvem(contratado),
-                        );
-                      } 
+                        if ( plano100gb  == true){
+                          String contratado = "Plano 100GB";
+                          Navigator.pushReplacementNamed(
+                            context,
+                            "compranuvem2",                          
+                            arguments: ArgumentosNuvem(contratado),
+                          );
+                        } if ( plano200gb  == true){
+                          String contratado = "Plano 200GB";
+                           Navigator.pushReplacementNamed(
+                            context,
+                            "compranuvem2",                          
+                            arguments: ArgumentosNuvem(contratado),
+                          );
+                        } if ( plano2tb  == true){
+                          String contratado = "Plano 2TB";
+                          Navigator.pushReplacementNamed(
+                            context,
+                            "compranuvem2",                          
+                            arguments: ArgumentosNuvem(contratado),
+                          );
+                        } 
                       },
                     ),
                   ],

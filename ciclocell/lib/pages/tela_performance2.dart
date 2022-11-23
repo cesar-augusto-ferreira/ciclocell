@@ -18,22 +18,12 @@ class _TelaPerformance2State extends State<TelaPerformance2> {
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: Row(
-          children: [
-            const BotaoTexto(
+          children: const [
+            BotaoTexto(
               label: "CicloCell",
               corTexto: Color.fromARGB(255, 15, 234, 22),
               acaoBotao: "principal",
               tamFont: 35,
-            ),
-            Column(
-              children: [
-                const SizedBox(width: 130),
-                Image.asset(
-                  "lib/images/homem.png",
-                  height: 30,
-                  ),
-                Usuario().nome(18, Colors.white),
-              ],
             ),
           ],
         ),
@@ -90,7 +80,7 @@ class _TelaPerformance2State extends State<TelaPerformance2> {
               label: "Central de ajuda",
               corTexto: Colors.white,
               tamFont: 20,
-              acaoBotao: "ajuda",
+              acaoBotao: "ajuda1",
             ),
             const SizedBox(height: 40,),
             const BotaoTexto(
@@ -154,14 +144,14 @@ class _TelaPerformance2State extends State<TelaPerformance2> {
               ), 
                const SizedBox(height: 100),
               Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: const [
-                    Texto(
-                      label: "CicloCell",
-                      tamFont: 16,
-                    ),
-                  ],
-                ),
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: const [
+                  Texto(
+                    label: "CicloCell",
+                    tamFont: 16,
+                  ),
+                ],
+              ),
 
             ],
           ),
