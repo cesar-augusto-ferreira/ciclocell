@@ -143,7 +143,7 @@ class _TelaNuvemState extends State<TelaNuvem> {
                   Botao(
                     corBotao: Colors.white,
                     label: 'Comprar',
-                    acaoBotao: 'compranuvem',
+                    acaoBotao: 'compranuvem1',
                   ),
                   SizedBox(width: 60),
                   Botao(

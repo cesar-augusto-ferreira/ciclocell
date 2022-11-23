@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../pages/Retorna_dados.dart';
 import '../pages/util.dart';
 
-
 class TelaNuvem2 extends StatefulWidget {
   const TelaNuvem2({Key? key}) : super(key: key);
 
@@ -13,8 +12,9 @@ class TelaNuvem2 extends StatefulWidget {
 class _TelaNuvem2State extends State<TelaNuvem2> {
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
-       //appbar
+      //appbar
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: Row(
@@ -31,7 +31,7 @@ class _TelaNuvem2State extends State<TelaNuvem2> {
                 Image.asset(
                   "lib/images/homem.png",
                   height: 30,
-                  ),
+                ),
                 Usuario().nome(18, Colors.white),
               ],
             ),
@@ -39,69 +39,85 @@ class _TelaNuvem2State extends State<TelaNuvem2> {
         ),
       ),
 
-        // menu lateral
+      // menu lateral
       endDrawer: Drawer(
         backgroundColor: const Color.fromRGBO(68, 56, 71, 1),
         width: 250,
         child: Column(
           children: [
             UserAccountsDrawerHeader(
-              accountName: Usuario().nome(18,Colors.white), 
+              accountName: Usuario().nome(18, Colors.white),
               accountEmail: Usuario().email(18, Colors.white),
               currentAccountPicture: Image.asset("lib/images/homem.png"),
             ),
-            const SizedBox(height: 10,),
-            const BotaoTexto( 
+            const SizedBox(
+              height: 10,
+            ),
+            const BotaoTexto(
               label: "Aumentar Performance",
               corTexto: Colors.white,
               tamFont: 20,
               acaoBotao: "performance1",
             ),
-            const SizedBox(height: 15,),
+            const SizedBox(
+              height: 15,
+            ),
             const BotaoTexto(
               label: "Tempo da bateria",
-              corTexto: Colors.white, 
+              corTexto: Colors.white,
               tamFont: 20,
               acaoBotao: "bateria1",
             ),
-            const SizedBox(height: 15,),
+            const SizedBox(
+              height: 15,
+            ),
             const BotaoTexto(
               label: "Avaliar o aparelho",
-              corTexto: Colors.white, 
+              corTexto: Colors.white,
               tamFont: 20,
               acaoBotao: "avaliacao1",
             ),
-            const SizedBox(height: 15,),
+            const SizedBox(
+              height: 15,
+            ),
             const BotaoTexto(
               label: "Anunciar o aparelho",
-              corTexto: Colors.white, 
+              corTexto: Colors.white,
               tamFont: 20,
               acaoBotao: "anunciar1",
             ),
-            const SizedBox(height: 15,),
+            const SizedBox(
+              height: 15,
+            ),
             const BotaoTexto(
               label: "Backup de arquivos",
-              corTexto: Colors.white, 
+              corTexto: Colors.white,
               tamFont: 20,
               acaoBotao: "nuvem1",
             ),
-            const SizedBox(height: 15,),
+            const SizedBox(
+              height: 15,
+            ),
             const BotaoTexto(
               label: "Central de ajuda",
               corTexto: Colors.white,
               tamFont: 20,
               acaoBotao: "ajuda",
             ),
-            const SizedBox(height: 40,),
+            const SizedBox(
+              height: 40,
+            ),
             const BotaoTexto(
-              label: "Sobre", 
+              label: "Sobre",
               corTexto: Colors.white,
               tamFont: 20,
               acaoBotao: "sobre",
             ),
-            const SizedBox(height: 15,),
+            const SizedBox(
+              height: 15,
+            ),
             const BotaoTexto(
-              label: "Minha conta", 
+              label: "Minha conta",
               corTexto: Colors.white,
               tamFont: 20,
               acaoBotao: "conta",
@@ -112,7 +128,7 @@ class _TelaNuvem2State extends State<TelaNuvem2> {
         ),
       ),
 
-        //corpo da página
+      //corpo da página
       backgroundColor: const Color.fromRGBO(68, 56, 71, 1),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 70),
@@ -122,12 +138,9 @@ class _TelaNuvem2State extends State<TelaNuvem2> {
               const Texto(
                 label: "Conteúdo enviado para nuvem de: ",
                 tamFont: 20,
-              ),                 
-              const SizedBox(height: 20),
-              Texto(
-                label: "${Usuario().email(18, Colors.white)}",
-                tamFont: 30,
               ),
+              const SizedBox(height: 20),
+              Usuario().email(18, Colors.white),
               const SizedBox(height: 25),
               Image.asset(
                 "lib/images/nuvem.png",
@@ -149,7 +162,7 @@ class _TelaNuvem2State extends State<TelaNuvem2> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: const [
                   Texto(
-                    label: "CicloCell", 
+                    label: "CicloCell",
                     tamFont: 16,
                   ),
                 ],
@@ -161,4 +174,3 @@ class _TelaNuvem2State extends State<TelaNuvem2> {
     );
   }
 }
-

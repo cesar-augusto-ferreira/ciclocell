@@ -129,7 +129,17 @@ class _TelaPerformance3State extends State<TelaPerformance3> {
               Image.asset(
                 "lib/images/forca.png",
                 height: 150,                
-              ),                                                  
+              ),  
+               const SizedBox(height: 265),
+              Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: const [
+                    Texto(
+                      label: "CicloCell",
+                      tamFont: 16,
+                    ),
+                  ],
+                ),                                                
             ],
           ),
         ),

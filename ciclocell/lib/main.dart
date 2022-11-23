@@ -17,7 +17,7 @@ import '../pages/tela_recuperar_senha2.dart';
 import '../pages/tela_anunciar.dart';
 import '../pages/tela_anunciar2.dart';
 import '../pages/tela_anunciar3.dart';
-import '../pages/tela_performnance.dart';
+import 'pages/tela_performance.dart';
 import '../pages/tela_performance2.dart';
 import '../pages/tela_performance3.dart';
 import '../pages/tela_sobre.dart';
@@ -84,6 +84,14 @@ class ArgumentosAvaliacao {
       this.marca, this.modelo, this.memoriaRam, this.memoriaInterna);
 }
 
+//Argumento para segunda tela da nuvem
+
+class ArgumentosNuvem {
+  final String contratados;
+
+  ArgumentosNuvem(this.contratados);
+}
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -117,8 +125,8 @@ class MyApp extends StatelessWidget {
         "conta": (context) => const TelaMinhaConta(),
         "bateria1": (context) => const TelaBateria(),
         "bateria2": (context) => const TelaBateria2(),
-        "compranuvem": (context) => const TelaCompra1(),
-        "nuvem2": (context) => const TelaCompra2(),
+        TelaCompra2.routeName: (context) => const TelaCompra2(),
+        "compranuvem1": (context) => const TelaCompra1(),
       },
     );
   }
