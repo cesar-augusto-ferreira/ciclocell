@@ -118,19 +118,25 @@ class _TelaPerformance3State extends State<TelaPerformance3> {
             children: [
               const Texto(
                 label: "+ Performance! ", 
-                tamFont: 20,
+                tamFont: 25,
               ),
               const SizedBox(height: 20),
               const Texto(
                 label: " Seu Smartphone esta 29% mais forte! \n", 
-                tamFont: 20,
+                tamFont: 18,
               ),
               const SizedBox(height: 30),
               Image.asset(
                 "lib/images/forca.png",
                 height: 150,                
-              ),  
-               const SizedBox(height: 265),
+              ), 
+              const SizedBox(height: 60),
+              Botao(
+                  corBotao: Colors.grey.shade200, 
+                  label: "Home", 
+                  acaoBotao: "principal",
+                ), 
+               const SizedBox(height: 185),
               Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: const [

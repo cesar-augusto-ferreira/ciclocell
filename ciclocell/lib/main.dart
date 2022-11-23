@@ -17,7 +17,7 @@ import '../pages/tela_recuperar_senha2.dart';
 import '../pages/tela_anunciar.dart';
 import '../pages/tela_anunciar2.dart';
 import '../pages/tela_anunciar3.dart';
-import 'pages/tela_performance.dart';
+import '../pages/tela_performance.dart';
 import '../pages/tela_performance2.dart';
 import '../pages/tela_performance3.dart';
 import '../pages/tela_sobre.dart';
@@ -26,6 +26,8 @@ import '../pages/tela_nuvem2.dart';
 import '../pages/tela_minha_conta.dart';
 import '../pages/tela_compra_nuvem.dart';
 import '../pages/tela_compra_nuvem2.dart';
+import '../pages/tela_ajuda.dart';
+import '../pages/tela_ajuda2.dart';
 
 Future<void> main() async {
   await Firebase.initializeApp(
@@ -85,7 +87,6 @@ class ArgumentosAvaliacao {
 }
 
 //Argumento para segunda tela da nuvem
-
 class ArgumentosNuvem {
   final String contratados;
 
@@ -104,7 +105,8 @@ class MyApp extends StatelessWidget {
       routes: {
         "login": (context) => const TelaLogin(),
         "principal": (context) => const TelaPrincipal(),
-        //"ajuda" : ((context) => const TelaAjuda()),
+        "ajuda1" : ((context) => const TelaAjuda()),
+        "ajuda2" : ((context) => const TelaAjuda2()),
         "cadastro": (context) => const TelaCadastro(),
         TelaCadastro2.routeName: (context) => TelaCadastro2(),
         TelaCadastro3.routeName: (context) => TelaCadastro3(),

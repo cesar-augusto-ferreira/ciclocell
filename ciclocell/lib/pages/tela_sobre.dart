@@ -153,7 +153,7 @@ class _TelaSobreState extends State<TelaSobre> {
                   label:"Home", 
                   acaoBotao: "principal",
                 ),
-                const SizedBox(height: 50),
+                const SizedBox(height: 55),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: const[

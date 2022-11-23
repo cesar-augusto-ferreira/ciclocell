@@ -70,7 +70,7 @@ class TelaRecuperacao2 extends StatelessWidget {
                   label: "Concluir", 
                   acaoBotao: "login",
                 ),
-                const SizedBox(height: 120),
+                const SizedBox(height: 105),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: const [                    

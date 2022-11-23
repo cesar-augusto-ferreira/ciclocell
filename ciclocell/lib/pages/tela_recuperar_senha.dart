@@ -90,7 +90,7 @@ class _TelaRecuperacao1State extends State<TelaRecuperacao1> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 35),
+                const SizedBox(height: 45),
                 const Texto(
                   label: "* Campos obrigatórios",
                   tamFont: 14,

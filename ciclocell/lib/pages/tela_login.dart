@@ -32,7 +32,7 @@ class _TelaLoginState extends State<TelaLogin> {
                 ),
                 const SizedBox(height: 60),
                 CaixaTexto().SemBorda("E-mail", "Digite seu ", email, Icons.email, 25),
-                const SizedBox(height: 45),
+                const SizedBox(height: 40),
                 CaixaTexto().SemBorda("Senha", "Digite sua ", senha, Icons.vpn_key, 25),
                 const SizedBox(height: 40),
                 BotaoTexto(
@@ -42,7 +42,7 @@ class _TelaLoginState extends State<TelaLogin> {
                   decoracao: TextDecoration.underline,
                   acaoBotao: "recuperacao1",
                 ),
-                const SizedBox(height: 80),
+                const SizedBox(height: 70),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [                    

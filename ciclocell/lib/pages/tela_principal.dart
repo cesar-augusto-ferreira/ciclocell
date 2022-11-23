@@ -63,6 +63,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
               label: "Tempo da bateria",
               corTexto: Colors.white, 
               tamFont: 20,
+              acaoBotao: "bateria1",
             ),
             const SizedBox(height: 15,),
             const BotaoTexto(
@@ -83,12 +84,14 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
               label: "Backup de arquivos",
               corTexto: Colors.white, 
               tamFont: 20,
+              acaoBotao: "nuvem1",
             ),
             const SizedBox(height: 15,),
             const BotaoTexto(
               label: "Central de ajuda",
               corTexto: Colors.white,
               tamFont: 20,
+              acaoBotao: "ajuda1",
             ),
             const SizedBox(height: 40,),
             const BotaoTexto(
@@ -221,6 +224,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                       label: "Central \n de ajuda",
                       tamFont: 20,
                       corTexto: Colors.white,
+                      acaoBotao: "ajuda1",
                     ),
                   ],
                 ),

@@ -2,15 +2,16 @@
 import '../pages/util.dart';
 import 'package:flutter/material.dart';
 import '../pages/Retorna_dados.dart';
+import '../pages/Retorna_dados.dart';
 
-class TelaAvaliacao3 extends StatefulWidget {
-  const TelaAvaliacao3({Key? key}) : super(key: key);
+class TelaAjuda2 extends StatefulWidget {
+  const TelaAjuda2({Key? key}) : super(key: key);
 
   @override
-  State<TelaAvaliacao3> createState() => _TelaAvaliacao3State();
+  State<TelaAjuda2> createState() => _TelaAjuda2State();
 }
 
-class _TelaAvaliacao3State extends State<TelaAvaliacao3> {
+class _TelaAjuda2State extends State<TelaAjuda2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -119,20 +120,22 @@ class _TelaAvaliacao3State extends State<TelaAvaliacao3> {
               children: [
                 const SizedBox(height: 8),
                 const Texto(
-                  label: "Quanto vale meu celular?", 
+                  label: "Central de ajuda", 
                   tamFont: 25,
                 ),
                 const SizedBox(height: 25),
-                const Texto(
-                  label: "Seu celular foi avaliado em", 
-                  tamFont: 25,
-                ),
+                Usuario().nome(25, Colors.white),
                 const SizedBox(height: 25),
                 const Texto(
-                  label: " R\$ 1399,00 ", 
+                  label: "Sua dúvida foi enviada" , 
                   tamFont: 25,
                 ),
-                const SizedBox(height: 55),
+                const SizedBox(height: 5),
+                const Texto(
+                  label: "com sucesso" , 
+                  tamFont: 25,
+                ),
+                const SizedBox(height: 30),
                 Image.asset(
                   "lib/images/ok.png",
                   height: 150,
@@ -148,7 +151,7 @@ class _TelaAvaliacao3State extends State<TelaAvaliacao3> {
                   label: "Home", 
                   acaoBotao: "principal",
                 ),
-                const SizedBox(height: 80),
+                const SizedBox(height: 70),
                  Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: const [                    
