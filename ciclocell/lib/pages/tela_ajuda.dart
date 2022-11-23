@@ -23,22 +23,12 @@ class _TelaAjudaState extends State<TelaAjuda> {
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: Row(
-          children: [
-            const BotaoTexto(
+          children: const [
+           BotaoTexto(
               label: "CicloCell",
               corTexto: Color.fromARGB(255, 15, 234, 22),
               acaoBotao: "principal",
               tamFont: 35,
-            ),
-            Column(
-              children: [
-                const SizedBox(width: 130),
-                Image.asset(
-                  "lib/images/homem.png",
-                  height: 30,
-                ),
-                Usuario().nome(18, Colors.white),
-              ],
             ),
           ],
         ),
@@ -95,6 +85,7 @@ class _TelaAjudaState extends State<TelaAjuda> {
               label: "Central de ajuda",
               corTexto: Colors.white,
               tamFont: 20,
+              acaoBotao: "ajuda1",
             ),
             const SizedBox(height: 40,),
             const BotaoTexto(
@@ -123,7 +114,6 @@ class _TelaAjudaState extends State<TelaAjuda> {
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 60),
           child: Center(
             child: Column(
-              // ignore: prefer_const_literals_to_create_immutables
               children: [
                 const Texto(
                   label: "Central de ajuda?", 
@@ -148,7 +138,7 @@ class _TelaAjudaState extends State<TelaAjuda> {
                     const SizedBox(width: 80),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        minimumSize: Size(120, 50),
+                        minimumSize: const Size(120, 50),
                         primary: Colors.grey.shade200,
                       ), 
                       child: const Text(
@@ -158,23 +148,26 @@ class _TelaAjudaState extends State<TelaAjuda> {
                           color: Colors.black,
                         ),
                       ),
-                      onPressed: () async {                    
-                        AjudaController().criarAjuda(context,ajuda.text);                                
-                        Navigator.pushReplacementNamed(context, "ajuda2");
-                        
+                      onPressed: () async {  
+                        if(ajuda.text.isNotEmpty) {                  
+                          AjudaController().criarAjuda(context,ajuda.text);                                
+                          Navigator.pushReplacementNamed(context, "ajuda2");
+                        } else {
+                          return Mensagem().erro(context, "Digite sua dúvida para continuar");
+                        }
                       },
                     ),
                   ],
                 ),
                 const SizedBox(height: 70),
-                const Texto(label: '* Campos obrigatórios', tamFont: 14),
-                const SizedBox(height: 40),
+                const Texto(label: "* Campos obrigatórios", tamFont: 14),
+                const SizedBox(height: 50),
                 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: const [
                     Texto(
-                      label: 'CicloCell', 
+                      label: "CicloCell", 
                       tamFont: 16,
                     ),
                   ],

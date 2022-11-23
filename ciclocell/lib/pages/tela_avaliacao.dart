@@ -32,16 +32,6 @@ class _TelaAvaliacaoState extends State<TelaAvaliacao> {
               acaoBotao: "principal",
               tamFont: 35,
             ),
-            Column(
-              children: [
-                const SizedBox(width: 130),
-                Image.asset(
-                  "lib/images/homem.png",
-                  height: 30,
-                  ),
-                Usuario().nome(18, Colors.white),
-              ],
-            ),
           ],
         ),
       ),
@@ -55,7 +45,7 @@ class _TelaAvaliacaoState extends State<TelaAvaliacao> {
             UserAccountsDrawerHeader(
               accountName: Usuario().nome(18,Colors.white), 
               accountEmail: Usuario().email(18, Colors.white),
-              currentAccountPicture: Image.asset('lib/images/homem.png'),
+              currentAccountPicture: Image.asset("lib/images/homem.png"),
             ),
             const SizedBox(height: 10,),
             const BotaoTexto( 
@@ -69,6 +59,7 @@ class _TelaAvaliacaoState extends State<TelaAvaliacao> {
               label: "Tempo da bateria",
               corTexto: Colors.white, 
               tamFont: 20,
+              acaoBotao: "bateria1",
             ),
             const SizedBox(height: 15,),
             const BotaoTexto(
@@ -89,12 +80,14 @@ class _TelaAvaliacaoState extends State<TelaAvaliacao> {
               label: "Backup de arquivos",
               corTexto: Colors.white, 
               tamFont: 20,
+              acaoBotao: "nuvem",
             ),
             const SizedBox(height: 15,),
             const BotaoTexto(
               label: "Central de ajuda",
               corTexto: Colors.white,
               tamFont: 20,
+              acaoBotao: "ajuda1",
             ),
             const SizedBox(height: 40,),
             const BotaoTexto(

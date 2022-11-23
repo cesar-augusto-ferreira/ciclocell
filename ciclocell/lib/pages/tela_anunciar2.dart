@@ -35,22 +35,12 @@ class _TelaAnunciar2State extends State<TelaAnunciar2> {
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: Row(
-          children: [
-            const BotaoTexto(
+          children: const [
+            BotaoTexto(
               label: "CicloCell",
               corTexto: Color.fromARGB(255, 15, 234, 22),
               acaoBotao: "principal",
               tamFont: 35,
-            ),
-            Column(
-              children: [
-                const SizedBox(width: 130),
-                Image.asset(
-                  "lib/images/homem.png",
-                  height: 30,
-                  ),
-                Usuario().nome(18, Colors.white),
-              ],
             ),
           ],
         ),
@@ -65,7 +55,7 @@ class _TelaAnunciar2State extends State<TelaAnunciar2> {
             UserAccountsDrawerHeader(
               accountName: Usuario().nome(18,Colors.white), 
               accountEmail: Usuario().email(18, Colors.white),
-              currentAccountPicture: Image.asset('lib/images/homem.png'),
+              currentAccountPicture: Image.asset("lib/images/homem.png"),
             ),
             const SizedBox(height: 10,),
             const BotaoTexto( 
@@ -79,6 +69,7 @@ class _TelaAnunciar2State extends State<TelaAnunciar2> {
               label: "Tempo da bateria",
               corTexto: Colors.white, 
               tamFont: 20,
+              acaoBotao: "bateria1",
             ),
             const SizedBox(height: 15,),
             const BotaoTexto(
@@ -99,12 +90,14 @@ class _TelaAnunciar2State extends State<TelaAnunciar2> {
               label: "Backup de arquivos",
               corTexto: Colors.white, 
               tamFont: 20,
+              acaoBotao: "nuvem1",
             ),
             const SizedBox(height: 15,),
             const BotaoTexto(
               label: "Central de ajuda",
               corTexto: Colors.white,
               tamFont: 20,
+              acaoBotao: "ajuda1",
             ),
             const SizedBox(height: 40,),
             const BotaoTexto(
@@ -139,12 +132,12 @@ class _TelaAnunciar2State extends State<TelaAnunciar2> {
                   tamFont: 30,
                 ),
                 const SizedBox(height: 25),
-                const Texto(label: 
-                  "Marque apenas os itens que for ", 
+                const Texto(
+                  label: "Marque apenas os itens que for ", 
                   tamFont: 18,
                 ),
-                const Texto(label: 
-                  "correspondente ao estado do aparelho", 
+                const Texto(
+                  label: "correspondente ao estado do aparelho", 
                   tamFont: 18,
                 ),
                 const SizedBox(height: 10),
@@ -284,7 +277,7 @@ class _TelaAnunciar2State extends State<TelaAnunciar2> {
                     const SizedBox(width: 80),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        minimumSize: Size(120, 50),
+                        minimumSize: const Size(120, 50),
                         primary: Colors.grey.shade200,
                       ), 
                       child: const Text(
@@ -312,8 +305,7 @@ class _TelaAnunciar2State extends State<TelaAnunciar2> {
                       tamFont: 16,
                     ),
                   ],
-                ),
-                
+                ), 
               ],
             ),
           ),

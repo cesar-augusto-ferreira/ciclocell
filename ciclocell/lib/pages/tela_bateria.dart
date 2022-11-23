@@ -118,8 +118,8 @@ class _TelaBateriaState extends State<TelaBateria> {
               const Texto(label: 'Tempo de bateria!', tamFont: 20),
               const SizedBox(height: 20),
               const Texto(
-                  label: ' Que tal saber quanto tempo de vida útil ainda'
-                      ' tem a bateria do seu aparelho.',
+                  label: " Que tal saber quanto tempo de vida útil ainda"
+                    " tem a bateria do seu aparelho.",
                   tamFont: 20),
               const SizedBox(height: 30),
               Image.asset(
@@ -142,15 +142,10 @@ class _TelaBateriaState extends State<TelaBateria> {
                   ],
                 ),
             ],
-            
           ),
-          
         ),
-        
       ),
-      
     );
-    
   }
   
 }
