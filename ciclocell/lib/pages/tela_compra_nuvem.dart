@@ -3,9 +3,10 @@ import '../main.dart';
 import '../pages/util.dart';
 import '../controller/anuncio_controller.dart';
 import '../pages/retorna_dados.dart';
+import '../controller/nuvem_controller.dart';
 
 class TelaCompra1 extends StatefulWidget {
-  static const routeName = "compranuvem";
+  
 
   const TelaCompra1({Key? key}) : super(key: key);
 
@@ -14,16 +15,14 @@ class TelaCompra1 extends StatefulWidget {
 }
 
 class _TelaCompra1State extends State<TelaCompra1> {
-  bool telaTroc = false;
-  bool telaTrinc = false;
-  bool traseira = false;
-  bool detalhes = false;
-  bool bateria = false;
+  bool plano100gb = false;
+  bool plano200gb = false;
+  bool plano2tb = false;
   bool valor = true;
 
   @override
   Widget build(BuildContext context) {
-     
+    
     return Scaffold(
       // appBar
       appBar: AppBar(
@@ -148,10 +147,7 @@ class _TelaCompra1State extends State<TelaCompra1> {
                   label: "Valores para armazenar na nuvem: ",
                   tamFont: 18,
                 ),
-                
-                const SizedBox(height: 10),
-                
-                const SizedBox(height: 30),
+                const SizedBox(height: 40),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -161,15 +157,14 @@ class _TelaCompra1State extends State<TelaCompra1> {
                     ),
                     const SizedBox(width: 60),
                     Checkbox(
-                      value: telaTroc,
+                      value: plano100gb,
                       onChanged: (valor) {
                         setState(() {
-                          telaTroc = valor!;
+                          plano100gb = valor!;
                         });
                       },
                     ),
                     const SizedBox(width: 10),
-                    
                   ],
                 ),
                 const SizedBox(height: 30),
@@ -182,15 +177,14 @@ class _TelaCompra1State extends State<TelaCompra1> {
                     ),
                     const SizedBox(width: 52),
                     Checkbox(
-                      value: telaTrinc,
+                      value: plano200gb,
                       onChanged: (valor) {
                         setState(() {
-                          telaTrinc = valor!;
+                          plano200gb = valor!;
                         });
                       },
                     ),
                     const SizedBox(width: 10),
-                    
                   ],
                 ),
                 const SizedBox(height: 30),
@@ -203,63 +197,24 @@ class _TelaCompra1State extends State<TelaCompra1> {
                     ),
                     const SizedBox(width: 62),
                     Checkbox(
-                      value: bateria,
+                      value: plano2tb,
                       onChanged: (valor) {
                         setState(() {
-                          bateria = valor!;
+                          plano2tb = valor!;
                         });
                       },
                     ),
                     const SizedBox(width: 10),
-                    
                   ],
                 ),
-                const SizedBox(height: 30),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    
-                    const SizedBox(width: 62),
-                    Checkbox(
-                      value: traseira,
-                      onChanged: (valor) {
-                        setState(() {
-                          traseira = valor!;
-                        });
-                      },
-                    ),
-                    
-                  ],
-                ),
-                const SizedBox(height: 30),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    
-                    const SizedBox(
-                      width: 4,
-                    ),
-                    Checkbox(
-                      value: detalhes,
-                      onChanged: (valor) {
-                        setState(() {
-                          detalhes = valor!;
-                        });
-                      },
-                    ),
-                    
-                  ],
-                ),
-                const SizedBox(
-                  height: 75,
-                ),
+                const SizedBox(height: 100),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Botao(
                       corBotao: Colors.grey.shade200,
                       label: "Voltar",
-                      acaoBotao: "principal",
+                      acaoBotao: "nuvem1",
                     ),
                     const SizedBox(width: 80),
                     ElevatedButton(
@@ -275,12 +230,35 @@ class _TelaCompra1State extends State<TelaCompra1> {
                         ),
                       ),
                       onPressed: () async {
-                        Navigator.pushReplacementNamed(context, "nuvem2");
+                        NuvemController().criarNuvem(
+                            context, plano100gb, plano200gb, plano2tb);
+                          if ( plano100gb  == true){
+                            String contratado = "Plano 100GB";
+                            Navigator.pushReplacementNamed(
+                              context,
+                              "compranuvem2",                          
+                              arguments: ArgumentosNuvem(contratado),
+                        );
+                      } if ( plano200gb  == true){
+                            String contratado = "Plano 200GB";
+                            Navigator.pushReplacementNamed(
+                              context,
+                              "compranuvem2",                          
+                              arguments: ArgumentosNuvem(contratado),
+                        );
+                      } if ( plano2tb  == true){
+                            String contratado = "Plano 2TB";
+                            Navigator.pushReplacementNamed(
+                              context,
+                              "compranuvem2",                          
+                              arguments: ArgumentosNuvem(contratado),
+                        );
+                      } 
                       },
                     ),
                   ],
                 ),
-                const SizedBox(height: 50),
+                const SizedBox(height: 200),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: const [

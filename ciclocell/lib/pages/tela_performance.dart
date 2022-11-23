@@ -134,6 +134,16 @@ class _TelaPerformanceState extends State<TelaPerformance> {
                 label: "+ Performance", 
                 acaoBotao: "performance2",
               ),
+              const SizedBox(height: 135),
+              Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: const [
+                    Texto(
+                      label: "CicloCell",
+                      tamFont: 16,
+                    ),
+                  ],
+                ),
             ],
           ),
         ),
