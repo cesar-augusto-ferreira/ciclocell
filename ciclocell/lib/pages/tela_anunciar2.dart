@@ -108,6 +108,13 @@ class _TelaAnunciar2State extends State<TelaAnunciar2> {
             ),
             const SizedBox(height: 15,),
             const BotaoTexto(
+              label: "Atualizar cadastro", 
+              corTexto: Colors.white,
+              tamFont: 20,
+              acaoBotao: "atualizar1",
+            ),
+            const SizedBox(height: 15,),
+            const BotaoTexto(
               label: "Minha conta", 
               corTexto: Colors.white,
               tamFont: 20,

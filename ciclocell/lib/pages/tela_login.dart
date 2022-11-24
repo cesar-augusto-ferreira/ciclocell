@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../pages/util.dart';
 import '../controller/login_controller.dart';
 
@@ -13,6 +14,7 @@ class TelaLogin extends StatefulWidget {
 class _TelaLoginState extends State<TelaLogin> {
   var email = TextEditingController();
   var senha = TextEditingController();
+  bool _mostrar = false;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +35,42 @@ class _TelaLoginState extends State<TelaLogin> {
                 const SizedBox(height: 60),
                 CaixaTexto().SemBorda("E-mail", "Digite seu ", email, Icons.email, 25, false),
                 const SizedBox(height: 40),
-                CaixaTexto().SemBorda("Senha", "Digite sua ", senha, Icons.vpn_key, 25, true),
+                TextField(
+                  controller: senha,
+                  style: GoogleFonts.roboto(
+                    fontSize: 25,
+                    color: Colors.white,
+                  ),
+                  decoration: InputDecoration(
+                    floatingLabelAlignment: FloatingLabelAlignment.center,
+                    labelText: "Senha",
+                    hintText: "Digite sua senha",
+                    hintStyle: const TextStyle(
+                      color: Colors.white,
+                    ),
+                    prefixIcon: const Icon(
+                      Icons.vpn_key,
+                      color: Colors.white,
+                    ),
+                    suffixIcon: GestureDetector(
+                      child: Icon(
+                        _mostrar == false ? Icons.visibility_off:
+                        Icons.visibility,
+                        color: Colors.white,
+                      ),
+                      onTap: () {
+                        setState(() {
+                          _mostrar = ! _mostrar;
+                        });
+                      },
+                    ),
+                    labelStyle: GoogleFonts.roboto(
+                      fontSize: 25,
+                      color: Colors.white,
+                    ),
+                  ),
+                  obscureText: _mostrar == false ? true : false,
+                ),
                 const SizedBox(height: 40),
                 BotaoTexto(
                   corTexto: Colors.red.shade600,

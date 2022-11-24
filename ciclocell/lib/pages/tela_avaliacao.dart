@@ -80,7 +80,7 @@ class _TelaAvaliacaoState extends State<TelaAvaliacao> {
               label: "Backup de arquivos",
               corTexto: Colors.white, 
               tamFont: 20,
-              acaoBotao: "nuvem",
+              acaoBotao: "nuvem1",
             ),
             const SizedBox(height: 15,),
             const BotaoTexto(
@@ -95,6 +95,13 @@ class _TelaAvaliacaoState extends State<TelaAvaliacao> {
               corTexto: Colors.white,
               tamFont: 20,
               acaoBotao: "sobre",
+            ),
+            const SizedBox(height: 15,),
+            const BotaoTexto(
+              label: "Atualizar cadastro", 
+              corTexto: Colors.white,
+              tamFont: 20,
+              acaoBotao: "atualizar1",
             ),
             const SizedBox(height: 15,),
             const BotaoTexto(

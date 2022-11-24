@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../pages/Retorna_dados.dart';
 import '../main.dart';
 import '../pages/util.dart';
@@ -15,8 +16,9 @@ class _TelaAtualizarCadastroState extends State<TelaAtualizarCadastro> {
   var nome = TextEditingController();
   var rg = TextEditingController();
   var cpf = TextEditingController();
-  //var email = TextEditingController();
+  var email = TextEditingController();
   var senha = TextEditingController();
+  bool _mostrar = false;
   
   @override
   Widget build(BuildContext context) {
@@ -25,14 +27,97 @@ class _TelaAtualizarCadastroState extends State<TelaAtualizarCadastro> {
           // Appbar
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: const Text(
-          "CicloCell",
-          style: TextStyle(
-            fontSize: 35,
-            color: Color.fromARGB(255, 15, 234, 22),
-          ),
+        title: Row(
+          children: const [
+            BotaoTexto(
+              label: "CicloCell",
+              corTexto: Color.fromARGB(255, 15, 234, 22),
+              acaoBotao: "principal",
+              tamFont: 35,
+            ),
+          ],
         ),
       ),
+
+        //menu lateral
+      endDrawer: Drawer(
+        backgroundColor: const Color.fromRGBO(68, 56, 71, 1),
+        width: 250,
+        child: Column(
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Usuario().nome(18,Colors.white), 
+              accountEmail: Usuario().email(18, Colors.white),
+              currentAccountPicture: Image.asset("lib/images/homem.png"),
+            ),
+            const SizedBox(height: 10,),
+            const BotaoTexto( 
+              label: "Aumentar Performance",
+              corTexto: Colors.white,
+              tamFont: 20,
+              acaoBotao: "performance1",
+            ),
+            const SizedBox(height: 15,),
+            const BotaoTexto(
+              label: "Tempo da bateria",
+              corTexto: Colors.white, 
+              tamFont: 20,
+              acaoBotao: "bateria1",
+            ),
+            const SizedBox(height: 15,),
+            const BotaoTexto(
+              label: "Avaliar o aparelho",
+              corTexto: Colors.white, 
+              tamFont: 20,
+              acaoBotao: "avaliacao1",
+            ),
+            const SizedBox(height: 15,),
+            const BotaoTexto(
+              label: "Anunciar o aparelho",
+              corTexto: Colors.white, 
+              tamFont: 20,
+              acaoBotao: "anunciar1",
+            ),
+            const SizedBox(height: 15,),
+            const BotaoTexto(
+              label: "Backup de arquivos",
+              corTexto: Colors.white, 
+              tamFont: 20,
+              acaoBotao: "nuvem1",
+            ),
+            const SizedBox(height: 15,),
+            const BotaoTexto(
+              label: "Central de ajuda",
+              corTexto: Colors.white,
+              tamFont: 20,
+              acaoBotao: "ajuda1",
+            ),
+            const SizedBox(height: 40,),
+            const BotaoTexto(
+              label: "Sobre", 
+              corTexto: Colors.white,
+              tamFont: 20,
+              acaoBotao: "sobre",
+            ),
+            const SizedBox(height: 15,),
+            const BotaoTexto(
+              label: "Atualizar cadastro", 
+              corTexto: Colors.white,
+              tamFont: 20,
+              acaoBotao: "atualizar1",
+            ),
+            const SizedBox(height: 15,),
+            const BotaoTexto(
+              label: "Minha conta", 
+              corTexto: Colors.white,
+              tamFont: 20,
+              acaoBotao: "conta",
+            ),
+            const SizedBox(height: 15),
+            const BotaoSair(),
+          ],
+        ),
+      ),  
 
        //corpo da página
       backgroundColor: const Color.fromRGBO(68, 56, 71, 1),
@@ -62,17 +147,46 @@ class _TelaAtualizarCadastroState extends State<TelaAtualizarCadastro> {
                 CaixaTexto().SemBorda("RG*", "Digite o seu ", rg, Icons.document_scanner_outlined, 22, false),
                 const SizedBox(height: 4),
                 CaixaTexto().SemBorda("CPF*", "Digite o seu ", cpf, Icons.document_scanner_outlined, 22, false), 
-                const SizedBox(height: 8),
-                Row(
-                  children: [
-                    Texto(label: "Email: ", tamFont: 22),
-
-                    Usuario().email(22, Colors.white),
-                  ],
+                const SizedBox(height: 2),
+                CaixaTexto().SemBorda("email*", "Digite o seu ", email, Icons.document_scanner_outlined, 22, false),
+                const SizedBox(height: 4),
+                TextField(
+                  controller: senha,
+                  style: GoogleFonts.roboto(
+                    fontSize: 25,
+                    color: Colors.white,
+                  ),
+                  decoration: InputDecoration(
+                    floatingLabelAlignment: FloatingLabelAlignment.center,
+                    labelText: "Senha*",
+                    hintText: "Digite sua senha",
+                    hintStyle: const TextStyle(
+                      color: Colors.white,
+                    ),
+                    prefixIcon: const Icon(
+                      Icons.vpn_key,
+                      color: Colors.white,
+                    ),
+                    suffixIcon: GestureDetector(
+                      child: Icon(
+                        _mostrar == false ? Icons.visibility_off:
+                        Icons.visibility,
+                        color: Colors.white,
+                      ),
+                      onTap: () {
+                        setState(() {
+                          _mostrar = ! _mostrar;
+                        });
+                      },
+                    ),
+                    labelStyle: GoogleFonts.roboto(
+                      fontSize: 25,
+                      color: Colors.white,
+                    ),
+                  ),
+                  obscureText: _mostrar == false ? true : false,
                 ),
-                const SizedBox(height: 10),
-                CaixaTexto().SemBorda("Senha*", "Digite a ", senha, Icons.vpn_key, 22, false), 
-                const SizedBox(height: 20),
+                const SizedBox(height: 30),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -95,11 +209,11 @@ class _TelaAtualizarCadastroState extends State<TelaAtualizarCadastro> {
                         ),
                       ),
                       onPressed: () async { 
-                        if (nome.text.isNotEmpty && rg.text.isNotEmpty && cpf.text.isNotEmpty && senha.text.isNotEmpty) {
+                        if (nome.text.isNotEmpty && rg.text.isNotEmpty && cpf.text.isNotEmpty && email.text.isNotEmpty && senha.text.isNotEmpty) {
                           Navigator.pushReplacementNamed(
                             context,
                             "atualizar2",
-                            arguments: ArgumentosAtualizar(nome.text, rg.text, cpf.text, senha.text),
+                            arguments: ArgumentosAtualizar(nome.text, rg.text, cpf.text, email.text, senha.text),
                           );
                         } else {
                           Mensagem().erro(context,

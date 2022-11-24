@@ -42,7 +42,7 @@ class _TelaSobreState extends State<TelaSobre> {
             ),
             const SizedBox(height: 10,),
             const BotaoTexto( 
-              label: "Aumentar Performace",
+              label: "Aumentar Performance",
               corTexto: Colors.white,
               tamFont: 20,
               acaoBotao: "performance1",
@@ -80,7 +80,7 @@ class _TelaSobreState extends State<TelaSobre> {
               label: "Central de ajuda",
               corTexto: Colors.white,
               tamFont: 20,
-              acaoBotao: "ajuda",
+              acaoBotao: "ajuda1",
             ),
             const SizedBox(height: 40,),
             const BotaoTexto(
@@ -88,6 +88,13 @@ class _TelaSobreState extends State<TelaSobre> {
               corTexto: Colors.white,
               tamFont: 20,
               acaoBotao: "sobre",
+            ),
+            const SizedBox(height: 15,),
+            const BotaoTexto(
+              label: "Atualizar cadastro", 
+              corTexto: Colors.white,
+              tamFont: 20,
+              acaoBotao: "atualizar1",
             ),
             const SizedBox(height: 15,),
             const BotaoTexto(

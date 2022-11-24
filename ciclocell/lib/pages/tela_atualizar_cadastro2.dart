@@ -27,14 +27,97 @@ class TelaAtualizarCadastro2 extends StatelessWidget {
         //appbar
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: const Text(
-          "CicloCell",
-          style: TextStyle(
-            fontSize: 35,
-            color: Color.fromARGB(255, 15, 234, 22),
-          ),
+        title: Row(
+          children: const [
+            BotaoTexto(
+              label: "CicloCell",
+              corTexto: Color.fromARGB(255, 15, 234, 22),
+              acaoBotao: "principal",
+              tamFont: 35,
+            ),
+          ],
         ),
       ),
+
+        //menu lateral
+      endDrawer: Drawer(
+        backgroundColor: const Color.fromRGBO(68, 56, 71, 1),
+        width: 250,
+        child: Column(
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Usuario().nome(18,Colors.white), 
+              accountEmail: Usuario().email(18, Colors.white),
+              currentAccountPicture: Image.asset("lib/images/homem.png"),
+            ),
+            const SizedBox(height: 10,),
+            const BotaoTexto( 
+              label: "Aumentar Performance",
+              corTexto: Colors.white,
+              tamFont: 20,
+              acaoBotao: "performance1",
+            ),
+            const SizedBox(height: 15,),
+            const BotaoTexto(
+              label: "Tempo da bateria",
+              corTexto: Colors.white, 
+              tamFont: 20,
+              acaoBotao: "bateria1",
+            ),
+            const SizedBox(height: 15,),
+            const BotaoTexto(
+              label: "Avaliar o aparelho",
+              corTexto: Colors.white, 
+              tamFont: 20,
+              acaoBotao: "avaliacao1",
+            ),
+            const SizedBox(height: 15,),
+            const BotaoTexto(
+              label: "Anunciar o aparelho",
+              corTexto: Colors.white, 
+              tamFont: 20,
+              acaoBotao: "anunciar1",
+            ),
+            const SizedBox(height: 15,),
+            const BotaoTexto(
+              label: "Backup de arquivos",
+              corTexto: Colors.white, 
+              tamFont: 20,
+              acaoBotao: "nuvem1",
+            ),
+            const SizedBox(height: 15,),
+            const BotaoTexto(
+              label: "Central de ajuda",
+              corTexto: Colors.white,
+              tamFont: 20,
+              acaoBotao: "ajuda1",
+            ),
+            const SizedBox(height: 40,),
+            const BotaoTexto(
+              label: "Sobre", 
+              corTexto: Colors.white,
+              tamFont: 20,
+              acaoBotao: "sobre",
+            ),
+            const SizedBox(height: 15,),
+            const BotaoTexto(
+              label: "Atualizar cadastro", 
+              corTexto: Colors.white,
+              tamFont: 20,
+              acaoBotao: "atualizar1",
+            ),
+            const SizedBox(height: 15,),
+            const BotaoTexto(
+              label: "Minha conta", 
+              corTexto: Colors.white,
+              tamFont: 20,
+              acaoBotao: "conta",
+            ),
+            const SizedBox(height: 15),
+            const BotaoSair(),
+          ],
+        ),
+      ),  
 
        //corpo da página
       backgroundColor: const Color.fromRGBO(68, 56, 71, 1),
@@ -58,13 +141,14 @@ class TelaAtualizarCadastro2 extends StatelessWidget {
                   label: 'Página 2/2', 
                   tamFont: 16,
                 ),
-                const SizedBox(height: 10),
-                CaixaTexto().SemBorda("Cidade", "Digite o nome da sua ", cidade, Icons.location_city_outlined, 22, false),
+                const SizedBox(height: 15),
+                CaixaTexto().SemBorda("Cidade*", "Digite o nome da sua ", cidade, Icons.location_city_outlined, 22, false),
                 const SizedBox(height: 20),
-                CaixaTexto().SemBorda("Endereço", "Digite o seu ", endereco, Icons.house_outlined, 22, false),
+                CaixaTexto().SemBorda("Endereço*", "Digite o seu ", endereco, Icons.house_outlined, 22, false),
                 const SizedBox(height: 20),
                 CaixaTexto().SemBorda("Complemento", "Digite o ", complemento, Icons.apartment_outlined, 22, false),
                 CaixaTexto().SemBorda("Celular*", "Digite o seu ", celular, Icons.smartphone_outlined, 22, false),
+                const SizedBox(height: 40),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -88,7 +172,7 @@ class TelaAtualizarCadastro2 extends StatelessWidget {
                       ),
                       onPressed: () async {
                         if (cidade.text.isNotEmpty && endereco.text.isNotEmpty && celular.text.isNotEmpty) {
-                          //LoginController().criarConta(context,argumentosAtu.nome, argumentosAtu.rg, argumentosAtu.cpf, argumentosAtu.senha, cidade.text, endereco.text, complemento.text, celular.text);                                
+                          LoginController().atualizarDadosUsuario(context,argumentosAtu.nome, argumentosAtu.rg, argumentosAtu.cpf, argumentosAtu.email, argumentosAtu.senha, cidade.text, endereco.text, complemento.text, celular.text);                                
                           Navigator.pushReplacementNamed(context, "atualizar3");
                         } else {
                           Mensagem().erro(context, "Informe a cidade, endereço e celura para fazer o cadastro.");

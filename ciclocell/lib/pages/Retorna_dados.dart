@@ -215,6 +215,37 @@ class Usuario {
     );
   }
 
+
+//retorna o documento do usuario logado
+  Widget documentos(dynamic tamFont, Color corTexto) {
+
+    return FutureBuilder<String>(
+      future: LoginController().retornarDocUsuario(),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const CircularProgressIndicator();
+        } else if (snapshot.connectionState == ConnectionState.done) {
+          if (snapshot.hasError) {
+            return const Text("Error");
+          } else if (snapshot.hasData) {
+            return Text(
+              snapshot.data.toString(),
+              overflow: TextOverflow.ellipsis,
+              style: GoogleFonts.roboto(
+                fontSize: tamFont,
+                color: corTexto,
+              ),
+            );
+          } else {
+            return const Text("Empty data");
+          }
+        } else {
+          return Text("State: ${snapshot.connectionState}");
+        }
+      },
+    );
+  }
+
 }
 //retorna o documento do usuario logado
  /* Widget email(dynamic tamFont, Color corTexto) {

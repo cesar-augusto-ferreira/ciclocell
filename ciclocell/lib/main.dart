@@ -101,9 +101,10 @@ class ArgumentosAtualizar {
   final String nome;
   final String rg;
   final String cpf;
+  final String email;
   final String senha;
 
-  ArgumentosAtualizar(this.nome, this.rg, this.cpf, this.senha);
+  ArgumentosAtualizar(this.nome, this.rg, this.cpf, this.senha, this.email);
 }
 
 class MyApp extends StatelessWidget {

@@ -73,7 +73,7 @@ class _TelaAnunciar3State extends State<TelaAnunciar3> {
               label: "Backup de arquivos",
               corTexto: Colors.white, 
               tamFont: 20,
-              acaoBotao: "bateria1",
+              acaoBotao: "nuvem1",
             ),
             const SizedBox(height: 15,),
             const BotaoTexto(
@@ -88,6 +88,13 @@ class _TelaAnunciar3State extends State<TelaAnunciar3> {
               corTexto: Colors.white,
               tamFont: 20,
               acaoBotao: "sobre",
+            ),
+            const SizedBox(height: 15,),
+            const BotaoTexto(
+              label: "Atualizar cadastro", 
+              corTexto: Colors.white,
+              tamFont: 20,
+              acaoBotao: "atualizar1",
             ),
             const SizedBox(height: 15,),
             const BotaoTexto(

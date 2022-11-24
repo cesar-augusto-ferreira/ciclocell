@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:ciclocell/pages/Retorna_dados.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -37,6 +39,29 @@ class LoginController {
       }
     });
   }
+
+    // atualizar dados do usuário
+  void atualizarDadosUsuario(context, nome, rg, cpf, email, senha, cidade, endereco, complemento, celular) async {
+    var documento = retornarDocUsuario().toString();
+    print("documento: $documento");
+    String uid = FirebaseAuth.instance.currentUser!.uid.toString();
+    print("uid: $uid");
+    FirebaseFirestore.instance
+    .collection("usuarios")
+    .doc(documento)
+    .set({
+      "uid": uid,
+      "nome": nome,
+      "rg": rg,
+      "cpf": cpf,
+      "email": email,
+      "cidade": cidade,
+      "endereço": endereco,
+      "complemento": complemento,
+      "celular": celular,
+    });
+
+  }  
 
   // login no app
   void login(context, email, senha) {
@@ -192,6 +217,26 @@ class LoginController {
     return res;
   }
 
+   // retorna o documento do usuário 
+  Future<String> retornarDocUsuario() async {
+   var uid = FirebaseAuth.instance.currentUser!.uid;
+    var res;
+    await FirebaseFirestore.instance
+        .collection("usuarios")
+        .where("uid", isEqualTo: uid)
+        .get()
+        .then(
+      (q) {
+        if (q.docs.isNotEmpty) {
+          res = q.docs[0].id;
+        } else {
+          res = "";
+        }
+      },
+    );
+    return res;
+  }
+
   // retorna o celular do usuário logado no app
   Future<String> retornarCelularUsuario() async {
     var uid = FirebaseAuth.instance.currentUser!.uid;
@@ -214,22 +259,5 @@ class LoginController {
 
 }
 
-// retorna o documento do usuário 
-  Future<String> retornarDocumentoUsuario() async {
-    var uid = FirebaseAuth.instance.currentUser!.uid;
-    var res;
-    await FirebaseFirestore.instance
-        .collection("usuarios")
-        .where("uid", isEqualTo: uid)
-        .get()
-        .then(
-      (q) {
-        if (q.docs.isNotEmpty) {
-          res = q.docs;
-        } else {
-          res = "";
-        }
-      },
-    );
-    return res;
-  }
+   
+  

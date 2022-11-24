@@ -92,6 +92,13 @@ class _TelaMinhaContaState extends State<TelaMinhaConta> {
             ),
             const SizedBox(height: 15,),
             const BotaoTexto(
+              label: "Atualizar cadastro", 
+              corTexto: Colors.white,
+              tamFont: 20,
+              acaoBotao: "atualizar1",
+            ),
+            const SizedBox(height: 15,),
+            const BotaoTexto(
               label: "Minha conta", 
               corTexto: Colors.white,
               tamFont: 20,
@@ -194,6 +201,17 @@ class _TelaMinhaContaState extends State<TelaMinhaConta> {
                       tamFont: 20,
                     ),
                     Usuario().celular(18, Colors.white),
+                  ],
+                ),
+                const SizedBox(height: 15),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Texto(
+                      label: "documento: ", 
+                      tamFont: 20,
+                    ),
+                    Usuario().documentos(18, Colors.white),
                   ],
                 ),
                 const SizedBox(height: 30),

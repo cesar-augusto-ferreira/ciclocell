@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../controller/login_controller.dart';
 import '../main.dart';
 import '../pages/util.dart';
@@ -17,6 +18,7 @@ class _TelaCadastroState extends State<TelaCadastro> {
   var cpf = TextEditingController();
   var email = TextEditingController();
   var senha = TextEditingController();
+  bool _mostrar = false;
   
   @override
   Widget build(BuildContext context) {
@@ -65,11 +67,45 @@ class _TelaCadastroState extends State<TelaCadastro> {
                 const SizedBox(height: 4),
                 CaixaTexto().SemBorda("E-mail*", "Digite o seu ", email, Icons.email_outlined, 22, false),
                 const SizedBox(height: 4),
-                CaixaTexto().SemBorda("Senha*", "Digite a ", senha, Icons.vpn_key, 22, false), 
+                TextField(
+                  controller: senha,
+                  style: GoogleFonts.roboto(
+                    fontSize: 25,
+                    color: Colors.white,
+                  ),
+                  decoration: InputDecoration(
+                    floatingLabelAlignment: FloatingLabelAlignment.center,
+                    labelText: "Senha",
+                    hintText: "Digite sua senha",
+                    hintStyle: const TextStyle(
+                      color: Colors.white,
+                    ),
+                    prefixIcon: const Icon(
+                      Icons.vpn_key,
+                      color: Colors.white,
+                    ),
+                    suffixIcon: GestureDetector(
+                      child: Icon(
+                        _mostrar == false ? Icons.visibility_off:
+                        Icons.visibility,
+                        color: Colors.white,
+                      ),
+                      onTap: () {
+                        setState(() {
+                          _mostrar = ! _mostrar;
+                        });
+                      },
+                    ),
+                    labelStyle: GoogleFonts.roboto(
+                      fontSize: 25,
+                      color: Colors.white,
+                    ),
+                  ),
+                  obscureText: _mostrar == false ? true : false,
+                ),
                 const SizedBox(height: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  // ignore: prefer_const_literals_to_create_immutables
                   children: [
                     Botao(
                       corBotao: Colors.grey.shade200, 
