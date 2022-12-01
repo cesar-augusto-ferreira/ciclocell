@@ -237,6 +237,7 @@ class LoginController {
     return res;
   }
 
+
   // retorna o celular do usuário logado no app
   Future<String> retornarCelularUsuario() async {
     var uid = FirebaseAuth.instance.currentUser!.uid;

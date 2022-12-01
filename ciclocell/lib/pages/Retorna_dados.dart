@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
 import 'package:google_fonts/google_fonts.dart';
 import '../controller/login_controller.dart';
 
@@ -215,9 +216,7 @@ class Usuario {
     );
   }
 
-
-//retorna o documento do usuario logado
-  Widget documentos(dynamic tamFont, Color corTexto) {
+    Widget documentos(dynamic tamFont, Color corTexto) {
 
     return FutureBuilder<String>(
       future: LoginController().retornarDocUsuario(),
@@ -246,33 +245,55 @@ class Usuario {
     );
   }
 
-}
-//retorna o documento do usuario logado
- /* Widget email(dynamic tamFont, Color corTexto) {
 
-    return FutureBuilder<String>(
-      future: LoginController().,
+
+  //retorna o numero do documento do cadastro do usuário
+
+ dynamic retornaDoc() async {
+  Future<String> stringFuture = LoginController().retornarDocUsuario();
+  String message = await stringFuture.;
+ return message;
+ }
+
+
+
+  //retorna o documento do usuario logado
+  /*String documento01() {
+    String result = "";
+
+    LoginController().retornarCpfUsuario().then((String value) {
+      result = value;
+    });
+    return result;
+  }*/
+
+    
+
+  /*dynamic docImages() async{
+   Future<String> loginController = LoginController().retornarDocUsuario();
+    String retorno;
+    loginController = Future.value("Data from DB");
+
+    retorno = await loginController;
+    loginController.then((String value) {
+      retorno = value;
+
+    });
+    return retorno;
+  }*/
+
+  /*String documentos(){
+      String documento = "";
+
+    FutureBuilder<String>(
+      future: LoginController().retornarDocUsuario(),
       builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          return const CircularProgressIndicator();
-        } else if (snapshot.connectionState == ConnectionState.done) {
-          if (snapshot.hasError) {
-            return const Text("Error");
-          } else if (snapshot.hasData) {
-            return Text(
-              snapshot.data.toString(),
-              overflow: TextOverflow.ellipsis,
-              style: GoogleFonts.roboto(
-                fontSize: tamFont,
-                color: corTexto,
-              ),
-            );
-          } else {
-            return const Text("Empty data");
-          }
-        } else {
-          return Text("State: ${snapshot.connectionState}");
-        }
+       documento = snapshot.data.toString();
       },
     );
+    return documento;
   }*/
+
+
+
+}
