@@ -123,7 +123,7 @@ class MyApp extends StatelessWidget {
         "ajuda2" : ((context) => const TelaAjuda2()),
         "cadastro": (context) => const TelaCadastro(),
         TelaCadastro2.routeName: (context) => TelaCadastro2(),
-        TelaCadastro3.routeName: (context) => TelaCadastro3(),
+        TelaCadastro3.routeName: (context) => const TelaCadastro3(),
         "recuperacao1": (context) => const TelaRecuperacao1(),
         TelaRecuperacao2.routeName: (context) => const TelaRecuperacao2(),
         "avaliacao1": (context) => const TelaAvaliacao(),

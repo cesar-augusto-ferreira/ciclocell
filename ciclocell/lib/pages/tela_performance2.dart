@@ -159,7 +159,6 @@ class _TelaPerformance2State extends State<TelaPerformance2> {
                   ),
                 ],
               ),
-
             ],
           ),
         ),

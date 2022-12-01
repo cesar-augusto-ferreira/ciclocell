@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
 import 'package:google_fonts/google_fonts.dart';
 import '../controller/login_controller.dart';
 
@@ -244,56 +243,5 @@ class Usuario {
       },
     );
   }
-
-
-
-  //retorna o numero do documento do cadastro do usuário
-
- dynamic retornaDoc() async {
-  Future<String> stringFuture = LoginController().retornarDocUsuario();
-  String message = await stringFuture.;
- return message;
- }
-
-
-
-  //retorna o documento do usuario logado
-  /*String documento01() {
-    String result = "";
-
-    LoginController().retornarCpfUsuario().then((String value) {
-      result = value;
-    });
-    return result;
-  }*/
-
-    
-
-  /*dynamic docImages() async{
-   Future<String> loginController = LoginController().retornarDocUsuario();
-    String retorno;
-    loginController = Future.value("Data from DB");
-
-    retorno = await loginController;
-    loginController.then((String value) {
-      retorno = value;
-
-    });
-    return retorno;
-  }*/
-
-  /*String documentos(){
-      String documento = "";
-
-    FutureBuilder<String>(
-      future: LoginController().retornarDocUsuario(),
-      builder: (context, snapshot) {
-       documento = snapshot.data.toString();
-      },
-    );
-    return documento;
-  }*/
-
-
 
 }

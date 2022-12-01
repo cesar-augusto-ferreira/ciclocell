@@ -1,5 +1,4 @@
 
-import 'package:ciclocell/controller/login_controller.dart';
 import 'package:flutter/material.dart';
 import '../pages/util.dart';
 import '../pages/Retorna_dados.dart';
@@ -203,18 +202,7 @@ class _TelaMinhaContaState extends State<TelaMinhaConta> {
                     ),
                     Usuario().celular(18, Colors.white),
                   ],
-                ),
-                const SizedBox(height: 15),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Texto(
-                      label: "documento: ", 
-                      tamFont: 20,
-                    ),
-                    Text(Usuario().retornaDoc().toString()),
-                  ],
-                ),
+                ),               
                 const SizedBox(height: 30),
                 const Texto(
                   label: 'Conta ativa', 

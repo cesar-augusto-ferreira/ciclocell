@@ -5,8 +5,6 @@ import '../pages/retorna_dados.dart';
 import '../controller/nuvem_controller.dart';
 
 class TelaCompra1 extends StatefulWidget {
-  
-
   const TelaCompra1({Key? key}) : super(key: key);
 
   @override
@@ -183,7 +181,7 @@ class _TelaCompra1State extends State<TelaCompra1> {
                       label: "CicloCell 2TB - 44,99 por mês",
                       tamFont: 15,
                     ),
-                    const SizedBox(width: 62),
+                    const SizedBox(width: 65),
                     Checkbox(
                       value: plano2tb,
                       onChanged: (valor) {

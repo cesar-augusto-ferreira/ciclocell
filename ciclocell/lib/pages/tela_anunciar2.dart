@@ -318,7 +318,6 @@ class _TelaAnunciar2State extends State<TelaAnunciar2> {
           ),
         ),
       ),
-
     );
     
   }

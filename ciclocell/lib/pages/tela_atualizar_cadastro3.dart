@@ -1,9 +1,7 @@
 
 import 'package:ciclocell/pages/Retorna_dados.dart';
 import 'package:flutter/material.dart';
-import '../main.dart';
 import '../pages/util.dart';
-
 
 class TelaAtualizarCadastro3 extends StatefulWidget {
   const TelaAtualizarCadastro3({Key? key}) : super(key: key);

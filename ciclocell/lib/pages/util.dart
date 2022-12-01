@@ -1,6 +1,5 @@
 
 
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../controller/login_controller.dart';
@@ -292,107 +291,6 @@ class _BotaoSairState extends State<BotaoSair> {
     );
   }
 }
-
-
-/*class CaixaSenha extends StatefulWidget {
-
-  final String label;
-  final String hintLabel;
-  final dynamic variavel;
-  final IconData? iconepref;
-  final dynamic tamFont;
-  final bool senha;
-  const CaixaSenha({Key? key, required this.label, required this.hintLabel, this.variavel, this.iconepref, this.tamFont, required this.senha}) : super(key: key);
-
-  @override
-  State<CaixaSenha> createState() => _CaixaSenhaState();
-  
-}
-
-class _CaixaSenhaState extends State<CaixaSenha> {
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding : const EdgeInsets.fromLTRB(0, 0, 0, 15),
-        child: TextField(
-          controller: variavel,
-          style: GoogleFonts.roboto(
-            fontSize: tamFont,
-            color: Colors.white,
-          ),
-          decoration: InputDecoration(
-            floatingLabelAlignment: FloatingLabelAlignment.center,
-            labelText: label,
-            hintText: "$hintLabel $label",
-            hintStyle: const TextStyle(
-              color: Colors.white,
-            ),
-          prefixIcon: iconepref == null ? null : Icon(
-            iconepref, color: Colors.white,
-          ),
-          labelStyle: GoogleFonts.roboto(
-            fontSize: tamFont,
-            color: Colors.white,
-          ),
-        ),
-      )
-    );
-
-
-    
-  }
-}*/
-
-
-/*class CampoSenha extends StatelessWidget {
-
-  final String label;
-  final String hintLabel;
-  final dynamic variavel;
-  final IconData? iconepref;
-  final dynamic tamFont;
-  bool mostrar = false;
-  
-  const CampoSenha({Key? key, required this.label, required this.hintLabel, this.variavel, this.iconepref, this.tamFont}) : super(key: key);
-  
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding : const EdgeInsets.fromLTRB(0, 0, 0, 15),
-        child: TextField(
-          controller: variavel,
-          style: GoogleFonts.roboto(
-            fontSize: tamFont,
-            color: Colors.white,
-          ),
-          decoration: InputDecoration(
-            floatingLabelAlignment: FloatingLabelAlignment.center,
-            labelText: label,
-            hintText: "$hintLabel $label",
-            hintStyle: const TextStyle(
-              color: Colors.white,
-            ),
-          prefixIcon: iconepref == null ? null : Icon(
-            iconepref, color: Colors.white,
-          ),
-          suffixIcon: GestureDetector(
-            child: Icon(
-              Icons.visibility_off,
-              color: Colors.white,
-            ),
-          ),
-          labelStyle: GoogleFonts.roboto(
-            fontSize: tamFont,
-            color: Colors.white,
-          ),
-        ),
-        obscureText: false,
-      )
-    );
-  }
-
-    
-  }*/
 
 
 
